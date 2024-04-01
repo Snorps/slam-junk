@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cm7vivof2m8be"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CenterText" type="Label" parent="."]
+offset_top = 4.0
+offset_right = 1136.0
+offset_bottom = 635.0
+text = "Nothing is hapening"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopLeftText" type="Label" parent="."]
+offset_top = 4.0
+offset_right = 1136.0
+offset_bottom = 635.0
+text = "0:0"

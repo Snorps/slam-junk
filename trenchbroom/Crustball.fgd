@@ -18,8 +18,8 @@
 
 @PointClass size(-8 -8 -8, 8 8 8) = physics_ball : "Physics Ball" 
 [
-	mass(float) : "" : "1"
-	size(float) : "" : "1"
+	mass(float) : "" : "0.30000000000291"
+	size(float) : "" : "0.40000000000873"
 	velocity(string) : "Initial velocity" : "0 0 0"
 ]
 
@@ -29,3 +29,15 @@
 ]
 
 @PointClass color(204 204 204) model("models/player.glb") size(-8 -8 -8, 8 8 8) = player : "player" []
+
+@SolidClass = goal : "The goal." 
+[
+	axis(string) : "Direction of movement when pressed." : "0 -1 0"
+	depth(float) : "How far to move along the axis when pressed." : "0.8"
+	press_signal_delay(float) : "Seconds after press() is called, before emitting is own pressed signal." : "0"
+	release_delay(float) : "Seconds after a physics body exits, before calling release()" : "0"
+	release_signal_delay(float) : "Seconds after release() is called, before emitting is own released signal." : "0"
+	speed(float) : "Delta multiplier for a lerp weight to move the button to its desired position." : "8"
+	target(string) : "" : ""
+	trigger_signal_delay(float) : "Seconds after press() is called, before emitting the trigger signal." : "0"
+]

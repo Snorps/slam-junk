@@ -15,6 +15,12 @@ run/main_scene="res://generic_map.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+HUD="*res://singleton/Hud.tscn"
+GameStateManager="*res://manager/game_state_manager.tscn"
+EntityTargetManager="*res://entity/EntityTargetManager.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")

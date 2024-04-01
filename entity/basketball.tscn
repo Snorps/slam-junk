@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7ccfkajnmn64"]
+[gd_scene load_steps=5 format=3 uid="uid://b7ccfkajnmn64"]
+
+[ext_resource type="Script" path="res://DestroyOffMap.gd" id="1_d5deg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_76020"]
 bounce = 1.1
@@ -15,3 +17,7 @@ mesh = SubResource("1")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
 shape = SubResource("2")
+
+[node name="DestroyOffMap" type="Node3D" parent="."]
+script = ExtResource("1_d5deg")
+lose_on_destroy = true

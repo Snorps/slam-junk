@@ -1,6 +1,6 @@
 [gd_scene load_steps=150 format=3 uid="uid://wve3dyxt6bln"]
 
-[ext_resource type="PackedScene" uid="uid://x3l0v6tbskoe" path="res://Player/Player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://x3l0v6tbskoe" path="res://entity/Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://bd5cdspxkh8mf" path="res://Maps/Textures/texture_04.png" id="2"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_yyf3p"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="3_vj7q4"]
