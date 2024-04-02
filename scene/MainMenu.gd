@@ -2,6 +2,7 @@ extends Node2D
 var confirm = false
 
 func _on_start_pressed():
+	GameStateManager.map = GameStateManager.levels[0]
 	var startButton = get_node("Start")
 	if(confirm == false):
 		startButton.text = "Okay but are you sure tho"

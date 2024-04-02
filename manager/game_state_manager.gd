@@ -11,17 +11,16 @@ var levels = [
 var lose_nodes = []
 var score
 var level
-var map = levels[0]
+var map
 
 func _ready():
 	reset_game()
 	
 func reset_game():
-	get_tree().change_scene_to_packed(game_complete_scene)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	level = 0
 	score = 0
-	map = levels[level]
+
 
 func lose():
 	score -= 1
@@ -38,6 +37,7 @@ func win():
 func reset_level():
 	HUD.get_node("TopLeftText").text = str(score) + ":0"
 	if level >= levels.size():
+		get_tree().change_scene_to_packed(game_complete_scene)
 		reset_game()
 		HUD.get_node("CenterText").text = "You had became beated the game!"
 		return

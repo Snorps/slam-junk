@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bwyhm860axdvn"
+path="res://.godot/imported/level1-jumps.map-3ba0c17c781e887c880d03ec8cf19213.tres"
+
+[deps]
+
+source_file="res://maps/level1-jumps.map"
+dest_files=["res://.godot/imported/level1-jumps.map-3ba0c17c781e887c880d03ec8cf19213.tres"]
+
+[params]
+
