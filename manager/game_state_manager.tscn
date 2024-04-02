@@ -1,12 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2e4ifiwgq4vi"]
+[gd_scene load_steps=4 format=3 uid="uid://b2e4ifiwgq4vi"]
 
 [ext_resource type="Script" path="res://manager/game_state_manager.gd" id="1_cxn3q"]
-[ext_resource type="AudioStream" uid="uid://dbsag88yhxsko" path="res://audio/BAKSETSBAL.mp3" id="2_b65wu"]
+[ext_resource type="PackedScene" uid="uid://qkl8i8hg8u8j" path="res://scene/generic_map.tscn" id="2_nf57l"]
+[ext_resource type="PackedScene" uid="uid://1q1ttixn6an3" path="res://scene/MainMenu.tscn" id="3_8n3iu"]
 
 [node name="GameStateManager" type="Node"]
 script = ExtResource("1_cxn3q")
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_b65wu")
-volume_db = -25.0
-autoplay = true
+generic_map_scene = ExtResource("2_nf57l")
+game_complete_scene = ExtResource("3_8n3iu")

@@ -1,5 +1,8 @@
 extends Node
 
+@export var generic_map_scene: PackedScene
+@export var game_complete_scene: PackedScene
+
 var levels = [
 	"level1-pit.map",
 	"level1-hoop.map"
@@ -14,7 +17,7 @@ func _ready():
 	reset_game()
 	
 func reset_game():
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	get_tree().change_scene_to_packed(game_complete_scene)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	level = 0
 	score = 0
@@ -36,10 +39,11 @@ func reset_level():
 	HUD.get_node("TopLeftText").text = str(score) + ":0"
 	if level >= levels.size():
 		reset_game()
+		HUD.get_node("CenterText").text = "You had became beated the game!"
 		return
 	map = levels[level]
 	await get_tree().create_timer(1).timeout
-	await get_tree().change_scene_to_file("res://generic_map.tscn")
+	await get_tree().change_scene_to_packed(generic_map_scene)
 
 func lose_if_destroyed(obj):
 	lose_nodes.append(obj)
