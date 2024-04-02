@@ -8,6 +8,10 @@ func _ready():
 	if map == null:
 		print("Builder node has no func_godot Map reference set.")
 		return
+	build()
+	
+func build():
+	map.global_map_file = "res://maps/" + GameStateManager.map
 	await map.verify_and_build()
 	await map.unwrap_uv2()
 	

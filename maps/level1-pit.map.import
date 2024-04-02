@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bhecfruqpiqhm"
+path="res://.godot/imported/level1-pit.map-a3a0f1abc96d45f8ddbd5ddc61b182f4.tres"
+
+[deps]
+
+source_file="res://maps/level1-pit.map"
+dest_files=["res://.godot/imported/level1-pit.map-a3a0f1abc96d45f8ddbd5ddc61b182f4.tres"]
+
+[params]
+
