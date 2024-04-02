@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var camera = $Body/Head/CameraMarker3D/Camera3D
 @onready var camera_target = $Body/Head/CameraMarker3D
 @onready var head_position: Vector3 = head.position
+@onready var hands = $Body/Head/Hands
 
 @export_file var default_reticle
 
@@ -115,7 +116,10 @@ func _input(event):
 		body.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
-
+	elif event.is_action_pressed("interact"):
+		if hands:
+			hands.try_grabthrow()
+		
 func _physics_process(delta):
 	update_camera = true
 	var is_step: bool = false
