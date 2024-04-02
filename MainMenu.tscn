@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://1q1ttixn6an3"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6g0kc"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_6g0kc")
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.5
+offset_top = -86.0
+offset_right = 109.5
+offset_bottom = 6.0
+grow_horizontal = 2
+pivot_offset = Vector2(109, 46)
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.5
+offset_top = 45.0
+offset_right = 109.5
+offset_bottom = 137.0
+grow_horizontal = 2
+pivot_offset = Vector2(109, 46)
+text = "Quit"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Title" type="RichTextLabel" parent="."]
+clip_contents = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = -283.0
+offset_right = 100.0
+offset_bottom = -243.0
+grow_horizontal = 2
+pivot_offset = Vector2(99, 18)
+bbcode_enabled = true
+text = "This is a test type of thing"
+fit_content = true
+scroll_following = true
+
+[connection signal="button_down" from="Start" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="meta_clicked" from="Title" to="." method="_on_title_meta_clicked"]
+[connection signal="meta_hover_started" from="Title" to="." method="_on_title_meta_hover_started"]
+[connection signal="mouse_entered" from="Title" to="." method="_on_title_mouse_entered"]
