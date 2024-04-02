@@ -8,7 +8,7 @@
 
 [node name="FuncGodotMap" type="Node3D" parent="."]
 script = ExtResource("1_kg1g4")
-global_map_file = "res://trenchbroom/level1-pitch.map"
+global_map_file = "res://maps/level1-pit.map"
 map_settings = ExtResource("2_5lj6r")
 
 [node name="Builder" type="Node" parent="." node_paths=PackedStringArray("map")]
