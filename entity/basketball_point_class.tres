@@ -14,7 +14,7 @@ description = "Physics Ball"
 func_godot_internal = false
 base_classes = Array[Resource]([])
 class_properties = {
-"mass": 0.3,
+"mass": 0.07,
 "size": 0.4,
 "velocity": Vector3(0, 0, 0)
 }
