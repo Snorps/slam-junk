@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7ccfkajnmn64"]
+[gd_scene load_steps=7 format=3 uid="uid://b7ccfkajnmn64"]
 
+[ext_resource type="Texture2D" uid="uid://d244n1m3d7lyq" path="res://Models/Sphere.png" id="1_8xp00"]
 [ext_resource type="Script" path="res://DestroyOffMap.gd" id="1_d5deg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_76020"]
 bounce = 1.1
 
 [sub_resource type="SphereMesh" id="1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l487c"]
+albedo_texture = ExtResource("1_8xp00")
 
 [sub_resource type="SphereShape3D" id="2"]
 
@@ -14,6 +18,7 @@ physics_material_override = SubResource("PhysicsMaterial_76020")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="."]
 mesh = SubResource("1")
+surface_material_override/0 = SubResource("StandardMaterial3D_l487c")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
 shape = SubResource("2")
