@@ -6,6 +6,8 @@ extends CharacterBody3D
 @onready var camera_target = $Body/Head/CameraMarker3D
 @onready var head_position: Vector3 = head.position
 
+@export_file var default_reticle
+
 var mouse_sensitivity: float = 0.1
 
 const ACCELERATION_DEFAULT: float = 7.0
@@ -47,12 +49,13 @@ var update_camera = false
 var camera_gt_previous : Transform3D
 var camera_gt_current : Transform3D
 
+var RETICLE : Control
+
 
 class StepResult:
 	var diff_position: Vector3 = Vector3.ZERO
 	var normal: Vector3 = Vector3.ZERO
 	var is_step_up: bool = false
-
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -63,6 +66,17 @@ func _ready():
 	
 	camera_gt_previous = camera_target.global_transform
 	camera_gt_current = camera_target.global_transform
+	
+	if default_reticle:
+		change_reticle(default_reticle)
+		
+func change_reticle(reticle):
+	if RETICLE:
+		RETICLE.queue_free()
+	
+	RETICLE = load(reticle).instantiate()
+	RETICLE.character = self
+	$UserInterface.add_child(RETICLE)
 
 func update_camera_transform():
 	camera_gt_previous = camera_gt_current
