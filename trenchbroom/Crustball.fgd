@@ -18,8 +18,8 @@
 
 @PointClass size(-8 -8 -8, 8 8 8) = physics_ball : "Physics Ball" 
 [
-	mass(float) : "" : "0.30000000000291"
-	size(float) : "" : "0.40000000000873"
+	mass(float) : "" : "0.15"
+	size(float) : "" : "0.4"
 	velocity(string) : "Initial velocity" : "0 0 0"
 ]
 

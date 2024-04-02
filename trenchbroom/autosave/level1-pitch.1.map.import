@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://c2t2vdhfg8i7b"
+path="res://.godot/imported/level1-pitch.1.map-0c0c85abc5d8d53d1161827a20cd4f1f.tres"
+
+[deps]
+
+source_file="res://trenchbroom/autosave/level1-pitch.1.map"
+dest_files=["res://.godot/imported/level1-pitch.1.map-0c0c85abc5d8d53d1161827a20cd4f1f.tres"]
+
+[params]
+

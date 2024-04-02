@@ -4,8 +4,8 @@ extends AnimatableBody3D
 
 var grab_object = null
 var grab_force = 10000
-var grab_speed_damping = 0.97
-var throw_force = 1
+var grab_speed_damping = 0.96
+var throw_force = 1.5
 
 func _physics_process(delta):
 	if grab_object != null:
