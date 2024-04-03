@@ -27,12 +27,14 @@ func reset_game():
 func lose():
 	score -= 1
 	HUD.get_node("CenterText").text = "FuckYou"
+	$LoseSound.play()
 	reset_level()
 	
 func win():
 	score += 1
 	level += 1
 	HUD.get_node("CenterText").text = "You scored point!"
+	$ScoreSound.play()
 	reset_level()
 	
 	

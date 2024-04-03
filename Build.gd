@@ -11,6 +11,7 @@ func _ready():
 	build()
 	
 func build():
+	EntityTargetManager.emitters = []
 	if GameStateManager.map != null:
 		map.global_map_file = "res://maps/" + GameStateManager.map
 	await map.verify_and_build()

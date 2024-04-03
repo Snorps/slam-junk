@@ -2,6 +2,14 @@
 class_name PhysicsBall
 extends PhysicsEntity
 
+var rng = RandomNumberGenerator.new()
+
+var bounce_sounds = [
+	load("res://audio/bounce1.wav"),
+	load("res://audio/bounce2.wav"),
+	load("res://audio/bounce3.wav"),
+]
+
 func _func_godot_apply_properties(properties: Dictionary):
 	if 'size' in properties:
 		$MeshInstance.mesh.radius = properties.size * 0.5
@@ -10,10 +18,10 @@ func _func_godot_apply_properties(properties: Dictionary):
 		$CollisionShape.shape.radius = properties.size * 0.5
 	if 'mass' in properties:
 		mass = properties.mass
+		
+func _init() -> void:
+	connect("body_shape_entered", body_shape_entered)
 
-
-func use():
-	bounce()
-
-func bounce():
-	linear_velocity.y = 10
+func body_shape_entered(body_id, body: Node, body_shape_idx: int, self_shape_idx: int) -> void:
+	$AudioStreamPlayer3D.stream = bounce_sounds[rng.randi_range(0, bounce_sounds.size() - 1)]
+	$AudioStreamPlayer3D.play()

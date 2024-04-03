@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_aykgl"]
 [ext_resource type="Script" path="res://scene/generic_map.gd" id="1_g3etl"]
 [ext_resource type="Resource" uid="uid://bi6bb8ko0asno" path="res://crustball_default_map_settings.tres" id="2_mrm2m"]
+[ext_resource type="AudioStream" uid="uid://ccyvl04tkj3py" path="res://audio/BOUNSYBALL2.wav" id="2_n1svq"]
 [ext_resource type="Script" path="res://Build.gd" id="3_sbysy"]
-[ext_resource type="AudioStream" uid="uid://dbsag88yhxsko" path="res://audio/BAKSETSBAL.mp3" id="4_nq21a"]
 [ext_resource type="Texture2D" uid="uid://bnbptbnwmsq6f" path="res://Models/skyboxtest.jpg" id="6_vntsb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tfkm7"]
@@ -21,7 +21,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_g3etl")
-music = ExtResource("4_nq21a")
+music = ExtResource("2_n1svq")
 
 [node name="FuncGodotMap" type="Node3D" parent="."]
 script = ExtResource("1_aykgl")
