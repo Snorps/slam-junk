@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_udmmm"]
 [ext_resource type="Texture2D" uid="uid://d24uu77q264np" path="res://Models/enemyplayer1uvtest1.png" id="2_6q73p"]
-[ext_resource type="Script" path="res://entity/Hands.gd" id="2_1018t"]
+[ext_resource type="Script" path="res://Hands.gd" id="2_1018t"]
 [ext_resource type="Script" path="res://DestroyOffMap.gd" id="3_rl0x1"]
 
 [sub_resource type="BoxShape3D" id="6"]

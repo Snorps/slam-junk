@@ -2,15 +2,28 @@ extends AnimatableBody3D
 
 @export var head: Node3D
 
+const grab_force = 10000
+const grab_speed_damping = 0.96
+const throw_force = 1.5
+const grab_grace_period = 0.5
+
 var grab_object = null
-var grab_force = 10000
-var grab_speed_damping = 0.96
-var throw_force = 1.5
+var highlighted_object = null
+var time_left_to_grab = 0
 
 func _physics_process(delta):
+	time_left_to_grab -= delta
 	if grab_object != null:
 		grab_object.apply_force((global_position - grab_object.global_position) * grab_object.mass * grab_force * delta)
 		grab_object.linear_velocity *= grab_speed_damping
+	else:
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(head.global_position, look_vector()*50)
+		var result = space_state.intersect_ray(query)
+		if not result: return
+		if not result.collider is RigidBody3D: return
+		highlighted_object = result.collider
+		time_left_to_grab = grab_grace_period
 
 func try_grabthrow():
 	if grab_object != null:
@@ -19,18 +32,13 @@ func try_grabthrow():
 		grab()
 
 func grab():
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(head.global_position, look_vector()*50)
-	var result = space_state.intersect_ray(query)
-	if not result: return
-	if not result.collider is RigidBody3D: return
-	
+	if time_left_to_grab <= 0: return
 	PhysicsServer3D.body_set_state(
-		result.rid,
+		highlighted_object.get_rid(),
 		PhysicsServer3D.BODY_STATE_TRANSFORM,
 		Transform3D.IDENTITY.translated(global_position)
 	)
-	grab_object = result.collider
+	grab_object = highlighted_object
 
 func throw():
 	grab_object.apply_impulse(look_vector() * throw_force)
