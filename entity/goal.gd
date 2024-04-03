@@ -40,8 +40,5 @@ func emit_trigger() -> void:
 	#trigger.emit()
 
 func _func_godot_apply_properties(props: Dictionary):
-	if "target" in props:
-		EntityTargetManager.register_emitter(self, props.target)
-
 	if 'trigger_signal_delay' in props:
 		trigger_signal_delay = props.trigger_signal_delay

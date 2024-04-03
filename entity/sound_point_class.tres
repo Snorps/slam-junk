@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" load_steps=4 format=3 uid="uid://co0h0bnrfbmdu"]
+
+[ext_resource type="Resource" uid="uid://bsjdis0ov80pp" path="res://entity/light_base_class.tres" id="1_mawcn"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_vtdj4"]
+[ext_resource type="Script" path="res://entity/sound.gd" id="3_vu20k"]
+
+[resource]
+script = ExtResource("2_vtdj4")
+script_class = ExtResource("3_vu20k")
+apply_rotation_on_map_build = true
+classname = "sound"
+description = "Audio player."
+func_godot_internal = false
+base_classes = Array[Resource]([ExtResource("1_mawcn")])
+class_properties = {
+"angle": 0.0
+}
+class_property_descriptions = {
+"angle": "Rotation Angle"
+}
+meta_properties = {
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"targetname": null,
+"volume": 0.0
+}
+node_class = "Node3D"
+name_property = ""

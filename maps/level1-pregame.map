@@ -318,6 +318,14 @@
 }
 // entity 2
 {
+"classname" "sound"
+"origin" "88 72 72"
+"targetname" "big_coach"
+"sound" "res://voice/big coach dirty.mp3"
+"volume" "25"
+}
+// entity 3
+{
 "classname" "trigger_once"
 "target" "big_coach"
 // brush 0
@@ -330,7 +338,7 @@
 ( 64 -48 96 ) ( 64 96 96 ) ( 64 96 16 ) skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 3
+// entity 4
 {
 "classname" "trigger_goal"
 // brush 0
@@ -343,10 +351,8 @@
 ( 256 16 32 ) ( 256 16 33 ) ( 256 17 32 ) skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 4
+// entity 5
 {
-"classname" "sound"
-"origin" "88 72 72"
-"targetname" "big_coach"
-"sound" "res://voice/look_out_champ.mp3"
+"classname" "light"
+"origin" "296 -20 56"
 }
