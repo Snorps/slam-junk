@@ -25,6 +25,7 @@ func reset_game():
 
 
 func lose():
+	if resetting == true: return
 	score -= 1
 	HUD.get_node("CenterText").text = "FuckYou"
 	$LoseSound.play()
@@ -37,8 +38,10 @@ func win():
 	$ScoreSound.play()
 	reset_level()
 	
-	
+var resetting = false
 func reset_level():
+	if resetting == true: return
+	resetting = true
 	HUD.get_node("TopLeftText").text = str(score) + ":0"
 	if level >= levels.size():
 		get_tree().change_scene_to_packed(game_complete_scene)
@@ -48,6 +51,7 @@ func reset_level():
 	map = levels[level]
 	await get_tree().create_timer(1).timeout
 	await get_tree().change_scene_to_packed(generic_map_scene)
+	resetting = false
 
 func lose_if_destroyed(obj):
 	lose_nodes.append(obj)

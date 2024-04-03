@@ -134,7 +134,7 @@ gi_mode = 0
 mesh = SubResource("BoxMesh_dhg0d")
 
 [node name="Hands" type="AnimatableBody3D" parent="Body/Head" node_paths=PackedStringArray("head")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 script = ExtResource("2_1018t")
 head = NodePath("..")
 
