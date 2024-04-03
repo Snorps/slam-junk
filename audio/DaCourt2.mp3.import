@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/DaCourt2.mp3-3aa631c695086de99a963d4029564954
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

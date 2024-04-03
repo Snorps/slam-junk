@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dri24sujykpig"]
+
+[ext_resource type="Script" path="res://manager/audio_manager.gd" id="1_8yw4c"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_8yw4c")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+autoplay = true

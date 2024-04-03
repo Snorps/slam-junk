@@ -1,28 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://qkl8i8hg8u8j"]
+[gd_scene load_steps=7 format=3 uid="uid://qkl8i8hg8u8j"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_aykgl"]
+[ext_resource type="Script" path="res://scene/generic_map.gd" id="1_isi24"]
 [ext_resource type="Resource" uid="uid://bi6bb8ko0asno" path="res://crustball_default_map_settings.tres" id="2_mrm2m"]
 [ext_resource type="Script" path="res://Build.gd" id="3_sbysy"]
 [ext_resource type="AudioStream" uid="uid://dbsag88yhxsko" path="res://audio/BAKSETSBAL.mp3" id="4_nq21a"]
 
-[sub_resource type="Environment" id="Environment_lti01"]
+[sub_resource type="Environment" id="Environment_oirts"]
 ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_isi24")
+music = ExtResource("4_nq21a")
 
 [node name="FuncGodotMap" type="Node3D" parent="."]
 script = ExtResource("1_aykgl")
-global_map_file = "res://maps/level1-jumps.map"
+global_map_file = "res://maps/level1-pit.map"
 map_settings = ExtResource("2_mrm2m")
 
 [node name="Builder" type="Node" parent="." node_paths=PackedStringArray("map")]
 script = ExtResource("3_sbysy")
 map = NodePath("../FuncGodotMap")
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_nq21a")
-volume_db = -25.0
-autoplay = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lti01")
+environment = SubResource("Environment_oirts")

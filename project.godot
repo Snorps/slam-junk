@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 HUD="*res://singleton/Hud.tscn"
 GameStateManager="*res://manager/game_state_manager.tscn"
 EntityTargetManager="*res://entity/EntityTargetManager.gd"
+AudioManager="*res://manager/audio_manager.tscn"
 
 [editor_plugins]
 
