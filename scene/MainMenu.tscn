@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://1q1ttixn6an3"]
 
 [ext_resource type="Script" path="res://scene/MainMenu.gd" id="1_sd21b"]
-[ext_resource type="AudioStream" uid="uid://duabbs0dibifh" path="res://audio/DaCourt2.mp3" id="2_naumc"]
+[ext_resource type="AudioStream" uid="uid://duabbs0dibifh" path="res://audio/DaCourt2.mp3" id="2_8qnii"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sd21b")
-music = ExtResource("2_naumc")
+music = ExtResource("2_8qnii")
 
 [node name="Start" type="Button" parent="."]
 offset_left = 353.0
