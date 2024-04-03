@@ -1,12 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://qkl8i8hg8u8j"]
+[gd_scene load_steps=10 format=3 uid="uid://qkl8i8hg8u8j"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_aykgl"]
 [ext_resource type="Script" path="res://scene/generic_map.gd" id="1_g3etl"]
 [ext_resource type="Resource" uid="uid://bi6bb8ko0asno" path="res://crustball_default_map_settings.tres" id="2_mrm2m"]
 [ext_resource type="Script" path="res://Build.gd" id="3_sbysy"]
 [ext_resource type="AudioStream" uid="uid://dbsag88yhxsko" path="res://audio/BAKSETSBAL.mp3" id="4_nq21a"]
+[ext_resource type="Texture2D" uid="uid://bnbptbnwmsq6f" path="res://Models/skyboxtest.jpg" id="6_vntsb"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tfkm7"]
+panorama = ExtResource("6_vntsb")
+
+[sub_resource type="Sky" id="Sky_kjvdr"]
+sky_material = SubResource("PanoramaSkyMaterial_tfkm7")
 
 [sub_resource type="Environment" id="Environment_lti01"]
+background_mode = 2
+sky = SubResource("Sky_kjvdr")
+ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="World" type="Node3D"]

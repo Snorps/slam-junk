@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tifhg4pgek2c"
+path="res://.godot/imported/big coach dirty.mp3-f02f26407211d32016580d30765e058d.mp3str"
+
+[deps]
+
+source_file="res://voice/big coach dirty.mp3"
+dest_files=["res://.godot/imported/big coach dirty.mp3-f02f26407211d32016580d30765e058d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

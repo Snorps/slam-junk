@@ -10,8 +10,8 @@
 [ext_resource type="Resource" uid="uid://buhfoumq4mg7b" path="res://entity/player_model_class.tres" id="8_p6qex"]
 [ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="9_k0rlm"]
 [ext_resource type="Resource" uid="uid://ckg61cpr5p63l" path="res://entity/goal_solid_class.tres" id="9_vfm8x"]
-[ext_resource type="Resource" uid="uid://cqevsv06cb766" path="res://entity/mover_solid_class.tres" id="10_6egg6"]
-[ext_resource type="Resource" uid="uid://dg8jvo68bohvp" path="res://entity/trigger_once_solid_class.tres" id="11_0sme1"]
+[ext_resource type="Resource" path="res://entity/mover_solid_class.tres" id="10_6egg6"]
+[ext_resource type="Resource" path="res://entity/trigger_once_solid_class.tres" id="11_0sme1"]
 
 [resource]
 script = ExtResource("9_k0rlm")
