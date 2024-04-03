@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=11 format=3 uid="uid://7tcluxdhgtdo"]
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=13 format=3 uid="uid://7tcluxdhgtdo"]
 
 [ext_resource type="Resource" uid="uid://nayxb8n7see2" path="res://addons/func_godot/fgd/phong_base.tres" id="1_yyf2m"]
 [ext_resource type="Resource" uid="uid://bdji3873bg32h" path="res://addons/func_godot/fgd/worldspawn.tres" id="2_3rd81"]
@@ -10,6 +10,8 @@
 [ext_resource type="Resource" uid="uid://buhfoumq4mg7b" path="res://entity/player_model_class.tres" id="8_p6qex"]
 [ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="9_k0rlm"]
 [ext_resource type="Resource" uid="uid://ckg61cpr5p63l" path="res://entity/goal_solid_class.tres" id="9_vfm8x"]
+[ext_resource type="Resource" uid="uid://cqevsv06cb766" path="res://entity/mover_solid_class.tres" id="10_6egg6"]
+[ext_resource type="Resource" uid="uid://dg8jvo68bohvp" path="res://entity/trigger_once_solid_class.tres" id="11_0sme1"]
 
 [resource]
 script = ExtResource("9_k0rlm")
@@ -17,4 +19,4 @@ export_file = false
 model_key_word_supported = true
 fgd_name = "Crustball"
 base_fgd_files = Array[Resource]([])
-entity_definitions = Array[Resource]([ExtResource("1_yyf2m"), ExtResource("2_3rd81"), ExtResource("3_rvjnh"), ExtResource("4_rvklf"), ExtResource("5_7638f"), ExtResource("6_8objo"), ExtResource("7_6mf36"), ExtResource("8_p6qex"), ExtResource("9_vfm8x")])
+entity_definitions = Array[Resource]([ExtResource("1_yyf2m"), ExtResource("2_3rd81"), ExtResource("3_rvjnh"), ExtResource("4_rvklf"), ExtResource("5_7638f"), ExtResource("6_8objo"), ExtResource("7_6mf36"), ExtResource("8_p6qex"), ExtResource("9_vfm8x"), ExtResource("10_6egg6"), ExtResource("11_0sme1")])

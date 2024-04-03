@@ -36,8 +36,7 @@ func press() -> void:
 
 func emit_trigger() -> void:
 	await get_tree().create_timer(trigger_signal_delay).timeout
-	GameStateManager.win()
-	#trigger.emit()
+	trigger.emit()
 
 func _func_godot_apply_properties(props: Dictionary):
 	if "target" in props:

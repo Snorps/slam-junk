@@ -4,8 +4,10 @@ extends Node
 @export var game_complete_scene: PackedScene
 
 var levels = [
-	"level1-pit.map",
-	"level1-hoop.map"
+	"level1-pregame.map",
+	"level1-court-hoop.map",
+	"level1-court-hoop.map",
+	"level1-court-hoop.map",
 ]
 
 var lose_nodes = []

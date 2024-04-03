@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ceuc6m33b7hik"
+path="res://.godot/imported/how did they win again.mp3-06232f66e0ef124914e59ae32cfdece2.mp3str"
+
+[deps]
+
+source_file="res://voice/how did they win again.mp3"
+dest_files=["res://.godot/imported/how did they win again.mp3-06232f66e0ef124914e59ae32cfdece2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
