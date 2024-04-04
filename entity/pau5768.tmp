@@ -24,6 +24,15 @@ offset_right = 762.0
 offset_bottom = 179.0
 text = "Resume"
 
+[node name="Settings" type="Button" parent="."]
+process_mode = 2
+layout_mode = 0
+offset_left = 403.0
+offset_top = 264.0
+offset_right = 762.0
+offset_bottom = 361.0
+text = "Settings"
+
 [node name="Quit" type="Button" parent="."]
 process_mode = 2
 layout_mode = 0
@@ -33,31 +42,20 @@ offset_right = 762.0
 offset_bottom = 527.0
 text = "Quit"
 
-[node name="VolumeLabel" type="Label" parent="."]
+[node name="VolumeThings" type="Container" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VolumeThings"]
 layout_mode = 2
-offset_left = 889.0
-offset_top = 72.0
-offset_right = 1031.0
-offset_bottom = 95.0
 text = "Master volume"
 
-[node name="VolumeControl" type="HSlider" parent="."]
-process_mode = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.92
-anchor_top = 0.167
-anchor_right = 0.92
-anchor_bottom = 0.191
-offset_left = -199.84
-offset_top = -0.216003
-offset_right = 0.160034
-offset_bottom = 0.231987
-max_value = 1.0
-step = 0.001
-value = 0.5
-tick_count = 1
+[node name="VolumeSlider" type="HSlider" parent="VolumeThings"]
+layout_mode = 2
+value = 100.0
 
 [connection signal="button_down" from="Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="Settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="Quit" to="." method="_on_quit_button_down"]
-[connection signal="value_changed" from="VolumeControl" to="." method="_on_volume_control_value_changed"]
+[connection signal="value_changed" from="VolumeThings/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
