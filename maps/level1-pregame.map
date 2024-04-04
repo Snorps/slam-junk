@@ -335,7 +335,8 @@
 }
 // entity 3
 {
-"classname" "trigger_goal"
+"classname" "trigger_changelevel"
+"target" "player"
 // brush 0
 {
 ( 240 -32 16 ) ( 240 -31 16 ) ( 240 -32 17 ) skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -355,4 +356,5 @@
 {
 "classname" "ent_player"
 "origin" "-72 -8 24"
+"targetname" "player"
 }

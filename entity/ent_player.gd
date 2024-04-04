@@ -2,15 +2,8 @@
 class_name Player
 extends CharacterBody3D
 
-@export var properties: Dictionary :
-	get:
-		return properties
-	set(new_properties):
-		if(properties != new_properties):
-			properties = new_properties
-			update_properties()
+var targetname
 
-
-func update_properties():
-	if 'size' in properties:
-		pass
+func _func_godot_apply_properties(properties: Dictionary):
+	if 'targetname' in properties:
+		targetname = properties.targetname
