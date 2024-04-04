@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dougrwojepr52"]
+
+[ext_resource type="Script" path="res://PauseMenu.gd" id="1_vlh18"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vlh18")
+
+[node name="Resume" type="Button" parent="."]
+process_mode = 2
+layout_mode = 0
+offset_left = 403.0
+offset_top = 82.0
+offset_right = 762.0
+offset_bottom = 179.0
+text = "Resume"
+
+[node name="Quit" type="Button" parent="."]
+process_mode = 2
+layout_mode = 0
+offset_left = 403.0
+offset_top = 341.0
+offset_right = 762.0
+offset_bottom = 438.0
+text = "Quit"
+
+[connection signal="button_down" from="Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="Quit" to="." method="_on_quit_button_down"]

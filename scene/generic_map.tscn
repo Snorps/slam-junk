@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qkl8i8hg8u8j"]
+[gd_scene load_steps=11 format=3 uid="uid://qkl8i8hg8u8j"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_aykgl"]
 [ext_resource type="Script" path="res://scene/generic_map.gd" id="1_g3etl"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://rq1ijuta4162" path="res://audio/BOUNSYBALL3.wav" id="2_xa566"]
 [ext_resource type="Script" path="res://Build.gd" id="3_sbysy"]
 [ext_resource type="Texture2D" uid="uid://bnbptbnwmsq6f" path="res://Models/skyboxtest.jpg" id="6_vntsb"]
+[ext_resource type="PackedScene" uid="uid://dougrwojepr52" path="res://entity/pause_menu.tscn" id="7_bcwgx"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tfkm7"]
 panorama = ExtResource("6_vntsb")
@@ -34,3 +35,5 @@ map = NodePath("../FuncGodotMap")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lti01")
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_bcwgx")]
