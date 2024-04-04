@@ -1,18 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://1q1ttixn6an3"]
+[gd_scene load_steps=9 format=3 uid="uid://1q1ttixn6an3"]
 
 [ext_resource type="Script" path="res://scene/MainMenu.gd" id="1_sd21b"]
 [ext_resource type="Shader" path="res://scene/MenuShader.gdshader" id="3_ho482"]
 [ext_resource type="Texture2D" uid="uid://bnbptbnwmsq6f" path="res://Models/skyboxtest.jpg" id="3_rkqri"]
+[ext_resource type="Texture2D" uid="uid://d244n1m3d7lyq" path="res://Models/Sphere.png" id="4_qk13n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yvq6g"]
 shader = ExtResource("3_ho482")
 shader_parameter/direction = Vector2(1, 0)
 shader_parameter/speedScale = 0.1
 
+[sub_resource type="SphereMesh" id="SphereMesh_xobkn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqr6t"]
+albedo_texture = ExtResource("4_qk13n")
+
+[sub_resource type="Environment" id="Environment_wevck"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.7
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sd21b")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_yvq6g")
 offset_right = 1156.0
 offset_bottom = 645.0
@@ -33,6 +45,25 @@ offset_top = 386.0
 offset_right = 694.0
 offset_bottom = 467.0
 text = "Quit"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="TheBall" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55347, 0.820339, 0)
+mesh = SubResource("SphereMesh_xobkn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_tqr6t")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+projection = 1
+size = 5.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.9229, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_wevck")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -16,6 +16,8 @@ func _on_start_pressed():
 	else:
 		get_tree().change_scene_to_file("res://scene/generic_map.tscn")
 
+func _process(delta):
+	$Node3D/TheBall.rotation.y += 5*delta
 
 func _on_quit_pressed():
 	get_tree().quit()
