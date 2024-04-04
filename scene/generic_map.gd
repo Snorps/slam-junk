@@ -7,5 +7,5 @@ func _ready():
 		AudioManager.set_music(music)
 
 func _input(event):
-	if(Input.is_key_pressed(KEY_Q)):
+	if(Input.is_key_pressed(KEY_ESCAPE)):
 		get_tree().quit()
