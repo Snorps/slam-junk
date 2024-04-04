@@ -15,8 +15,11 @@ func body_shape_entered(body_id, body: Node, body_shape_idx: int, self_shape_idx
 	if body is StaticBody3D:
 		return
 
+	##checks that the entity triggering the goal post is, in fact, baketbol
 	if overlaps == 0:
-		press()
+		if(body.name == "entity_4_physics_ball"):
+			press()
+		
 
 	overlaps += 1
 
