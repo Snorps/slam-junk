@@ -9,8 +9,6 @@ var volumeControl
 @export
 var audioBusName : String
 var audioBusIndex : int
-#var resumeButton = get_tree().get_root().get_node("Resume")
-#var quitButton = get_tree().get_root().get_node("Quit")
 
 func _ready():
 	resumeButton = get_node("Resume")
@@ -26,23 +24,15 @@ func _ready():
 	
 
 func _input(event):
-	if(Input.is_key_pressed(KEY_ESCAPE)):
+	if(Input.is_action_pressed("Pause")):
+		
+		if(paused == true):
+			ResumeGame()
+			
 		if(paused == false):
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			resumeButton.show()
-			volumeControl.show()
-			volumeLabel.show()
-			quitButton.show()
-			get_tree().paused = true
-			paused = true
+			PauseGame()
 			
-			
-
-func _on_quit_button_down():
-	get_tree().quit()
-
-
-func _on_resume_button_down():
+func ResumeGame():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	resumeButton.hide()
 	quitButton.hide()
@@ -50,6 +40,22 @@ func _on_resume_button_down():
 	volumeLabel.hide()
 	get_tree().paused = false
 	paused = false
+	
+func PauseGame():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	resumeButton.show()
+	volumeControl.show()
+	volumeLabel.show()
+	quitButton.show()
+	get_tree().paused = true
+	paused = true
+
+func _on_quit_button_down():
+	get_tree().quit()
+
+
+func _on_resume_button_down():
+	ResumeGame()
 
 
 func _on_settings_button_down():
