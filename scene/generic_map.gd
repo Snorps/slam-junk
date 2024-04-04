@@ -5,3 +5,7 @@ extends Node3D
 func _ready():
 	if music != null:
 		AudioManager.set_music(music)
+
+func _input(event):
+	if(Input.is_key_pressed(KEY_Q)):
+		get_tree().quit()
