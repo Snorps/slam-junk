@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="FuncGodotFGDSolidClass" load_steps=3 format=3 uid="uid://ckg61cpr5p63l"]
 
-[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd" id="1_63m3u"]
-[ext_resource type="Script" path="res://entity/goal.gd" id="2_k0l1u"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd" id="1_kefgc"]
+[ext_resource type="Script" path="res://entity/trigger_goal.gd" id="2_qhola"]
 
 [resource]
-script = ExtResource("1_63m3u")
+script = ExtResource("1_kefgc")
 spawn_type = 2
 origin_type = 0
 build_visuals = true
@@ -17,7 +17,7 @@ collision_layer = 1
 collision_mask = 1
 collision_priority = 1.0
 collision_shape_margin = 0.04
-script_class = ExtResource("2_k0l1u")
+script_class = ExtResource("2_qhola")
 classname = "trigger_goal"
 description = "The goal."
 func_godot_internal = false

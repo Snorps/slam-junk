@@ -216,30 +216,15 @@
 }
 // entity 1
 {
-"classname" "light"
-"origin" "-24 184 200"
+"classname" "ent_basketball"
+"origin" "392 -56 120"
 }
 // entity 2
 {
-"classname" "light"
-"origin" "192 -128 256"
-}
-// entity 3
-{
-"classname" "light"
-"origin" "808 184 24"
-}
-// entity 4
-{
-"classname" "physics_ball"
-"origin" "392 -56 120"
-}
-// entity 5
-{
-"classname" "player"
+"classname" "ent_player"
 "origin" "-72 -56 24"
 }
-// entity 6
+// entity 3
 {
 "classname" "func_illusionary"
 // brush 0
@@ -268,7 +253,7 @@
 ( 1024 -12 168 ) ( 1024 -4 168 ) ( 1016 -12 136 ) net_texture 0 160 0 0.008 0.08
 }
 }
-// entity 7
+// entity 4
 {
 "classname" "trigger_goal"
 // brush 0

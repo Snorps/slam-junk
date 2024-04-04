@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="FuncGodotFGDPointClass" load_steps=4 format=3 uid="uid://cubvqwi3p77sq"]
 
-[ext_resource type="PackedScene" uid="uid://b7ccfkajnmn64" path="res://entity/basketball.tscn" id="1_1bb3d"]
-[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_umonk"]
-[ext_resource type="Script" path="res://entity/basketball.gd" id="3_p4rah"]
+[ext_resource type="PackedScene" uid="uid://b7ccfkajnmn64" path="res://entity/ent_basketball.tscn" id="1_8i2rj"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_6u416"]
+[ext_resource type="Script" path="res://entity/ent_basketball.gd" id="3_4wnax"]
 
 [resource]
-script = ExtResource("2_umonk")
-scene_file = ExtResource("1_1bb3d")
-script_class = ExtResource("3_p4rah")
+script = ExtResource("2_6u416")
+scene_file = ExtResource("1_8i2rj")
+script_class = ExtResource("3_4wnax")
 apply_rotation_on_map_build = true
-classname = "physics_ball"
+classname = "ent_basketball"
 description = "Physics Ball"
 func_godot_internal = false
 base_classes = Array[Resource]([])
