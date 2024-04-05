@@ -54,4 +54,4 @@ func _func_godot_build_complete():
 		var emitters = EntityTargetManager.get_emitters()
 		for emitter in emitters:
 			if emitter.value == targetname:
-				emitter.node.pressed.connect(use)
+				emitter.node.trigger.connect(use)
