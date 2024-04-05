@@ -25,12 +25,20 @@ func reset_game():
 	score = 0
 
 
-func lose():
+func lose_point():
 	if resetting == true: return
 	score -= 1
 	HUD.get_node("CenterText").text = "FuckYou"
 	$LoseSound.play()
 	reset_level()
+	
+func lose_game():
+	$LoseSound.play()
+	HUD.get_node("CenterText").text = "You had became died! :("
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_packed(game_complete_scene)
+	reset_game()
+	return
 	
 func win():
 	score += 1
@@ -59,4 +67,4 @@ func lose_if_destroyed(obj):
 
 func has_destroyed(obj):
 	if lose_nodes.has(obj):
-		lose()
+		lose_point()
