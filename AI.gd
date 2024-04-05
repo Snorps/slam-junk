@@ -1,18 +1,20 @@
 extends Node3D
 
 const refresh_rate = 0.3
-const turn_speed = 0.5
+const turn_speed = 0.06
 
 @onready var angle = Vector3.FORWARD.angle_to(transform.basis.z)
+@onready var body = $"../Body"
 
 func _physics_process(delta):
-	if transform.basis.z.angle_to(GameStateManager.player.position) > 0:
+	var angle_to = transform.basis.z.signed_angle_to(global_position - GameStateManager.player.position, Vector3.UP)
+	var diff = rad_to_deg(abs(angle_to - angle))
+	if diff > 170:
+		angle = -angle
+	if angle_to > angle:
 		angle += turn_speed
 	else:
 		angle -= turn_speed
 
 func get_vector():
-	#if GameStateManager.player == null:
-	#	return Vector3.ZERO
-	#return (position - GameStateManager.player.position).normalized()
-	return Vector3.FORWARD
+	return -transform.basis.y
