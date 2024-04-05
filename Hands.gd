@@ -5,7 +5,7 @@ extends AnimatableBody3D
 const grab_force = 10000
 const grab_speed_damping = 0.96
 const throw_force = 1.5
-const grab_grace_period = 5
+const grab_grace_period = 0.5
 
 var grab_object = null
 var highlighted_object = null
