@@ -3,6 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
+"music" "res://audio/BOUNSYBALL3.wav"
 // brush 0
 {
 ( -80 -112 16 ) ( -80 -111 16 ) ( -80 -112 17 ) __TB_empty 0 0 0 1 1

@@ -1,9 +1,7 @@
-[gd_scene load_steps=50 format=3 uid="uid://qkl8i8hg8u8j"]
+[gd_scene load_steps=48 format=3 uid="uid://qkl8i8hg8u8j"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_aykgl"]
-[ext_resource type="Script" path="res://scene/generic_map.gd" id="1_g3etl"]
 [ext_resource type="Resource" uid="uid://bi6bb8ko0asno" path="res://crustball_default_map_settings.tres" id="2_mrm2m"]
-[ext_resource type="AudioStream" uid="uid://rq1ijuta4162" path="res://audio/BOUNSYBALL3.wav" id="2_xa566"]
 [ext_resource type="Script" path="res://Build.gd" id="3_sbysy"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="5_bx88b"]
 [ext_resource type="Material" path="res://trenchbroom/textures/court_texture.tres" id="6_oinkw"]
@@ -184,8 +182,6 @@ ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_g3etl")
-music = ExtResource("2_xa566")
 
 [node name="FuncGodotMap" type="Node3D" parent="."]
 script = ExtResource("1_aykgl")
