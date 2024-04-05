@@ -1,6 +1,8 @@
 extends Node2D
 var confirm = false
 
+const ball_speed = 2
+
 @export var music: AudioStream
 
 func _ready():
@@ -16,8 +18,14 @@ func _on_start_pressed():
 	else:
 		get_tree().change_scene_to_file("res://scene/generic_map.tscn")
 
+var rng = RandomNumberGenerator.new()
 func _process(delta):
-	$Node3D/TheBall.rotation.y += 5*delta
+	var rot = ball_speed * delta
+	if rng.randf_range(0.0, 10.0) > 9.5:
+		var rand = rng.randf_range(0, 10.0)
+		var sign = rng.randi_range(0,1) * 2 - 1
+		rot += sign * (-log(-rand + 10) * 2 + 2)
+	$Node3D/TheBall.rotation.y += rot
 
 func _on_quit_pressed():
 	get_tree().quit()
