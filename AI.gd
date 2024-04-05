@@ -1,7 +1,8 @@
 extends Node3D
 
 const refresh_rate = 0.3
-const turn_speed = 0.06
+const turn_speed = 0.045
+const run_speed = 0.8
 
 @onready var angle = Vector3.FORWARD.angle_to(transform.basis.z)
 @onready var body = $"../Body"
@@ -17,4 +18,4 @@ func _physics_process(delta):
 		angle -= turn_speed
 
 func get_vector():
-	return -transform.basis.y
+	return -transform.basis.y * run_speed

@@ -108,7 +108,7 @@ func _physics_process(delta):
 	
 	#var input = Input.get_vector("left", "right", "forward", "backward")
 	var input = $AI.get_vector()
-	direction = (body.global_transform.basis * Vector3(input.x, 0, input.y)).normalized()
+	direction = (body.global_transform.basis * Vector3(input.x, 0, input.y))
 
 	if is_on_floor():
 		is_jumping = false
