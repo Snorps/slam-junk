@@ -2,12 +2,7 @@ extends CharacterBody3D
 
 @onready var body = $Body
 @onready var head = $Body/Head
-@onready var camera = $Body/Head/CameraMarker3D/Camera3D
-@onready var camera_target = $Body/Head/CameraMarker3D
 @onready var head_position: Vector3 = head.position
-@onready var hands = $Body/Head/Hands
-
-@export_file var default_reticle
 
 var mouse_sensitivity: float = 0.1
 
@@ -50,7 +45,6 @@ var update_camera = false
 var camera_gt_previous : Transform3D
 var camera_gt_current : Transform3D
 
-var RETICLE : Control
 
 
 class StepResult:
@@ -59,74 +53,61 @@ class StepResult:
 	var is_step_up: bool = false
 
 func _ready():
-	GameStateManager.player = self
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	camera_target_position = camera.global_transform.origin
-	camera.set_as_top_level(true)
-	camera.global_transform = camera_target.global_transform
-	
-	camera_gt_previous = camera_target.global_transform
-	camera_gt_current = camera_target.global_transform
-	
-	if default_reticle:
-		change_reticle(default_reticle)
-		
-func change_reticle(reticle):
-	if RETICLE:
-		RETICLE.queue_free()
-	
-	RETICLE = load(reticle).instantiate()
-	RETICLE.character = self
-	$UserInterface.add_child(RETICLE)
-
-func update_camera_transform():
-	camera_gt_previous = camera_gt_current
-	camera_gt_current = camera_target.global_transform
+	#camera_target_position = camera.global_transform.origin
+	#camera.set_as_top_level(true)
+	#camera.global_transform = camera_target.global_transform
+	#
+	#camera_gt_previous = camera_target.global_transform
+	#camera_gt_current = camera_target.global_transform
+#
+#func update_camera_transform():
+	#camera_gt_previous = camera_gt_current
+	#camera_gt_current = camera_target.global_transform
 	
 func _process(delta: float) -> void:
-	if update_camera:
-		update_camera_transform()
-		update_camera = false
+	#if update_camera:
+		#update_camera_transform()
+		#update_camera = false
 
 	var interpolation_fraction = clamp(Engine.get_physics_interpolation_fraction(), 0, 1)
-
-	var camera_xform = camera_gt_previous.interpolate_with(camera_gt_current, interpolation_fraction)
-	camera.global_transform = camera_xform
+#
+	#var camera_xform = camera_gt_previous.interpolate_with(camera_gt_current, interpolation_fraction)
+	#camera.global_transform = camera_xform
 
 	var head_xform : Transform3D = head.get_global_transform()
 	
-	camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
+	#camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
 
 	if is_on_floor():
 		time_in_air = 0.0
-		camera_lerp_coefficient = 1.0
-		camera.position.y = camera_target_position.y
-	else:
-		time_in_air += delta
-		if time_in_air > 1.0:
-			camera_lerp_coefficient += delta
-			camera_lerp_coefficient = clamp(camera_lerp_coefficient, 2.0, 4.0)
-		else: 
-			camera_lerp_coefficient = 2.0
+		#camera_lerp_coefficient = 1.0
+		#camera.position.y = camera_target_position.y
+	#else:
+		#time_in_air += delta
+		#if time_in_air > 1.0:
+			#camera_lerp_coefficient += delta
+			#camera_lerp_coefficient = clamp(camera_lerp_coefficient, 2.0, 4.0)
+		#else: 
+			#camera_lerp_coefficient = 2.0
 
-		camera.position.y = camera_target_position.y
+		#camera.position.y = camera_target_position.y
 
-func _input(event):
-	if event is InputEventMouseMotion:
-		body.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
-		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
-	elif event.is_action_pressed("interact"):
-		if hands:
-			hands.try_grabthrow()
-		
+#func _input(event):
+	#if event is InputEventMouseMotion:
+		#body.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
+		#head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
+		#head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+
 func _physics_process(delta):
-	update_camera = true
+	body.rotation.y = $AI.angle
+	
+	#update_camera = true
 	var is_step: bool = false
 	
-	var input = Input.get_vector("left", "right", "forward", "backward")
+	#var input = Input.get_vector("left", "right", "forward", "backward")
+	var input = $AI.get_vector()
 	direction = (body.global_transform.basis * Vector3(input.x, 0, input.y)).normalized()
 
 	if is_on_floor():
@@ -139,10 +120,10 @@ func _physics_process(delta):
 		acceleration = ACCELERATION_AIR
 		gravity_direction += Vector3.DOWN * gravity * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		is_jumping = true
-		is_in_air = false
-		gravity_direction = Vector3.UP * jump
+	#if Input.is_action_just_pressed(r"jump") and is_on_floor():
+		#is_jumping = true
+		#is_in_air = false
+		#gravity_direction = Vector3.UP * jump
 
 	main_velocity = main_velocity.lerp(direction * speed, acceleration * delta)
 

@@ -16,19 +16,19 @@
 
 @SolidClass color(204 204 204) base(Phong) = func_illusionary : "Static geometry with no collision. Builds a Node3D with a MeshInstance3D and an Occluder3D to aid in render culling of other VisualInstance3D nodes." []
 
-@PointClass size(-8 -8 -8, 8 8 8) = physics_ball : "Physics Ball" 
+@PointClass size(-8 -8 -8, 8 8 8) = ent_basketball : "Physics Ball" 
 [
 	mass(float) : "" : "0.15"
 	size(float) : "" : "0.4"
 	velocity(string) : "Initial velocity" : "0 0 0"
 ]
 
-@PointClass size(-8 -8 -8, 8 8 8) base(Light) = light : "Invisible light source" 
+@PointClass size(-8 -8 -8, 8 8 8) base(Light) = ent_light : "Invisible light source" 
 [
 	angle(float) : "Rotation Angle" : "0"
 ]
 
-@PointClass color(204 204 204) model("models/player.glb") size(-8 -8 -8, 8 8 8) = player : "player" []
+@PointClass color(204 204 204) model("models/ent_player.glb") size(-8 -8 -8, 8 8 8) = ent_player : "player" []
 
 @SolidClass = trigger_goal : "The goal." 
 [
@@ -63,7 +63,21 @@
 	trigger_signal_delay(float) : "Seconds after press() is called, before emitting the trigger signal." : "0"
 ]
 
-@PointClass size(-8 -8 -8, 8 8 8) targetname() volume() base(Light) = sound : "Audio player." 
+@PointClass size(-8 -8 -8, 8 8 8) targetname() volume() base(Light) = ent_sound : "Audio player." 
 [
 	angle(float) : "Rotation Angle" : "0"
 ]
+
+@SolidClass level() target() = trigger_changelevel : "The goal." 
+[
+	axis(string) : "Direction of movement when pressed." : "0 -1 0"
+	depth(float) : "How far to move along the axis when pressed." : "0.8"
+	press_signal_delay(float) : "Seconds after press() is called, before emitting is own pressed signal." : "0"
+	release_delay(float) : "Seconds after a physics body exits, before calling release()" : "0"
+	release_signal_delay(float) : "Seconds after release() is called, before emitting is own released signal." : "0"
+	speed(float) : "Delta multiplier for a lerp weight to move the button to its desired position." : "8"
+	target(string) : "" : ""
+	trigger_signal_delay(float) : "Seconds after press() is called, before emitting the trigger signal." : "0"
+]
+
+@PointClass color(204 204 204) model("models/ent_enemy.glb") size(-8 -8 -8, 8 8 8) = ent_enemy : "An enemy." []

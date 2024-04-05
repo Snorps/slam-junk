@@ -14,6 +14,7 @@ var lose_nodes = []
 var score
 var level
 var map
+var player
 
 func _ready():
 	reset_game()
