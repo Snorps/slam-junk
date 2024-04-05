@@ -307,3 +307,11 @@ func step_check(delta: float, is_jumping_: bool, step_result: StepResult):
 						step_result.normal = test_motion_result.get_collision_normal()
 
 	return is_step
+
+
+func _on_damageable_area_entered(area):
+	print("area.name")
+
+
+func _on_damageable_body_entered(body):
+	print(body.name)

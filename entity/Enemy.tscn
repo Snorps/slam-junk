@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2xw7kapcnm7t"]
+[gd_scene load_steps=14 format=3 uid="uid://bhnffv3dxsd5g"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_xxk4u"]
 [ext_resource type="Texture2D" uid="uid://d24uu77q264np" path="res://Models/enemyplayer1uvtest1.png" id="3_qavhg"]
@@ -103,9 +103,12 @@ script = ExtResource("4_oyltf")
 script = ExtResource("4_g3jjp")
 
 [node name="DamageSource" type="Area3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 script = ExtResource("5_g46me")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageSource"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_3bapo")
 disabled = true
+
+[connection signal="area_entered" from="DamageSource" to="." method="_on_damage_source_area_entered"]
