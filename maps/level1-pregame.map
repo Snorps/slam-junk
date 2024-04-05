@@ -5,6 +5,7 @@
 "mapversion" "220"
 "classname" "worldspawn"
 "music" "res://audio/Mainroom.wav"
+"music_volume" "15"
 // brush 0
 {
 ( 48 48 16 ) ( 48 -64 16 ) ( 48 -64 -16 ) purple [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1

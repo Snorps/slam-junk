@@ -2,6 +2,8 @@ extends Node2D
 var confirm = false
 
 const ball_speed = 2
+const ball_aggression = 1.5
+const ball_glitch_chance = 0.08
 
 @export var music: AudioStream
 
@@ -21,10 +23,10 @@ func _on_start_pressed():
 var rng = RandomNumberGenerator.new()
 func _process(delta):
 	var rot = ball_speed * delta
-	if rng.randf_range(0.0, 10.0) > 9.5:
+	if rng.randf_range(0.0, 1.0) > 1-ball_glitch_chance:
 		var rand = rng.randf_range(0, 10.0)
 		var sign = rng.randi_range(0,1) * 2 - 1
-		rot += sign * (-log(-rand + 10) * 2 + 2)
+		rot += sign * (-log(-rand + 10) * ball_aggression + ball_aggression)
 	$Node3D/TheBall.rotation.y += rot
 
 func _on_quit_pressed():
