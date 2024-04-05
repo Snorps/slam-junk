@@ -5,11 +5,12 @@ extends AnimatableBody3D
 const grab_force = 10000
 const grab_speed_damping = 0.96
 const throw_force = 1.5
-const grab_grace_period = 0.5
+const grab_grace_period = 5
 
 var grab_object = null
 var highlighted_object = null
 var time_left_to_grab = 0
+var inputBuffer = false
 
 func _physics_process(delta):
 	time_left_to_grab -= delta
@@ -24,12 +25,20 @@ func _physics_process(delta):
 		if not result.collider is RigidBody3D: return
 		highlighted_object = result.collider
 		time_left_to_grab = grab_grace_period
+	if(inputBuffer):
+		grab()
+		time_left_to_grab -= delta
+		if(time_left_to_grab <= 0):
+			inputBuffer = false
 
 func try_grabthrow():
 	if grab_object != null:
 		throw()
-	else:
-		grab()
+		return
+	
+	inputBuffer = true
+	time_left_to_grab = grab_grace_period	
+	
 
 func grab():
 	if time_left_to_grab <= 0: return
@@ -39,6 +48,8 @@ func grab():
 		Transform3D.IDENTITY.translated(global_position)
 	)
 	grab_object = highlighted_object
+	if(grab_object != null):
+		inputBuffer = false
 
 func throw():
 	grab_object.apply_impulse(look_vector() * throw_force)

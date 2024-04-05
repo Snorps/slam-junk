@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://cqevsv06cb766" path="res://entity/func_mover.tres" id="10_7g4rd"]
 [ext_resource type="Resource" uid="uid://cpc1yj3jbnw0g" path="res://entity/trigger_once.tres" id="11_wa8xp"]
 [ext_resource type="Resource" uid="uid://co0h0bnrfbmdu" path="res://entity/ent_sound.tres" id="12_636yr"]
-[ext_resource type="Resource" uid="uid://djce317xulqj7" path="res://entity/trigger_changelevel.tres" id="13_ujokj"]
+[ext_resource type="Resource" path="res://entity/trigger_changelevel.tres" id="13_ujokj"]
 
 [resource]
 script = ExtResource("9_k0rlm")
