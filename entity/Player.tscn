@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://x3l0v6tbskoe"]
+[gd_scene load_steps=20 format=3 uid="uid://x3l0v6tbskoe"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_udmmm"]
 [ext_resource type="Texture2D" uid="uid://d24uu77q264np" path="res://Models/enemyplayer1uvtest1.png" id="2_6q73p"]
 [ext_resource type="Script" path="res://Hands.gd" id="2_1018t"]
 [ext_resource type="Script" path="res://DestroyOffMap.gd" id="3_rl0x1"]
 [ext_resource type="Script" path="res://Damageable.gd" id="5_3y4m0"]
+[ext_resource type="Texture2D" uid="uid://dp8jkh2heqlfb" path="res://entity/image.png" id="5_il45c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxnj7"]
 
@@ -182,6 +183,15 @@ lose_on_die = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333333, 0)
 shape = SubResource("CylinderShape3D_o4ws3")
 
+[node name="DamagePopup" type="TextureRect" parent="Damageable"]
+offset_right = 1152.0
+offset_bottom = 654.0
+texture = ExtResource("5_il45c")
+expand_mode = 1
+
+[node name="damageTimer" type="Timer" parent="Damageable"]
+wait_time = 1.5
+
 [node name="CollisionShape3D1" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_i8s3q")
@@ -199,3 +209,4 @@ disabled = true
 [connection signal="area_entered" from="Damageable" to="Damageable" method="_on_area_entered"]
 [connection signal="body_entered" from="Damageable" to="Damageable" method="_on_body_entered"]
 [connection signal="body_exited" from="Damageable" to="Damageable" method="_on_body_exited"]
+[connection signal="timeout" from="Damageable/damageTimer" to="Damageable" method="_on_damage_timer_timeout"]

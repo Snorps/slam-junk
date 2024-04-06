@@ -53,6 +53,7 @@ var camera_gt_current : Transform3D
 var RETICLE : Control
 
 
+
 class StepResult:
 	var diff_position: Vector3 = Vector3.ZERO
 	var normal: Vector3 = Vector3.ZERO
@@ -69,6 +70,8 @@ func _ready():
 	
 	camera_gt_previous = camera_target.global_transform
 	camera_gt_current = camera_target.global_transform
+	
+	
 	
 	if default_reticle:
 		change_reticle(default_reticle)
