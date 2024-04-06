@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7ccfkajnmn64"]
+[gd_scene load_steps=8 format=3 uid="uid://b7ccfkajnmn64"]
 
 [ext_resource type="Texture2D" uid="uid://d244n1m3d7lyq" path="res://Models/Sphere.png" id="1_cnl0j"]
 [ext_resource type="Script" path="res://DestroyOffMap.gd" id="2_gtf5c"]
+[ext_resource type="Texture2D" uid="uid://bbhihkictk55e" path="res://Models/basketbilleyes.png" id="3_j2o5h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_76020"]
 bounce = 1.1
@@ -34,3 +35,9 @@ lose_on_destroy = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 max_polyphony = 15
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.0004
+billboard = 2
+no_depth_test = true
+texture = ExtResource("3_j2o5h")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://1q1ttixn6an3"]
+[gd_scene load_steps=11 format=3 uid="uid://1q1ttixn6an3"]
 
 [ext_resource type="Script" path="res://scene/MainMenu.gd" id="1_sd21b"]
 [ext_resource type="AudioStream" uid="uid://duabbs0dibifh" path="res://audio/DaCourt2.mp3" id="2_w4gam"]
 [ext_resource type="Texture2D" uid="uid://d244n1m3d7lyq" path="res://Models/Sphere.png" id="4_qk13n"]
+[ext_resource type="Texture2D" uid="uid://bbhihkictk55e" path="res://Models/basketbilleyes.png" id="4_wi14m"]
 [ext_resource type="Script" path="res://scene/Background.gd" id="4_ykq30"]
 [ext_resource type="Material" uid="uid://5dmx5knx2825" path="res://scene/background_material.tres" id="5_08kbj"]
 
@@ -45,6 +46,12 @@ transform = Transform3D(0.956844, -0.290602, 0, 0.290602, 0.956844, 0, 0, 0, 1, 
 mesh = SubResource("SphereMesh_xobkn")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tqr6t")
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D/TheBall"]
+pixel_size = 0.0015
+billboard = 2
+no_depth_test = true
+texture = ExtResource("4_wi14m")
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
