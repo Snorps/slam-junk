@@ -12,5 +12,5 @@ func _process(delta):
 	if global_position.y < -20:
 		GameStateManager.has_destroyed(self)
 		if lose_on_destroy == true:
-			GameStateManager.lose_point()
+			GameStateManager.lose_game()
 		destroyee.queue_free()

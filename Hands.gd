@@ -22,7 +22,10 @@ func _physics_process(delta):
 		var query = PhysicsRayQueryParameters3D.create(head.global_position, look_vector()*50)
 		var result = space_state.intersect_ray(query)
 		if not result: return
-		if not result.collider is RigidBody3D: return
+		if "get_hover_message" in result.collider:
+			var message = result.collider.get_hover_message()
+			if message != null:
+				HUD.get_node("CenterText").text = message
 		highlighted_object = result.collider
 		time_left_to_grab = grab_grace_period
 	if(inputBuffer):
@@ -42,14 +45,18 @@ func try_grabthrow():
 
 func grab():
 	if time_left_to_grab <= 0: return
-	PhysicsServer3D.body_set_state(
-		highlighted_object.get_rid(),
-		PhysicsServer3D.BODY_STATE_TRANSFORM,
-		Transform3D.IDENTITY.translated(global_position)
-	)
-	grab_object = highlighted_object
-	if(grab_object != null):
+	#PhysicsServer3D.body_set_state(
+		#highlighted_object.get_rid(),
+		#PhysicsServer3D.BODY_STATE_TRANSFORM,
+		#Transform3D.IDENTITY.translated(global_position)
+	#)
+	if highlighted_object == null: return
+	if "player_interact" in highlighted_object:
+		highlighted_object.player_interact()
 		inputBuffer = false
+	if highlighted_object is RigidBody3D:
+		grab_object = highlighted_object
+	inputBuffer = false
 
 func throw():
 	grab_object.apply_impulse(look_vector() * throw_force)

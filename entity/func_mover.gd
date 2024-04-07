@@ -5,6 +5,10 @@ var offset_transform: Transform3D
 var target_transform: Transform3D
 
 var speed := 1.0
+var on_interact = false
+
+func _init() -> void:
+	connect("body_shape_entered", body_shape_entered)
 
 func _process(delta: float) -> void:
 	transform = transform.interpolate_with(target_transform, speed * delta)
@@ -27,6 +31,16 @@ func body_shape_entered(body_id, body: Node, body_shape_idx: int, self_shape_idx
 	if on_touch == false: return
 	use()
 	
+var _hover_message = "Open door."
+func player_interact():
+	if not on_interact: return
+	use()
+	
+func get_hover_message():
+	if on_interact and _hover_message != null:
+		return _hover_message
+	return null
+	
 var targetname = null
 func _func_godot_apply_properties(props: Dictionary):
 	if "targetname" in props:
@@ -34,6 +48,12 @@ func _func_godot_apply_properties(props: Dictionary):
 		
 	if 'on_touch' in props:
 		on_touch = props.on_touch
+		
+	if 'on_interact' in props:
+		on_interact = props.on_interact
+		
+	if "hover_message" in props:
+		_hover_message = props.hover_message
 		
 	if 'translation' in props:
 		offset_transform.origin = props.translation

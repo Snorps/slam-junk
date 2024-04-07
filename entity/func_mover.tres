@@ -30,6 +30,8 @@ class_properties = {
 "translation": Vector3(0, 0, 0)
 }
 class_property_descriptions = {}
-meta_properties = {}
+meta_properties = {
+"on_touch": false
+}
 node_class = "CharacterBody3D"
 name_property = ""
