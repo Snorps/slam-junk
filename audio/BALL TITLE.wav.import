@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cehirn50yby4h"
+path="res://.godot/imported/BALL TITLE.wav-3f8b2ec7955d6d96bb2633f854df3bd6.sample"
+
+[deps]
+
+source_file="res://audio/BALL TITLE.wav"
+dest_files=["res://.godot/imported/BALL TITLE.wav-3f8b2ec7955d6d96bb2633f854df3bd6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

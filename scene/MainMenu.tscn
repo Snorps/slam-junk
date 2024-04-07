@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://1q1ttixn6an3"]
+[gd_scene load_steps=13 format=3 uid="uid://1q1ttixn6an3"]
 
 [ext_resource type="Script" path="res://scene/MainMenu.gd" id="1_sd21b"]
-[ext_resource type="AudioStream" uid="uid://duabbs0dibifh" path="res://audio/DaCourt2.mp3" id="2_w4gam"]
+[ext_resource type="AudioStream" uid="uid://cehirn50yby4h" path="res://audio/BALL TITLE.wav" id="2_628lk"]
 [ext_resource type="Texture2D" uid="uid://d244n1m3d7lyq" path="res://Models/Sphere.png" id="4_qk13n"]
 [ext_resource type="Texture2D" uid="uid://bbhihkictk55e" path="res://Models/basketbilleyes.png" id="4_wi14m"]
 [ext_resource type="Script" path="res://scene/Background.gd" id="4_ykq30"]
 [ext_resource type="Material" uid="uid://5dmx5knx2825" path="res://scene/background_material.tres" id="5_08kbj"]
 [ext_resource type="Texture2D" uid="uid://dgqcivlvn1mxa" path="res://slam_junk_logo.png" id="7_tjmny"]
+[ext_resource type="Texture2D" uid="uid://c4q6yiitie3hn" path="res://Models/titlescreengradient.png" id="8_uwuem"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_xobkn"]
 radius = 0.7
@@ -24,7 +25,7 @@ ambient_light_energy = 0.7
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sd21b")
-music = ExtResource("2_w4gam")
+music = ExtResource("2_628lk")
 
 [node name="Start" type="Button" parent="."]
 offset_left = 353.0
@@ -76,6 +77,11 @@ script = ExtResource("4_ykq30")
 position = Vector2(550, 139)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("7_tjmny")
+
+[node name="Titlescreengradient" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(637, 239)
+texture = ExtResource("8_uwuem")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
