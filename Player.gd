@@ -60,8 +60,6 @@ class StepResult:
 	var is_step_up: bool = false
 
 func _ready():
-	GameStateManager.player = self
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	camera_target_position = camera.global_transform.origin
@@ -322,7 +320,6 @@ func _func_godot_apply_properties(properties: Dictionary):
 				delete = false
 		if delete:
 			queue_free()
-		#GameStateManager.builder.register_player_spawn(self, properties.spawnname)
+			return
+	GameStateManager.player = self
 
-#func _func_godot_build_complete():
-	#GameStateManager.builder.try_pick_spawn()

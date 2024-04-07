@@ -8,6 +8,8 @@ const run_speed = 0.8
 @onready var body = $"../Body"
 
 func _physics_process(delta):
+	if GameStateManager.player == null:
+		return
 	var angle_to = transform.basis.z.signed_angle_to(global_position - GameStateManager.player.position, Vector3.UP)
 	var diff = rad_to_deg(abs(angle_to - angle))
 	if diff > 170:
