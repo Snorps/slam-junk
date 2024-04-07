@@ -310,3 +310,19 @@ func step_check(delta: float, is_jumping_: bool, step_result: StepResult):
 						step_result.normal = test_motion_result.get_collision_normal()
 
 	return is_step
+
+func _func_godot_apply_properties(properties: Dictionary):
+	#if 'targetname' in properties:
+	#	targetname = properties.targetname
+	if "spawn_point" in GameStateManager.map:
+		var spawn_point = GameStateManager.map.spawn_point
+		var delete = true
+		if 'spawnname' in properties:
+			if properties.spawnname == spawn_point:
+				delete = false
+		if delete:
+			queue_free()
+		#GameStateManager.builder.register_player_spawn(self, properties.spawnname)
+
+#func _func_godot_build_complete():
+	#GameStateManager.builder.try_pick_spawn()

@@ -4,27 +4,24 @@ extends Node
 @export var game_complete_scene: PackedScene
 
 var levels = [
-	"level1-pregame.map",
-	"level1-court-hoop.map",
-	"level1-court-hoop.map",
-	"level1-court-hoop.map",
+	{"mapname"="level1-pregame.map", "spawn_point"="player_hallway"},
+	{"mapname"="level1-court-hoop.map"},
+	{"mapname"="level1-court-hoop.map"},
+	{"mapname"="level1-court-hoop.map"}
 ]
 
 var lose_nodes = []
 var score
-var level
+var level = 0
 var map
 var player
+var builder
+
+#var spawn_point_name = null
 
 func _ready():
 	reset_game()
 	
-func reset_game():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	level = 0
-	score = 0
-
-
 func lose_point():
 	if resetting == true: return
 	score -= 1
@@ -36,9 +33,16 @@ func lose_game():
 	$LoseSound.play()
 	HUD.get_node("CenterText").text = "You had became died! :("
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_packed(game_complete_scene)
+	get_tree().change_scene_to_packed(generic_map_scene)
+	map = {"mapname"="level1-pregame.map", "spawn_point"="player_changing_room"}
 	reset_game()
 	return
+	
+func reset_game():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	level = 0
+	score = 0
+
 	
 func win():
 	score += 1
@@ -61,6 +65,8 @@ func reset_level():
 	await get_tree().create_timer(1).timeout
 	await get_tree().change_scene_to_packed(generic_map_scene)
 	resetting = false
+	
+
 
 func lose_if_destroyed(obj):
 	lose_nodes.append(obj)

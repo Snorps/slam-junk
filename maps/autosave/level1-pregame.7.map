@@ -422,7 +422,6 @@
 "classname" "ent_player"
 "origin" "-72 -8 24"
 "targetname" "player"
-"spawnname" "player_hallway"
 }
 // entity 6
 {
@@ -458,6 +457,5 @@
 {
 "classname" "ent_player"
 "origin" "-312 -80 24"
-"targetname" "player"
-"spawnname" "player_changing_room"
+"targetname" "player_changing_room"
 }
