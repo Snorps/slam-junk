@@ -42,7 +42,7 @@
 	trigger_signal_delay(float) : "Seconds after press() is called, before emitting the trigger signal." : "0"
 ]
 
-@SolidClass = func_mover : "Moving brush." 
+@SolidClass on_touch() = func_mover : "Moving brush." 
 [
 	rotation(string) : "" : "0 0 0"
 	scale(string) : "" : "1 1 1"
@@ -81,3 +81,8 @@
 ]
 
 @PointClass color(204 204 204) model("models/ent_enemy.glb") size(-8 -8 -8, 8 8 8) = ent_enemy : "An enemy." []
+
+@SolidClass = trigger_changemusic : "Change music on player touch" 
+[
+	music(string) : "" : ""
+]

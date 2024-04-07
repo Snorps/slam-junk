@@ -888,7 +888,7 @@
 // entity 14
 {
 "classname" "trigger_changemusic"
-"music" "res://audio/maintenance.wav"
+"music" "res://audio/.wav"
 // brush 0
 {
 ( -480 288 80 ) ( -480 240 80 ) ( -480 240 0 ) skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1

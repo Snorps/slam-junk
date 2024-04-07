@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dm7321675ioje"
+path="res://.godot/imported/level1-pregame.10.map-d40d018794f19f914009e500df5f2bce.tres"
+
+[deps]
+
+source_file="res://maps/autosave/level1-pregame.10.map"
+dest_files=["res://.godot/imported/level1-pregame.10.map-d40d018794f19f914009e500df5f2bce.tres"]
+
+[params]
+
