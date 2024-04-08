@@ -21,6 +21,12 @@ HUD="*res://singleton/Hud.tscn"
 GameStateManager="*res://manager/game_state_manager.tscn"
 EntityTargetManager="*res://manager/EntityTargetManager.gd"
 AudioManager="*res://manager/audio_manager.tscn"
+Flags="*res://singleton/flags.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

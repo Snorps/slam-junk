@@ -69,7 +69,7 @@ func _ready():
 	camera_gt_previous = camera_target.global_transform
 	camera_gt_current = camera_target.global_transform
 	
-	
+	update_fov()
 	
 	if default_reticle:
 		change_reticle(default_reticle)
@@ -81,6 +81,9 @@ func change_reticle(reticle):
 	RETICLE = load(reticle).instantiate()
 	RETICLE.character = self
 	$UserInterface.add_child(RETICLE)
+
+func update_fov():
+	$Body/Head/CameraMarker3D/Camera3D.set_fov(75 + (30 * Flags.performosport))
 
 func update_camera_transform():
 	camera_gt_previous = camera_gt_current

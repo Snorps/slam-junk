@@ -86,3 +86,12 @@
 [
 	music(string) : "" : ""
 ]
+
+@SolidClass on_touch() = func_upgrade_vendor : "Upgrade Vendor" 
+[
+	rotation(string) : "" : "0 0 0"
+	scale(string) : "" : "1 1 1"
+	speed(float) : "" : "1"
+	targetname(string) : "" : ""
+	translation(string) : "" : "0 0 0"
+]

@@ -29,8 +29,8 @@ func _physics_process(delta):
 			if message != null:
 				HUD.get_node("CenterText").text = message
 		highlighted_object = result.collider
-		print(result.collider.name)
-		print("distance: " + str((result.position - head.global_position).length()))
+		#print(result.collider.name)
+		#print("distance: " + str((result.position - head.global_position).length()))
 		if result.collider.name == "GrabHitbox":
 			highlighted_object = result.collider.get_node("..")
 		time_left_to_grab = grab_grace_period

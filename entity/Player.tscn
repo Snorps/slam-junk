@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://x3l0v6tbskoe"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_udmmm"]
+[ext_resource type="Script" path="res://entity/ent_player.gd" id="1_1xtaq"]
 [ext_resource type="Texture2D" uid="uid://d24uu77q264np" path="res://Models/enemyplayer1uvtest1.png" id="2_6q73p"]
-[ext_resource type="Script" path="res://Hands.gd" id="2_1018t"]
-[ext_resource type="Script" path="res://DestroyOffMap.gd" id="3_rl0x1"]
-[ext_resource type="Script" path="res://Damageable.gd" id="5_3y4m0"]
+[ext_resource type="Script" path="res://component/Hands.gd" id="2_fro4k"]
+[ext_resource type="Script" path="res://component/DestroyOffMap.gd" id="4_3wvuh"]
 [ext_resource type="Texture2D" uid="uid://dp8jkh2heqlfb" path="res://entity/image.png" id="5_il45c"]
+[ext_resource type="Script" path="res://component/Damageable.gd" id="5_k4xuf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxnj7"]
 
@@ -103,7 +103,7 @@ height = 1.8
 [node name="Player" type="CharacterBody3D"]
 wall_min_slide_angle = 0.0872665
 floor_snap_length = 0.2
-script = ExtResource("1_udmmm")
+script = ExtResource("1_1xtaq")
 default_reticle = "res://reticles/reticle_0.tscn"
 
 [node name="Body" type="Node3D" parent="."]
@@ -127,7 +127,7 @@ mesh = SubResource("BoxMesh_dhg0d")
 
 [node name="Hands" type="AnimatableBody3D" parent="Body/Head" node_paths=PackedStringArray("head")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
-script = ExtResource("2_1018t")
+script = ExtResource("2_fro4k")
 head = NodePath("..")
 
 [node name="PinJoint3D" type="PinJoint3D" parent="Body/Head/Hands"]
@@ -146,7 +146,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_gv47w")
 
 [node name="DestroyOffMap" type="Node3D" parent="."]
-script = ExtResource("3_rl0x1")
+script = ExtResource("4_3wvuh")
 lose_on_destroy = true
 
 [node name="UserInterface" type="Control" parent="."]
@@ -176,7 +176,7 @@ layout_mode = 2
 
 [node name="Damageable" type="Area3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-script = ExtResource("5_3y4m0")
+script = ExtResource("5_k4xuf")
 lose_on_die = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Damageable"]

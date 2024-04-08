@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://bhnffv3dxsd5g"]
 
-[ext_resource type="Script" path="res://Enemy.gd" id="1_xxk4u"]
+[ext_resource type="Script" path="res://entity/ent_enemy.gd" id="1_xxk4u"]
 [ext_resource type="Texture2D" uid="uid://d24uu77q264np" path="res://Models/enemyplayer1uvtest1.png" id="3_qavhg"]
-[ext_resource type="Script" path="res://AI.gd" id="4_g3jjp"]
-[ext_resource type="Script" path="res://DestroyOffMap.gd" id="4_oyltf"]
-[ext_resource type="Script" path="res://DamageSource.gd" id="5_g46me"]
+[ext_resource type="Script" path="res://component/AI.gd" id="4_g3jjp"]
+[ext_resource type="Script" path="res://component/DestroyOffMap.gd" id="4_oyltf"]
+[ext_resource type="Script" path="res://component/DamageSource.gd" id="5_g46me"]
 
 [sub_resource type="BoxShape3D" id="6"]
 margin = 0.0

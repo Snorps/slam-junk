@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="5_bx88b"]
 [ext_resource type="Material" path="res://trenchbroom/textures/court_texture.tres" id="6_oinkw"]
 [ext_resource type="Texture2D" uid="uid://bnbptbnwmsq6f" path="res://Models/skyboxtest.jpg" id="6_vntsb"]
-[ext_resource type="PackedScene" uid="uid://dougrwojepr52" path="res://pause_menu.tscn" id="7_2tud4"]
 [ext_resource type="Material" path="res://trenchbroom/textures/red.tres" id="7_4fdx3"]
 [ext_resource type="Material" path="res://trenchbroom/textures/backboard.tres" id="8_6twtu"]
 [ext_resource type="PackedScene" uid="uid://b7ccfkajnmn64" path="res://entity/ent_basketball.tscn" id="9_i5utb"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://x3l0v6tbskoe" path="res://entity/Player.tscn" id="11_0rq2n"]
 [ext_resource type="Material" uid="uid://blhhbqoxfe3xi" path="res://trenchbroom/textures/net_texture.tres" id="12_0ujt3"]
 [ext_resource type="Script" path="res://entity/trigger_goal.gd" id="13_7loph"]
+[ext_resource type="PackedScene" uid="uid://dougrwojepr52" path="res://ui/pause_menu.tscn" id="14_1gneo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0s6ub"]
 albedo_texture = ExtResource("5_bx88b")
@@ -299,7 +299,7 @@ map = NodePath("../FuncGodotMap")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lti01")
 
-[node name="PauseMenu" parent="." instance=ExtResource("7_2tud4")]
+[node name="PauseMenu" parent="." instance=ExtResource("14_1gneo")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)

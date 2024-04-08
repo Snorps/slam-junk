@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dougrwojepr52"]
 
-[ext_resource type="Script" path="res://PauseMenu.gd" id="1_vlh18"]
+[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_ujaqg"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ offset_right = 19.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vlh18")
+script = ExtResource("1_ujaqg")
 
 [node name="Resume" type="Button" parent="."]
 process_mode = 2

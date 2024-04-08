@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1pnes7l8jun4"]
+
+[ext_resource type="Script" path="res://ui/vending_machine_gui.gd" id="1_iqvrt"]
+
+[node name="VendingMachineGui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_iqvrt")
+
+[node name="Performosport" type="Button" parent="."]
+offset_left = 320.0
+offset_top = 71.0
+offset_right = 540.0
+offset_bottom = 138.0
+text = "BUY SPORTS"
+
+[connection signal="button_down" from="Performosport" to="." method="_on_performosport_button_down"]
