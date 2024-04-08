@@ -73,7 +73,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("5_08kbj")
 script = ExtResource("4_ykq30")
 
-[node name="SlamJunkLogo" type="Sprite2D" parent="."]
+[node name="Title" type="Sprite2D" parent="."]
 position = Vector2(550, 139)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("7_g4iso")

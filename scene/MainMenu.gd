@@ -21,7 +21,12 @@ func _on_start_pressed():
 		get_tree().change_scene_to_file("res://scene/generic_map.tscn")
 
 var rng = RandomNumberGenerator.new()
+var time = 0
+@onready var title_base_scale = $Title.scale
 func _process(delta):
+	time += delta
+	var bounce = sin(time*50)/50
+	$Title.scale = title_base_scale + Vector2(bounce, bounce)
 	var rot = ball_speed * delta
 	if rng.randf_range(0.0, 1.0) > 1-ball_glitch_chance:
 		var rand = rng.randf_range(0, 10.0)

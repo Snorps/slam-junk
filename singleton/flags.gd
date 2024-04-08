@@ -1,5 +1,7 @@
 extends Node
 
+var money = 2000
+
 var performosport
 
 func _ready():
