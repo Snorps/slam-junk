@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cv03pnkr5767a"
+path="res://.godot/imported/level1-court-hoop.2.map-590a373519d6924210577df86a6213ec.tres"
+
+[deps]
+
+source_file="res://maps/autosave/level1-court-hoop.2.map"
+dest_files=["res://.godot/imported/level1-court-hoop.2.map-590a373519d6924210577df86a6213ec.tres"]
+
+[params]
+
