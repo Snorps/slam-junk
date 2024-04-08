@@ -19,3 +19,11 @@ offset_top = 4.0
 offset_right = 1136.0
 offset_bottom = 635.0
 text = "0:0"
+
+[node name="TopRightText" type="Label" parent="."]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 1136.0
+offset_bottom = 635.0
+text = "250b"
+horizontal_alignment = 2
