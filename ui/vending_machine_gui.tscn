@@ -8,6 +8,7 @@ anchors_preset = 0
 script = ExtResource("1_iqvrt")
 
 [node name="Performosport" type="Button" parent="."]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 71.0
 offset_right = 540.0
@@ -15,3 +16,4 @@ offset_bottom = 138.0
 text = "BUY SPORTS"
 
 [connection signal="button_down" from="Performosport" to="." method="_on_performosport_button_down"]
+[connection signal="pressed" from="Performosport" to="." method="_on_performosport_pressed"]
