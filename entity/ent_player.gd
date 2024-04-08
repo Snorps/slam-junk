@@ -83,7 +83,7 @@ func change_reticle(reticle):
 	$UserInterface.add_child(RETICLE)
 
 func update_fov():
-	$Body/Head/CameraMarker3D/Camera3D.set_fov(75 + (30 * Flags.performosport))
+	$Body/Head/CameraMarker3D/Camera3D.set_fov(75 + (25 * Flags.performosport))
 
 func update_camera_transform():
 	camera_gt_previous = camera_gt_current

@@ -1,3 +1,9 @@
 extends Node
 
-var performosport = 0
+var performosport
+
+func _ready():
+	reset()
+
+func reset():
+	performosport = 0

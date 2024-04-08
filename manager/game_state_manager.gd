@@ -35,13 +35,13 @@ func lose_game():
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_packed(generic_map_scene)
 	map = {"mapname"="level1-pregame.map", "spawn_point"="player_changing_room"}
-	reset_game()
 	return
 	
 func reset_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	level = 0
 	score = 0
+	Flags.reset()
 
 	
 func win():

@@ -10,8 +10,7 @@ var target_transform: Transform3D
 var speed := 1.0
 
 func _ready():
-	gui = get_tree().get_root().get_node("World/VendingMachineGui/Performosport")
-	gui.hide()
+	gui = get_tree().get_root().get_node("World/VendingMachineGui")
 
 var _hover_message = "Use vending machine."
 func player_interact():
