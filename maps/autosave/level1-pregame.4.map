@@ -831,7 +831,7 @@
 "classname" "func_mover"
 "targetname" "changing_room_door"
 "translation" "0 0 2"
-"on_interact" "1"
+"property 1" ""
 // brush 0
 {
 ( -32 188 20 ) ( -32 189 20 ) ( -32 188 21 ) red [ 0 1.0000000000000002 0 0 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1

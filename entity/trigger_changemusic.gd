@@ -28,7 +28,7 @@ func body_shape_exited(body_id, body: Node, body_shape_idx: int, self_shape_idx:
 
 func press() -> void:
 	if music != null:
-		AudioManager.set_music(music, null, true)
+		AudioManager.crossfade_music(music)
 
 
 func _func_godot_apply_properties(props: Dictionary):
