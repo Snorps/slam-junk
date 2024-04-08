@@ -2,6 +2,7 @@ extends AnimatableBody3D
 
 @export var head: Node3D
 
+const grab_distance = 3
 const grab_force = 10000
 const grab_speed_damping = 0.96
 const throw_force = 1.5
@@ -19,7 +20,8 @@ func _physics_process(delta):
 		grab_object.linear_velocity *= grab_speed_damping
 	else:
 		var space_state = get_world_3d().direct_space_state
-		var query = PhysicsRayQueryParameters3D.create(head.global_position, look_vector()*50)
+		var query = PhysicsRayQueryParameters3D.create(head.global_position, head.global_position+look_vector()*grab_distance)
+		#query.collide_with_areas = true
 		var result = space_state.intersect_ray(query)
 		if not result: return
 		if "get_hover_message" in result.collider:
@@ -27,6 +29,10 @@ func _physics_process(delta):
 			if message != null:
 				HUD.get_node("CenterText").text = message
 		highlighted_object = result.collider
+		print(result.collider.name)
+		print("distance: " + str((result.position - head.global_position).length()))
+		if result.collider.name == "GrabHitbox":
+			highlighted_object = result.collider.get_node("..")
 		time_left_to_grab = grab_grace_period
 	if(inputBuffer):
 		grab()
