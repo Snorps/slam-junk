@@ -41,5 +41,3 @@ func _process(delta):
 	if current_music_player.volume_db > target_volume:
 		current_music_player.volume_db = target_volume
 	off_player.volume_db -= fade_rate * delta
-	print("main:" + str(current_music_player.volume_db))
-	print("off:" + str(off_player.volume_db))
