@@ -2,7 +2,7 @@ extends AnimatableBody3D
 
 @export var head: Node3D
 
-const grab_distance = 3
+const grab_distance = 50
 const grab_force = 10000
 const grab_speed_damping = 0.96
 const throw_force = 1.5
@@ -34,11 +34,20 @@ func _physics_process(delta):
 		if result.collider.name == "GrabHitbox":
 			highlighted_object = result.collider.get_node("..")
 		time_left_to_grab = grab_grace_period
+	
+	if(grab_object != null):
+		PredictTrajectory()
+		return
+	
 	if(inputBuffer):
 		grab()
 		time_left_to_grab -= delta
 		if(time_left_to_grab <= 0):
 			inputBuffer = false
+
+func PredictTrajectory():
+	print("test")
+	return
 
 func try_grabthrow():
 	if grab_object != null:

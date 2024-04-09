@@ -16,6 +16,8 @@ var level = 0
 var map
 var player
 var builder
+var performoLevels
+var necroLevels
 
 #var spawn_point_name = null
 

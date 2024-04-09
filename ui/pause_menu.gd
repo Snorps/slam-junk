@@ -48,6 +48,8 @@ func PauseGame():
 	volumeLabel.show()
 	quitButton.show()
 	get_tree().paused = true
+	var shopMenu = get_tree().get_root().get_node("World/VendingMachineGui")
+	shopMenu.hide()
 	paused = true
 
 func _on_quit_button_down():
