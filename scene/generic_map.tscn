@@ -282,7 +282,7 @@ shape = SubResource("ConvexPolygonShape3D_58r6c")
 shape = SubResource("ConvexPolygonShape3D_mx7ju")
 
 [node name="entity_1_ent_basketball" parent="FuncGodotMap" instance=ExtResource("9_i5utb")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.75, 3.75, 12.25)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.75, 0.906262, 12.25)
 
 [node name="entity_2_ent_player" parent="FuncGodotMap" instance=ExtResource("11_0rq2n")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.75, 0.75, -2.25)
