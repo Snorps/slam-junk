@@ -125,6 +125,9 @@ func _input(event):
 	elif event.is_action_pressed("interact"):
 		if hands:
 			hands.try_grabthrow()
+	if(Input.is_key_pressed(KEY_Q)):
+		print("CurrPerform: " + str(Flags.totalPerformo))
+		Flags.performosport = 0
 		
 func _physics_process(delta):
 	update_camera = true

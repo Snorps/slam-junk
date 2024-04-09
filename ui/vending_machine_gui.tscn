@@ -52,7 +52,7 @@ offset_right = 749.0
 offset_bottom = 217.0
 text = "Moneycosts: five threes
 Amountsof: Nones :)
-"
+MAXONECRO: You Only Get One."
 
 [connection signal="button_down" from="Performosport" to="." method="_on_performosport_button_down"]
 [connection signal="pressed" from="Performosport" to="." method="_on_performosport_pressed"]

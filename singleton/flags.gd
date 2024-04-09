@@ -7,6 +7,10 @@ var performosport_unlocked
 
 var necrogluterol_unlocked
 
+var totalPerformo = 0
+var maxPerformo = 5
+var necroMax = 1
+
 func _ready():
 	reset()
 
