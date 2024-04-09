@@ -2,12 +2,14 @@ extends Control
 
 
 var performoLabel
+var performoLabel2
 var necroLabel
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _ready():
 	performoLabel = get_node("PerformoLabel")
 	necroLabel = get_node("NecroLabel")
+	performoLabel2 = get_node("PerformoLabel2")
 	
 func _process(delta):
 	pass
@@ -19,6 +21,9 @@ func UpdateText():
 	else:
 		text = "five fives"
 	performoLabel.text = "Moneycosts: " + text + "\nAmountsof: " + str(Flags.performosport) + "\nMAXOPERFORMO: FIVE"
+	
+	text = str(Flags.totalPerformo)
+	performoLabel2.text = "Refundables: " + text
 	
 func _on_performosport_pressed():
 	
