@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmlwitxdqipw4"
-path="res://.godot/imported/induswall.PNG-1a1f132f3470c76a2d98122ff1d6bbfb.ctex"
+path.s3tc="res://.godot/imported/induswall.PNG-1a1f132f3470c76a2d98122ff1d6bbfb.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://trenchbroom/textures/induswall.PNG"
-dest_files=["res://.godot/imported/induswall.PNG-1a1f132f3470c76a2d98122ff1d6bbfb.ctex"]
+dest_files=["res://.godot/imported/induswall.PNG-1a1f132f3470c76a2d98122ff1d6bbfb.s3tc.ctex"]
 
 [params]
 

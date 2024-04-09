@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n8mymcwbc4ab"
-path="res://.godot/imported/poolglass.PNG-ae6399309e4d9e7453e33ddb74bf5117.ctex"
+path.s3tc="res://.godot/imported/poolglass.PNG-ae6399309e4d9e7453e33ddb74bf5117.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://trenchbroom/textures/poolglass.PNG"
-dest_files=["res://.godot/imported/poolglass.PNG-ae6399309e4d9e7453e33ddb74bf5117.ctex"]
+dest_files=["res://.godot/imported/poolglass.PNG-ae6399309e4d9e7453e33ddb74bf5117.s3tc.ctex"]
 
 [params]
 

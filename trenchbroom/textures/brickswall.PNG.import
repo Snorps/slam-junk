@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7yqua7h8vlf2"
-path.s3tc="res://.godot/imported/indusfloor.PNG-35a70ab180265087cc8134bf38b612e8.s3tc.ctex"
+uid="uid://c41sxdl27dk0m"
+path.s3tc="res://.godot/imported/brickswall.PNG-12f5705f79f89c1cdd7b9e948e945403.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/indusfloor.PNG"
-dest_files=["res://.godot/imported/indusfloor.PNG-35a70ab180265087cc8134bf38b612e8.s3tc.ctex"]
+source_file="res://trenchbroom/textures/brickswall.PNG"
+dest_files=["res://.godot/imported/brickswall.PNG-12f5705f79f89c1cdd7b9e948e945403.s3tc.ctex"]
 
 [params]
 

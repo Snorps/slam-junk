@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7yqua7h8vlf2"
-path.s3tc="res://.godot/imported/indusfloor.PNG-35a70ab180265087cc8134bf38b612e8.s3tc.ctex"
+uid="uid://dwhe2vyotdn17"
+path.s3tc="res://.godot/imported/white_wall.png-a38b2a7a9b38c1c52572424bd2ca6b7c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/indusfloor.PNG"
-dest_files=["res://.godot/imported/indusfloor.PNG-35a70ab180265087cc8134bf38b612e8.s3tc.ctex"]
+source_file="res://trenchbroom/textures/white_wall.png"
+dest_files=["res://.godot/imported/white_wall.png-a38b2a7a9b38c1c52572424bd2ca6b7c.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7yqua7h8vlf2"
-path.s3tc="res://.godot/imported/indusfloor.PNG-35a70ab180265087cc8134bf38b612e8.s3tc.ctex"
+uid="uid://c3am3bfmy8he0"
+path.s3tc="res://.godot/imported/polystyrene_ceiling.png-3df22ec9ce203d403a26b0fec4d0e43f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/indusfloor.PNG"
-dest_files=["res://.godot/imported/indusfloor.PNG-35a70ab180265087cc8134bf38b612e8.s3tc.ctex"]
+source_file="res://trenchbroom/textures/polystyrene_ceiling.png"
+dest_files=["res://.godot/imported/polystyrene_ceiling.png-3df22ec9ce203d403a26b0fec4d0e43f.s3tc.ctex"]
 
 [params]
 
