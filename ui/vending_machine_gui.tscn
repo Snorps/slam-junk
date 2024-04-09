@@ -33,6 +33,27 @@ offset_right = 539.0
 offset_bottom = 236.0
 text = "Buy Necrogluterol"
 
+[node name="PerformoLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 78.0
+offset_right = 755.0
+offset_bottom = 122.0
+text = "Moneycosts: five fives
+Amountsof: Nones :(
+MAXOPERFORMO: FIVE
+"
+
+[node name="NecroLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 168.0
+offset_right = 749.0
+offset_bottom = 217.0
+text = "Moneycosts: five threes
+Amountsof: Nones :)
+"
+
 [connection signal="button_down" from="Performosport" to="." method="_on_performosport_button_down"]
 [connection signal="pressed" from="Performosport" to="." method="_on_performosport_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
