@@ -80,22 +80,27 @@ alignment = 1
 [node name="ColorRect" type="ColorRect" parent="PerformoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="PerformoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="PerformoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="PerformoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="PerformoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
 
 [connection signal="button_down" from="Performosport" to="." method="_on_performosport_button_down"]
 [connection signal="pressed" from="Performosport" to="." method="_on_performosport_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://qkl8i8hg8u8j"]
+[gd_scene load_steps=51 format=3 uid="uid://qkl8i8hg8u8j"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_aykgl"]
 [ext_resource type="Resource" uid="uid://bi6bb8ko0asno" path="res://crustball_default_map_settings.tres" id="2_mrm2m"]
@@ -10,9 +10,8 @@
 [ext_resource type="Material" path="res://trenchbroom/textures/red.tres" id="7_4fdx3"]
 [ext_resource type="Material" path="res://trenchbroom/textures/backboard.tres" id="8_6twtu"]
 [ext_resource type="PackedScene" uid="uid://b7ccfkajnmn64" path="res://entity/ent_basketball.tscn" id="9_i5utb"]
-[ext_resource type="Script" path="res://entity/ent_basketball.gd" id="10_rajkn"]
 [ext_resource type="PackedScene" uid="uid://x3l0v6tbskoe" path="res://entity/Player.tscn" id="11_0rq2n"]
-[ext_resource type="Material" uid="uid://blhhbqoxfe3xi" path="res://trenchbroom/textures/net_texture.tres" id="12_0ujt3"]
+[ext_resource type="Material" path="res://trenchbroom/textures/net_texture.tres" id="12_0ujt3"]
 [ext_resource type="PackedScene" uid="uid://bhnffv3dxsd5g" path="res://entity/Enemy.tscn" id="12_jiwyq"]
 [ext_resource type="Script" path="res://entity/trigger_goal.gd" id="13_7loph"]
 [ext_resource type="PackedScene" uid="uid://dougrwojepr52" path="res://ui/pause_menu.tscn" id="14_1gneo"]
@@ -284,7 +283,6 @@ shape = SubResource("ConvexPolygonShape3D_mx7ju")
 
 [node name="entity_1_ent_basketball" parent="FuncGodotMap" instance=ExtResource("9_i5utb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.75, 3.75, 12.25)
-script = ExtResource("10_rajkn")
 
 [node name="entity_2_ent_player" parent="FuncGodotMap" instance=ExtResource("11_0rq2n")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.75, 0.75, -2.25)

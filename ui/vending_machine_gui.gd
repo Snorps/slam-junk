@@ -20,12 +20,21 @@ func _process(delta):
 
 func UpdateLabels():
 	var counter = Flags.performosport
+	var counter2 = Flags.totalPerformo
+	
+	
 	for child in performoContainer.get_children():
-		if(counter > 0):
+		if(counter2 > 0):
 			child.color = Color(0.5, 0.5, 0.5, 1.0)
-			counter -= 1
+			counter2 -= 1
+			print("Loop1")
+			if(counter > 0):
+				child.color = Color(1.0, 1.0, 1.0, 1.0)
+				counter -= 1
+				print("Loop2")
 		else:
-			child.color = Color(1.0,1.0,1.0,1.0)
+			child.color = Color(0.0,0.0,0.0,1.0)
+			
 	
 func UpdateText():
 	var text
