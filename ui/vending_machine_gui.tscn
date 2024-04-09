@@ -16,6 +16,15 @@ offset_bottom = 138.0
 text = "Buy Performosport
 "
 
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 844.0
+offset_top = 450.0
+offset_right = 1064.0
+offset_bottom = 517.0
+text = "Unshop
+"
+
 [node name="Necrogluterol" type="Button" parent="."]
 layout_mode = 0
 offset_left = 319.0
@@ -26,4 +35,5 @@ text = "Buy Necrogluterol"
 
 [connection signal="button_down" from="Performosport" to="." method="_on_performosport_button_down"]
 [connection signal="pressed" from="Performosport" to="." method="_on_performosport_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Necrogluterol" to="." method="_on_necrogluterol_pressed"]

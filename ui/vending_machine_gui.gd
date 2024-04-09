@@ -18,3 +18,8 @@ func _on_necrogluterol_pressed():
 	Flags.add_money(-15)
 	GameStateManager.player.get_node("Damageable").health = 0
 	GameStateManager.lose_game()
+
+
+func _on_quit_pressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	hide()

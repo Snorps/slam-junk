@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b7ccfkajnmn64" path="res://entity/ent_basketball.tscn" id="9_i5utb"]
 [ext_resource type="Script" path="res://entity/ent_basketball.gd" id="10_rajkn"]
 [ext_resource type="PackedScene" uid="uid://x3l0v6tbskoe" path="res://entity/Player.tscn" id="11_0rq2n"]
-[ext_resource type="Material" uid="uid://blhhbqoxfe3xi" path="res://trenchbroom/textures/net_texture.tres" id="12_0ujt3"]
+[ext_resource type="Material" path="res://trenchbroom/textures/net_texture.tres" id="12_0ujt3"]
 [ext_resource type="PackedScene" uid="uid://bhnffv3dxsd5g" path="res://entity/Enemy.tscn" id="12_jiwyq"]
 [ext_resource type="Script" path="res://entity/trigger_goal.gd" id="13_7loph"]
 [ext_resource type="PackedScene" uid="uid://dougrwojepr52" path="res://ui/pause_menu.tscn" id="14_1gneo"]
