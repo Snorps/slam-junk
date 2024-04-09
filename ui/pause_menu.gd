@@ -8,6 +8,7 @@ var volumeControl
 var performoLabel
 var upgradeLabel
 var necroLabel
+var moneyLabel
 
 @export
 var audioBusName : String
@@ -21,6 +22,8 @@ func _ready():
 	performoLabel = get_node("PerformosportLabel")
 	upgradeLabel = get_node("UpgradeLabel")
 	necroLabel = get_node("NecroLabel")
+	moneyLabel = get_node("MoneyLabel")
+	moneyLabel.hide()
 	performoLabel.hide()
 	upgradeLabel.hide()
 	necroLabel.hide()
@@ -50,6 +53,7 @@ func ResumeGame():
 	performoLabel.hide()
 	necroLabel.hide()
 	upgradeLabel.hide()
+	moneyLabel.hide()
 	get_tree().paused = false
 	paused = false
 	
@@ -62,8 +66,10 @@ func PauseGame():
 	performoLabel.show()
 	necroLabel.show()
 	upgradeLabel.show()
+	moneyLabel.show()
 	get_tree().paused = true
 	var shopMenu = get_tree().get_root().get_node("World/VendingMachineGui")
+	moneyLabel.text = "Dollareydoos: " + str(Flags._money)
 	performoLabel.text = "Performosports: " + str(Flags.performosport)
 	shopMenu.hide()
 	paused = true
