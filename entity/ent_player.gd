@@ -126,8 +126,10 @@ func _input(event):
 		if hands:
 			hands.try_grabthrow()
 	if(Input.is_key_pressed(KEY_Q)):
-		print("CurrPerform: " + str(Flags.totalPerformo))
+		print("Purge")
 		Flags.performosport = 0
+		GameStateManager.player.update_fov()
+		
 		
 func _physics_process(delta):
 	update_camera = true
