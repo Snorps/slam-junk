@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://x3l0v6tbskoe"]
+[gd_scene load_steps=22 format=3 uid="uid://x3l0v6tbskoe"]
 
 [ext_resource type="Script" path="res://entity/ent_player.gd" id="1_1xtaq"]
 [ext_resource type="Texture2D" uid="uid://d24uu77q264np" path="res://Models/enemyplayer1uvtest1.png" id="2_6q73p"]
 [ext_resource type="Script" path="res://component/Hands.gd" id="2_fro4k"]
+[ext_resource type="Shader" path="res://entity/TestShader.gdshader" id="2_fuhgk"]
 [ext_resource type="Script" path="res://component/DestroyOffMap.gd" id="4_3wvuh"]
 [ext_resource type="Texture2D" uid="uid://dp8jkh2heqlfb" path="res://entity/image.png" id="5_il45c"]
 [ext_resource type="Script" path="res://component/Damageable.gd" id="5_k4xuf"]
@@ -12,6 +13,10 @@
 [sub_resource type="BoxMesh" id="BoxMesh_dhg0d"]
 material = SubResource("StandardMaterial3D_sxnj7")
 size = Vector3(0.1, 0.2, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7kdre"]
+shader = ExtResource("2_fuhgk")
+shader_parameter/pixel_size = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_24lmu"]
 radius = 0.001
@@ -124,6 +129,14 @@ visible = false
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("BoxMesh_dhg0d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Body/Head/CameraMarker3D/Camera3D"]
+
+[node name="ColorRect" type="ColorRect" parent="Body/Head/CameraMarker3D/Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_7kdre")
+offset_right = 1156.0
+offset_bottom = 646.0
+mouse_filter = 2
 
 [node name="Hands" type="AnimatableBody3D" parent="Body/Head" node_paths=PackedStringArray("head")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
