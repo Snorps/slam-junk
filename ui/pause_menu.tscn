@@ -58,6 +58,30 @@ step = 0.001
 value = 0.5
 tick_count = 1
 
+[node name="UpgradeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 76.0
+offset_right = 368.0
+offset_bottom = 105.0
+text = "Upgradeds"
+
+[node name="PerformosportLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 115.0
+offset_right = 318.0
+offset_bottom = 138.0
+text = "Performosports: 0"
+
+[node name="NecroLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 152.0
+offset_right = 318.0
+offset_bottom = 175.0
+text = "NecorglucerIForgotWhatIt'sCalled: 0"
+
 [connection signal="button_down" from="Resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="Quit" to="." method="_on_quit_button_down"]
 [connection signal="value_changed" from="VolumeControl" to="." method="_on_volume_control_value_changed"]

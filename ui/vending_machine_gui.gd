@@ -7,7 +7,9 @@ func _process(delta):
 
 func _on_performosport_pressed():
 	Flags.add_money(-25)
-	Flags.performosport += 1
+	if(Flags.performosport < 5):
+		Flags.performosport += 1
+		print(Flags.performosport)
 	GameStateManager.player.update_fov()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	hide()

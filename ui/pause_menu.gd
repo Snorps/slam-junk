@@ -5,6 +5,9 @@ var resumeButton
 var quitButton
 var volumeLabel
 var volumeControl
+var performoLabel
+var upgradeLabel
+var necroLabel
 
 @export
 var audioBusName : String
@@ -15,6 +18,12 @@ func _ready():
 	quitButton = get_node("Quit")
 	volumeControl = get_node("VolumeControl")
 	volumeLabel = get_node("VolumeLabel")
+	performoLabel = get_node("PerformosportLabel")
+	upgradeLabel = get_node("UpgradeLabel")
+	necroLabel = get_node("NecroLabel")
+	performoLabel.hide()
+	upgradeLabel.hide()
+	necroLabel.hide()
 	resumeButton.hide()
 	volumeControl.hide()
 	volumeLabel.hide()
@@ -38,6 +47,9 @@ func ResumeGame():
 	quitButton.hide()
 	volumeControl.hide()
 	volumeLabel.hide()
+	performoLabel.hide()
+	necroLabel.hide()
+	upgradeLabel.hide()
 	get_tree().paused = false
 	paused = false
 	
@@ -47,8 +59,12 @@ func PauseGame():
 	volumeControl.show()
 	volumeLabel.show()
 	quitButton.show()
+	performoLabel.show()
+	necroLabel.show()
+	upgradeLabel.show()
 	get_tree().paused = true
 	var shopMenu = get_tree().get_root().get_node("World/VendingMachineGui")
+	performoLabel.text = "Performosports: " + str(Flags.performosport)
 	shopMenu.hide()
 	paused = true
 
