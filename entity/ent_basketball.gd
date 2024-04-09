@@ -1,4 +1,3 @@
-@tool
 extends GrabbableBody3D
 
 var rng = RandomNumberGenerator.new()
