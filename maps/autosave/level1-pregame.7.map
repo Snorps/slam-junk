@@ -919,8 +919,3 @@
 "classname" "ent_light"
 "origin" "-24 24 120"
 }
-// entity 19
-{
-"classname" "ent_light"
-"origin" "-568 8 152"
-}
