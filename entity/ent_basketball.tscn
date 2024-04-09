@@ -21,6 +21,7 @@ radius = 0.2
 [node name="Basketball" type="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.33602e+08, 0)
 physics_material_override = SubResource("PhysicsMaterial_76020")
+sync_to_physics = false
 script = ExtResource("1_k5826")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="."]

@@ -11,6 +11,9 @@ var gravity_mult = 0.01
 var linear_velocity = Vector3.ZERO
 
 func _physics_process(delta):
+	update_trajectory(delta)
+	
+func update_trajectory(delta):
 	if linear_velocity == null: return
 	linear_velocity.y -= gravity * delta
 	var collision = move_and_collide(linear_velocity * delta)
