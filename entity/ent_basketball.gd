@@ -1,6 +1,5 @@
 @tool
-class_name PhysicsBall
-extends PhysicsEntity
+extends GrabbableBody3D
 
 var rng = RandomNumberGenerator.new()
 
@@ -9,6 +8,10 @@ var bounce_sounds = [
 	load("res://audio/bounce2.wav"),
 	load("res://audio/bounce3.wav"),
 ]
+
+func on_bounce():
+	$AudioStreamPlayer3D.stream = bounce_sounds[rng.randi_range(0, bounce_sounds.size() - 1)]
+	$AudioStreamPlayer3D.play()
 
 func _func_godot_apply_properties(properties: Dictionary):
 	if 'size' in properties:
@@ -19,9 +22,3 @@ func _func_godot_apply_properties(properties: Dictionary):
 	if 'mass' in properties:
 		mass = properties.mass
 		
-func _init() -> void:
-	connect("body_shape_entered", body_shape_entered)
-
-func body_shape_entered(body_id, body: Node, body_shape_idx: int, self_shape_idx: int) -> void:
-	$AudioStreamPlayer3D.stream = bounce_sounds[rng.randi_range(0, bounce_sounds.size() - 1)]
-	$AudioStreamPlayer3D.play()

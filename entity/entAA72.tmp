@@ -19,7 +19,7 @@ albedo_texture = ExtResource("1_cnl0j")
 radius = 0.2
 
 [node name="Basketball" type="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.33602e+08, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.29507e+08, 0)
 physics_material_override = SubResource("PhysicsMaterial_76020")
 script = ExtResource("1_k5826")
 

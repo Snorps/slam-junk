@@ -3,9 +3,9 @@ extends AnimatableBody3D
 @export var head: Node3D
 
 const grab_distance = 50
-const grab_force = 10000
-const grab_speed_damping = 0.96
-const throw_force = 1.5
+const grab_force = 800
+const grab_speed_damping = 0.93
+const throw_force = 15
 const grab_grace_period = 0.5
 
 var grab_object = null
@@ -16,7 +16,8 @@ var inputBuffer = false
 func _physics_process(delta):
 	time_left_to_grab -= delta
 	if grab_object != null:
-		grab_object.apply_force((global_position - grab_object.global_position) * grab_object.mass * grab_force * delta)
+		grab_object.apply_impulse((global_position - grab_object.global_position) * grab_object.mass * grab_force * delta)
+		grab_object 
 		grab_object.linear_velocity *= grab_speed_damping
 	else:
 		var space_state = get_world_3d().direct_space_state
@@ -69,7 +70,7 @@ func grab():
 	if "player_interact" in highlighted_object:
 		highlighted_object.player_interact()
 		inputBuffer = false
-	if highlighted_object is RigidBody3D:
+	if highlighted_object is RigidBody3D or highlighted_object is GrabbableBody3D:
 		grab_object = highlighted_object
 	inputBuffer = false
 
