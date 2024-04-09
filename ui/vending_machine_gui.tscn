@@ -16,6 +16,14 @@ offset_bottom = 138.0
 text = "Buy Performosport
 "
 
+[node name="Necrogluterol" type="Button" parent="."]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 169.0
+offset_right = 539.0
+offset_bottom = 236.0
+text = "Buy Necrogluterol"
+
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 844.0
@@ -26,20 +34,11 @@ text = "Unshop
 "
 
 [node name="Control" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = 582.0
 offset_top = 62.0
 offset_right = 1078.0
 offset_bottom = 353.0
-
-[node name="Necrogluterol" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = -263.0
-offset_top = 107.0
-offset_right = -43.0
-offset_bottom = 174.0
-text = "Buy Necrogluterol"
 
 [node name="PerformoLabel" type="Label" parent="Control"]
 layout_mode = 0
@@ -100,5 +99,5 @@ size_flags_horizontal = 3
 
 [connection signal="button_down" from="Performosport" to="." method="_on_performosport_button_down"]
 [connection signal="pressed" from="Performosport" to="." method="_on_performosport_pressed"]
+[connection signal="pressed" from="Necrogluterol" to="." method="_on_necrogluterol_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Control/Necrogluterol" to="." method="_on_necrogluterol_pressed"]
