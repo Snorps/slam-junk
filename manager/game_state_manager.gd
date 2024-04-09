@@ -33,7 +33,7 @@ func lose_point():
 	
 func lose_game():
 	$LoseSound.play()
-	HUD.get_node("CenterText").text = "You had became died! :("
+	HUD.set_centre_text("You had became died! :(")
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_packed(generic_map_scene)
 	map = {"mapname"="level1-pregame.map", "spawn_point"="player_changing_room"}
@@ -49,7 +49,7 @@ func reset_game():
 func win():
 	score += 1
 	level += 1
-	HUD.get_node("CenterText").text = "You scored point!"
+	HUD.set_centre_text("You scored point!")
 	$ScoreSound.play()
 	reset_level()
 	
@@ -61,7 +61,7 @@ func reset_level():
 	if level >= levels.size():
 		get_tree().change_scene_to_packed(game_complete_scene)
 		reset_game()
-		HUD.get_node("CenterText").text = "You had became beated the game!"
+		HUD.set_centre_text("You had became beated the game!")
 		return
 	map = levels[level]
 	await get_tree().create_timer(1).timeout

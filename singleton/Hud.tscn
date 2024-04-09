@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://cm7vivof2m8be"]
+[gd_scene load_steps=2 format=3 uid="uid://cm7vivof2m8be"]
+
+[ext_resource type="Script" path="res://singleton/Hud.gd" id="1_f3wg0"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_f3wg0")
 
 [node name="CenterText" type="Label" parent="."]
 layout_mode = 0
@@ -10,6 +13,16 @@ offset_top = 4.0
 offset_right = 1136.0
 offset_bottom = 379.0
 text = "Nothing is hapening"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HandsText" type="Label" parent="."]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 1136.0
+offset_bottom = 475.0
+text = "handshandshands
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://x3l0v6tbskoe"]
+[gd_scene load_steps=21 format=3 uid="uid://x3l0v6tbskoe"]
 
 [ext_resource type="Script" path="res://entity/ent_player.gd" id="1_1xtaq"]
 [ext_resource type="Texture2D" uid="uid://d24uu77q264np" path="res://Models/enemyplayer1uvtest1.png" id="2_6q73p"]
@@ -17,9 +17,6 @@ size = Vector3(0.1, 0.2, 0.5)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7kdre"]
 shader = ExtResource("2_fuhgk")
 shader_parameter/pixel_size = 2.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_24lmu"]
-radius = 0.001
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1j6b0"]
 resource_name = "Material"
@@ -138,16 +135,11 @@ offset_right = 1156.0
 offset_bottom = 646.0
 mouse_filter = 2
 
-[node name="Hands" type="AnimatableBody3D" parent="Body/Head" node_paths=PackedStringArray("head")]
+[node name="Hands" type="Node3D" parent="Body/Head" node_paths=PackedStringArray("head", "audio_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 script = ExtResource("2_fro4k")
 head = NodePath("..")
-
-[node name="PinJoint3D" type="PinJoint3D" parent="Body/Head/Hands"]
-node_a = NodePath("..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Head/Hands"]
-shape = SubResource("SphereShape3D_24lmu")
+audio_player = NodePath("../../../AudioPlayer")
 
 [node name="enemyplayer1" type="Node3D" parent="Body"]
 transform = Transform3D(-0.28, 0, -2.44784e-08, 0, 0.28, 0, 2.44784e-08, 0, -0.28, 0, 0, 0)
@@ -218,6 +210,9 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_k0goe")
 disabled = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="."]
+max_polyphony = 10
 
 [connection signal="area_entered" from="Damageable" to="Damageable" method="_on_area_entered"]
 [connection signal="body_entered" from="Damageable" to="Damageable" method="_on_body_entered"]

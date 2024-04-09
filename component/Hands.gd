@@ -1,6 +1,7 @@
-extends AnimatableBody3D
+extends Node3D
 
 @export var head: Node3D
+@export var audio_player: AudioStreamPlayer3D
 
 const grab_distance = 50
 const grab_force = 800
@@ -24,11 +25,12 @@ func _physics_process(delta):
 		var query = PhysicsRayQueryParameters3D.create(head.global_position, head.global_position+look_vector()*grab_distance)
 		#query.collide_with_areas = true
 		var result = space_state.intersect_ray(query)
+		HUD.set_hands_text("")
 		if not result: return
 		if "get_hover_message" in result.collider:
 			var message = result.collider.get_hover_message()
 			if message != null:
-				HUD.get_node("CenterText").text = message
+				HUD.set_hands_text(message)
 		highlighted_object = result.collider
 		#print(result.collider.name)
 		#print("distance: " + str((result.position - head.global_position).length()))
@@ -72,11 +74,15 @@ func grab():
 		inputBuffer = false
 	if highlighted_object is RigidBody3D or highlighted_object is GrabbableBody3D:
 		grab_object = highlighted_object
-	inputBuffer = false
+		audio_player.stream = load("res://audio/grab.wav")
+		audio_player.play()
+	inputBuffer = false	
 
 func throw():
 	grab_object.apply_impulse(look_vector() * throw_force)
 	grab_object = null
+	audio_player.stream = load("res://audio/THROW.wav")
+	audio_player.play()
 
 func look_vector():
 	return (global_position - head.global_position).normalized()
