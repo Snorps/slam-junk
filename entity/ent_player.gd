@@ -129,6 +129,7 @@ func _input(event):
 		print("CurrPerform: " + str(Flags.totalPerformo))
 		Flags.performosport = 0
 		
+		
 func _physics_process(delta):
 	update_camera = true
 	var is_step: bool = false

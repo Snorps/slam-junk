@@ -25,44 +25,80 @@ offset_bottom = 517.0
 text = "Unshop
 "
 
-[node name="Necrogluterol" type="Button" parent="."]
+[node name="Control" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 582.0
+offset_top = 62.0
+offset_right = 1078.0
+offset_bottom = 353.0
+
+[node name="Necrogluterol" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 319.0
-offset_top = 169.0
-offset_right = 539.0
-offset_bottom = 236.0
+offset_left = -263.0
+offset_top = 107.0
+offset_right = -43.0
+offset_bottom = 174.0
 text = "Buy Necrogluterol"
 
-[node name="PerformoLabel" type="Label" parent="."]
+[node name="PerformoLabel" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 586.0
-offset_top = 78.0
-offset_right = 755.0
-offset_bottom = 122.0
+offset_left = 4.0
+offset_top = 16.0
+offset_right = 181.0
+offset_bottom = 91.0
 text = "Moneycosts: five fives
 Amountsof: Nones :(
 MAXOPERFORMO: FIVE
 "
 
-[node name="PerformoLabel2" type="Label" parent="."]
+[node name="PerformoLabel2" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 783.0
-offset_top = 78.0
-offset_right = 960.0
-offset_bottom = 153.0
+offset_left = 201.0
+offset_top = 16.0
+offset_right = 378.0
+offset_bottom = 91.0
 text = "Refundables: Zilch"
 
-[node name="NecroLabel" type="Label" parent="."]
+[node name="NecroLabel" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 580.0
-offset_top = 168.0
-offset_right = 749.0
-offset_bottom = 217.0
+offset_left = -2.0
+offset_top = 106.0
+offset_right = 251.0
+offset_bottom = 181.0
 text = "Moneycosts: five threes
 Amountsof: Nones :)
 MAXONECRO: You Only Get One."
 
+[node name="PerformoContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 640.0
+offset_top = 135.0
+offset_right = 1091.0
+offset_bottom = 230.0
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PerformoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect2" type="ColorRect" parent="PerformoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect3" type="ColorRect" parent="PerformoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect4" type="ColorRect" parent="PerformoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect5" type="ColorRect" parent="PerformoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [connection signal="button_down" from="Performosport" to="." method="_on_performosport_button_down"]
 [connection signal="pressed" from="Performosport" to="." method="_on_performosport_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Necrogluterol" to="." method="_on_necrogluterol_pressed"]
+[connection signal="pressed" from="Control/Necrogluterol" to="." method="_on_necrogluterol_pressed"]
