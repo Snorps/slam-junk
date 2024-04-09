@@ -909,3 +909,13 @@
 ( 220 52 80 ) ( 220 92 80 ) ( 220 92 16 ) dark [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
+// entity 17
+{
+"classname" "ent_basketball"
+"origin" "56 -40 24"
+}
+// entity 18
+{
+"classname" "ent_light"
+"origin" "-24 24 120"
+}
