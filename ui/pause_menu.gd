@@ -9,6 +9,7 @@ var performoLabel
 var upgradeLabel
 var necroLabel
 var moneyLabel
+var fullscreenButton
 
 @export
 var audioBusName : String
@@ -23,6 +24,8 @@ func _ready():
 	upgradeLabel = get_node("UpgradeLabel")
 	necroLabel = get_node("NecroLabel")
 	moneyLabel = get_node("MoneyLabel")
+	fullscreenButton = get_node("Fullscreen")
+	fullscreenButton.hide()
 	moneyLabel.hide()
 	performoLabel.hide()
 	upgradeLabel.hide()
@@ -33,6 +36,11 @@ func _ready():
 	quitButton.hide()
 	
 	audioBusIndex = AudioServer.get_bus_index("Master")
+	
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
+		fullscreenButton.text = "Screen ensmallen :("
+	else:
+		fullscreenButton.text = "Screen ENHAMCE"
 	
 
 func _input(event):
@@ -54,6 +62,7 @@ func ResumeGame():
 	necroLabel.hide()
 	upgradeLabel.hide()
 	moneyLabel.hide()
+	fullscreenButton.hide()
 	get_tree().paused = false
 	paused = false
 	
@@ -67,6 +76,7 @@ func PauseGame():
 	necroLabel.show()
 	upgradeLabel.show()
 	moneyLabel.show()
+	fullscreenButton.show()
 	get_tree().paused = true
 	var shopMenu = get_tree().get_root().get_node("World/VendingMachineGui")
 	moneyLabel.text = "Dollareydoos: " + str(Flags._money)
@@ -88,3 +98,12 @@ func _on_settings_button_down():
 
 func _on_volume_control_value_changed(value):
 	AudioServer.set_bus_volume_db(audioBusIndex, linear_to_db((value)))
+
+
+func _on_fullscreen_button_down():
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		fullscreenButton.text = "Screen ENHAMCE"
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		fullscreenButton.text = "Screen ensmallen :("

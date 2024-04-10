@@ -24,6 +24,15 @@ offset_right = 762.0
 offset_bottom = 179.0
 text = "Resume"
 
+[node name="Fullscreen" type="Button" parent="."]
+process_mode = 2
+layout_mode = 0
+offset_left = 403.0
+offset_top = 242.0
+offset_right = 762.0
+offset_bottom = 339.0
+text = "Screen Enhancer"
+
 [node name="Quit" type="Button" parent="."]
 process_mode = 2
 layout_mode = 0
@@ -91,5 +100,6 @@ offset_bottom = 61.0
 text = "Dollareydoos: "
 
 [connection signal="button_down" from="Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="Fullscreen" to="." method="_on_fullscreen_button_down"]
 [connection signal="button_down" from="Quit" to="." method="_on_quit_button_down"]
 [connection signal="value_changed" from="VolumeControl" to="." method="_on_volume_control_value_changed"]
