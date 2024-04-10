@@ -85,6 +85,7 @@ script = SubResource("GDScript_a8kpl")
 reticle_lines = [NodePath("top"), NodePath("left"), NodePath("right"), NodePath("bottom")]
 
 [node name="dot" type="Polygon2D" parent="."]
+color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)
 
 [node name="top" type="Line2D" parent="."]
