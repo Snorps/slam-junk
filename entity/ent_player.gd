@@ -123,16 +123,19 @@ func _process(delta: float) -> void:
 	camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
 
 	##sets speeline texture if user is on performo and is moving
-	if(Flags.performosport > 0):
+	if(Flags.performosport > 0 && GameStateManager.player.velocity.is_zero_approx() == false):
 		var random = rng.randi_range(1,4)
 		match random:
 			1:
 				get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
 			2:
+				#Where speedline 2 goes
 				print("2")
 			3:
+				#Where speedline 3 goes
 				print("3")
 			4:
+				#Where speedline 4 goes
 				print("4")
 	else:
 		get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = null
