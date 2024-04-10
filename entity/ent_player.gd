@@ -52,6 +52,11 @@ var camera_gt_current : Transform3D
 
 var RETICLE : Control
 
+var jump_sounds = [
+	load("res://audio/jump1.wav"),
+	load("res://audio/jump2.wav"),
+	load("res://audio/jump3.wav"),
+]
 
 
 class StepResult:
@@ -137,7 +142,7 @@ func _input(event):
 		Flags.performosport = 0
 		GameStateManager.player.update_fov()
 		
-		
+var rng = RandomNumberGenerator.new()
 func _physics_process(delta):
 	update_camera = true
 	var is_step: bool = false
@@ -159,6 +164,9 @@ func _physics_process(delta):
 		is_jumping = true
 		is_in_air = false
 		gravity_direction = Vector3.UP * jump
+		
+		$AudioPlayer.stream = jump_sounds[rng.randi_range(0, jump_sounds.size() - 1)]
+		$AudioPlayer.play()
 
 	main_velocity = main_velocity.lerp(direction * speed, acceleration * delta)
 
