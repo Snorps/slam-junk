@@ -175,6 +175,11 @@ func _input(event):
 		print("Purge")
 		Flags.performosport = 0
 		GameStateManager.player.update_fov()
+	if(Input.is_action_just_pressed("Fullscreen")):
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 		
 func _physics_process(delta):
 	update_camera = true
