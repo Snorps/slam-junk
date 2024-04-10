@@ -19,6 +19,8 @@ func update_trajectory(delta):
 	var collision = move_and_collide(linear_velocity * delta)
 	if not collision: return
 	on_bounce()
+	if "on_collide" in collision.get_collider():
+		collision.get_collider().on_collide(self)
 	linear_velocity = linear_velocity.bounce(collision.get_normal()) * bounciness
 	
 func apply_impulse(force: Vector3):
