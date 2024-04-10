@@ -55,6 +55,8 @@ func _on_body_exited(body):
 			overlaps.erase(entry)
 			
 func die():
+	if "die" in $"..":
+		$"..".die()
 	if lose_on_die:
 		GameStateManager.lose_game()
 	queue_free()
