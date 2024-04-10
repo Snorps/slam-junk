@@ -93,6 +93,8 @@ func refresh_upgrades_effects():
 			player.get_node("Damageable").on_die()
 			get_upgrade("necrogluterol").equipped = 0
 			get_upgrade("sportimax").equipped = 0
+
+	AudioManager.PerformoAudio(0)
 	
 func purge_upgrades():
 	for upgrade in upgrades:

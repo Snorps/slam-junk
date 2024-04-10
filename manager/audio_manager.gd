@@ -4,6 +4,7 @@ const music_volume = -15
 const fade_rate = 10
 
 var target_volume
+var waitingroom
 @onready var current_music_player = $Music
 @onready var musicBackdrop = $PerformoLayer
 
@@ -17,19 +18,31 @@ func set_music(audio: AudioStream, volume = null, keep_time = false):
 			playback_time = current_music_player.get_playback_position()
 		current_music_player.stream = audio
 		current_music_player.play(playback_time)
+		if(waitingroom == null):
+			waitingroom = true
+		print("1: " + str(waitingroom))
+		PerformoAudio(playback_time)
 		
-		if(Flags.get_upgrade("performosport").equipped > 0):
-			if(musicBackdrop.stream == null):
-				musicBackdrop.stream = load("res://audio/Ball room performosport.wav")
-				musicBackdrop.play(playback_time)
-		if(Flags.get_upgrade("performosport").equipped == 0):
-			musicBackdrop.stop()
-		
-func PerformoAudio():
+func PerformoAudio(playback_time):
 	if(Flags.get_upgrade("performosport").equipped > 0):
-			if(musicBackdrop.stream == null):
+			if(waitingroom == true):
+				musicBackdrop.stop()
 				musicBackdrop.stream = load("res://audio/Ball room performosport.wav")
-				musicBackdrop.play(current_music_player.get_playback_position())
+				musicBackdrop.volume_db = target_volume - 5
+				musicBackdrop.play(playback_time)
+				print(current_music_player.stream)
+				waitingroom = false
+				print("2: " + str(waitingroom))
+			else:
+				print("3")
+				musicBackdrop.stop()
+				musicBackdrop.stream = load("res://audio/Bounsyball performosport.wav")
+				musicBackdrop.volume_db = target_volume - 5
+				musicBackdrop.play(playback_time)
+				print(current_music_player.stream)
+				waitingroom = true
+				
+				
 	if(Flags.get_upgrade("performosport").equipped == 0):
 		musicBackdrop.stop()
 	

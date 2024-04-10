@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dougrwojepr52"]
+[gd_scene load_steps=3 format=3 uid="uid://dougrwojepr52"]
 
 [ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_ujaqg"]
+[ext_resource type="Texture2D" uid="uid://bbkbe5td5ijdo" path="res://audio/controls.png" id="2_ckaoa"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -98,6 +99,11 @@ offset_top = 38.0
 offset_right = 276.0
 offset_bottom = 61.0
 text = "Dollareydoos: "
+
+[node name="Controls" type="Sprite2D" parent="."]
+position = Vector2(179, 405)
+scale = Vector2(0.939353, 0.939353)
+texture = ExtResource("2_ckaoa")
 
 [connection signal="button_down" from="Resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="Fullscreen" to="." method="_on_fullscreen_button_down"]
