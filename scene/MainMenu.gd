@@ -9,7 +9,7 @@ const ball_glitch_chance = 0.08
 
 func _ready():
 	if music != null:
-		AudioManager.set_music(music)
+		AudioManager.set_music(music, 10)
 
 func _on_start_pressed():
 	GameStateManager.map = GameStateManager.levels[0]
