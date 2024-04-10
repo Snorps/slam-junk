@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ciyoxc7b116sc" path="res://ui/vending_bg.png" id="3_dcs34"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1akf"]
-line_spacing = 15.0
-font_size = 50
+line_spacing = 5.0
+font_size = 30
 
 [node name="VendingMachineGui" type="Control"]
 layout_mode = 3
@@ -43,11 +43,13 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 368.0
-offset_top = 505.0
-offset_right = 817.0
-offset_bottom = 587.0
-text = "PRESS Q TO VOMIT"
+offset_left = 205.0
+offset_top = 485.0
+offset_right = 962.0
+offset_bottom = 628.0
+text = "PRESS Q TO VOMIT
+RECIEVE STAB FOR WORKERS COMPENSATION"
 label_settings = SubResource("LabelSettings_g1akf")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

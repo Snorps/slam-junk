@@ -22,6 +22,8 @@ func _on_button_pressed():
 	if upgrade.equipped < upgrade.unlocked:
 		upgrade.equipped += 1
 	elif upgrade.unlocked < upgrade.max:
+		if Flags.get_money() < upgrade.price: return
+		Flags.add_money(-upgrade.price)
 		upgrade.unlocked += 1
 		upgrade.equipped += 1
 	update()

@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm7vivof2m8be"]
+[gd_scene load_steps=4 format=3 uid="uid://cm7vivof2m8be"]
 
 [ext_resource type="Script" path="res://singleton/Hud.gd" id="1_f3wg0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_obgs1"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_saj5b"]
+font_size = 25
+font_color = Color(0.184314, 1, 0.141176, 1)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -31,7 +38,9 @@ layout_mode = 0
 offset_top = 4.0
 offset_right = 1136.0
 offset_bottom = 635.0
-text = "0:0"
+text = "0:3
+"
+label_settings = SubResource("LabelSettings_obgs1")
 
 [node name="TopRightText" type="Label" parent="."]
 layout_mode = 0
@@ -39,4 +48,5 @@ offset_top = 4.0
 offset_right = 1136.0
 offset_bottom = 635.0
 text = "250b"
+label_settings = SubResource("LabelSettings_saj5b")
 horizontal_alignment = 2

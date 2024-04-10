@@ -15,6 +15,7 @@ func on_die():
 
 var rng = RandomNumberGenerator.new()
 func on_hurt():
+	Flags.add_money(3)
 	$"../AudioPlayer".stream = pain_sounds[rng.randi_range(0, pain_sounds.size() - 1)]
 	$"../AudioPlayer".play()
 	$"../AudioPlayer".stream = load("res://audio/stab.wav")

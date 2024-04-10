@@ -22,7 +22,7 @@ var upgrades = [
 		"equipped" = 0,
 		"unlocked" = 0,
 		"max" = 3,
-		"price" = 15
+		"price" = 12
 	},
 	{
 		"name" = "sportimax",
@@ -63,7 +63,7 @@ func reset():
 	maxPerformo = 5
 	necroMax = 1
 	_money = 0
-	add_money(2000)
+	add_money(0)
 	
 func get_upgrade(name):
 	for upgrade in upgrades:
@@ -103,6 +103,9 @@ func purge_upgrades():
 	for upgrade in upgrades:
 		upgrade.equipped = 0
 	refresh_upgrades_effects()
+	
+func get_money():
+	return _money
 	
 func add_money(value):
 	_money += value

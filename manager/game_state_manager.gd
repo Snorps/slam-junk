@@ -65,7 +65,7 @@ var resetting = false
 func reset_level():
 	if resetting == true: return
 	resetting = true
-	HUD.get_node("TopLeftText").text = str(score) + ":0"
+	HUD.get_node("TopLeftText").text = str(score) + ":2"
 	if level >= levels.size():
 		#HUD.set_centre_text("You had became beated the game!")
 		game_end("And so, Coach brought Slam Duncan, his best player, out for a big yummy pizza lunch.", good_end_image)
