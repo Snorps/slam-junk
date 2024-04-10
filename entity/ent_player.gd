@@ -52,6 +52,10 @@ var camera_gt_current : Transform3D
 
 var speedlines
 var speedlines1 = load("res://speedlines/Speedlines1.png")
+var speedlines2 = load("res://speedlines/Speedlines2.png")
+var speedlines3 = load("res://speedlines/Speedlines3.png")
+var speedlines4 = load("res://speedlines/Speedlines4.png")
+var speedlineCheck = false
 var previousPos
 var rng = RandomNumberGenerator.new()
 
@@ -123,24 +127,28 @@ func _process(delta: float) -> void:
 	camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
 
 	##sets speeline texture if user is on performo and is moving
-	if(Flags.performosport > 0 && GameStateManager.player.velocity.is_zero_approx() == false):
-		var random = rng.randi_range(1,4)
-		match random:
-			1:
-				get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
-			2:
-				#Where speedline 2 goes
-				print("2")
-			3:
-				#Where speedline 3 goes
-				print("3")
-			4:
-				#Where speedline 4 goes
-				print("4")
+	if(Flags.performosport > 0 && GameStateManager.player.velocity.length() > 0.5):
+		if(speedlineCheck == true):
+			var random = rng.randi_range(1,4)
+			match random:
+				1:
+					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
+					speedlineCheck = false
+				2:
+					#Where speedline 2 goes
+					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines2
+					speedlineCheck = false
+				3:
+					#Where speedline 3 goes
+					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines3
+					speedlineCheck = false
+				4:
+					#Where speedline 4 goes
+					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines4
+					speedlineCheck = false
 	else:
 		get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = null
 	previousPos = position
-
 	if is_on_floor():
 		time_in_air = 0.0
 		camera_lerp_coefficient = 1.0
@@ -371,3 +379,7 @@ func _func_godot_apply_properties(properties: Dictionary):
 			return
 	GameStateManager.player = self
 
+
+
+func _on_speedline_timer_timeout():
+	speedlineCheck = true
