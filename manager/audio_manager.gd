@@ -5,6 +5,7 @@ const fade_rate = 10
 
 var target_volume
 @onready var current_music_player = $Music
+@onready var musicBackdrop = $PerformoLayer
 
 func set_music(audio: AudioStream, volume = null, keep_time = false):
 	if volume != null:
@@ -17,6 +18,21 @@ func set_music(audio: AudioStream, volume = null, keep_time = false):
 		current_music_player.stream = audio
 		current_music_player.play(playback_time)
 		
+		if(Flags.performosport > 0):
+			if(musicBackdrop.stream == null):
+				musicBackdrop.stream = load("res://audio/Ball room performosport.wav")
+				musicBackdrop.play(playback_time)
+		if(Flags.performosport == 0):
+			musicBackdrop.stop()
+		
+func PerformoAudio():
+	if(Flags.performosport > 0):
+			if(musicBackdrop.stream == null):
+				musicBackdrop.stream = load("res://audio/Ball room performosport.wav")
+				musicBackdrop.play()
+	if(Flags.performosport == 0):
+		musicBackdrop.stop()
+	
 func crossfade_music(audio: AudioStream):
 	if current_music_player.stream.resource_path.to_lower() == audio.resource_path.to_lower(): return
 	var playback_time = current_music_player.get_playback_position()
