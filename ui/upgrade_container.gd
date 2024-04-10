@@ -13,6 +13,8 @@ func _ready():
 		light.texture = light_not_bought
 		add_child(light)
 		lights.append(light)
+		light.scale.y = 0.5
+		light.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 	$Button.text = "Buy " + upgrade.name + ": " + str(upgrade.price) + "b"
 
 func _on_button_pressed():

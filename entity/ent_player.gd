@@ -11,10 +11,10 @@ extends CharacterBody3D
 
 var mouse_sensitivity: float = 0.1
 
-const ACCELERATION_DEFAULT: float = 7.0
-const ACCELERATION_AIR: float = 1.0
-const SPEED_DEFAULT: float = 7.0
-const SPEED_ON_STAIRS: float = 5.0
+var ACCELERATION_DEFAULT: float = 7.0
+var ACCELERATION_AIR: float = 1.0
+var SPEED_DEFAULT: float = 7.0
+var SPEED_ON_STAIRS: float = 5.0
 
 var acceleration: float = ACCELERATION_DEFAULT
 var speed: float = SPEED_DEFAULT
@@ -382,6 +382,7 @@ func _func_godot_apply_properties(properties: Dictionary):
 			queue_free()
 			return
 	GameStateManager.player = self
+	Flags.refresh_upgrades_effects()
 
 
 

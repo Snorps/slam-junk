@@ -19,6 +19,7 @@ var builder
 var performoLevels
 var necroLevels
 var game_end_message
+var vending_machine_ui
 
 #var spawn_point_name = null
 

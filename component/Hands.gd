@@ -9,6 +9,7 @@ const grab_speed_damping = 0.93
 const throw_force = 10
 const grab_grace_period = 0.5
 const preview_rate = 0.005
+var preview_distance = 0
 
 var grab_object = null
 var highlighted_object = null
@@ -73,7 +74,7 @@ func generate_throw_preview(delta):
 	for c in throw_preview.get_children():
 		if c is MeshInstance3D:
 			model.add_child(c.duplicate())
-	for i in 15:
+	for i in preview_distance:
 		throw_preview.update_trajectory(0.1)
 		var new_model = model.duplicate()
 		new_model.global_position = throw_preview.global_position
