@@ -1,15 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2e4ifiwgq4vi"]
+[gd_scene load_steps=9 format=3 uid="uid://b2e4ifiwgq4vi"]
 
 [ext_resource type="Script" path="res://manager/game_state_manager.gd" id="1_cxn3q"]
 [ext_resource type="PackedScene" uid="uid://qkl8i8hg8u8j" path="res://scene/generic_map.tscn" id="2_nf57l"]
 [ext_resource type="PackedScene" uid="uid://pg3ialobuwx2" path="res://scene/ending.tscn" id="3_vyhtf"]
+[ext_resource type="Texture2D" uid="uid://d4jsifa1j6bre" path="res://Endscreens/ERRORENDING.PNG" id="4_7t8r2"]
 [ext_resource type="AudioStream" uid="uid://v6do815oie3e" path="res://audio/rimhit.wav" id="4_rwnwo"]
+[ext_resource type="Texture2D" uid="uid://vryx6qevbbjp" path="res://Endscreens/GOODENDING.PNG" id="5_iueu7"]
 [ext_resource type="AudioStream" uid="uid://bple6be3gnluy" path="res://audio/score.wav" id="5_wcy0h"]
+[ext_resource type="Texture2D" uid="uid://x1863c7aauvt" path="res://Endscreens/BADENDING.PNG" id="6_b01cd"]
 
 [node name="GameStateManager" type="Node"]
 script = ExtResource("1_cxn3q")
 generic_map_scene = ExtResource("2_nf57l")
 game_complete_scene = ExtResource("3_vyhtf")
+glitch_end_image = ExtResource("4_7t8r2")
+good_end_image = ExtResource("5_iueu7")
+bad_end_image = ExtResource("6_b01cd")
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rwnwo")

@@ -25,13 +25,6 @@ var upgrades = [
 		"price" = 15
 	},
 	{
-		"name" = "bicepscene",
-		"equipped" = 0,
-		"unlocked" = 0,
-		"max" = 3,
-		"price" = 30
-	},
-	{
 		"name" = "sportimax",
 		"equipped" = 0,
 		"unlocked" = 0,
@@ -85,7 +78,7 @@ func refresh_upgrades_effects():
 		
 		var omniscerine = get_upgrade("omniscerine").equipped
 		var hands = player.get_node("Body/Head/Hands")
-		hands.preview_distance = 10 * omniscerine
+		hands.preview_distance = 7 * omniscerine
 		
 		var necrogluterol = get_upgrade("necrogluterol").equipped
 		var sportimax = get_upgrade("sportimax").equipped
