@@ -35,4 +35,4 @@ script = SubResource("GDScript_10f85")
 
 [node name="dot" type="Polygon2D" parent="."]
 color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)
+polygon = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
