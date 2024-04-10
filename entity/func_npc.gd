@@ -8,5 +8,5 @@ func _process(delta):
 	if(GameStateManager.player != null):
 		playerPos = GameStateManager.player.position
 		
-		look_at(playerPos)
+		look_at(playerPos + Vector3(0, 1.7, 0)) 
 		##rotation.y = rad_to_deg(get_tree().get_root().get_node("World/FuncGodotMap/entity_2_ent_player").position.x * delta * -1)
