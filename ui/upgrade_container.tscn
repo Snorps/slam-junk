@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8p0c852e4f3p"]
+
+[ext_resource type="Script" path="res://ui/upgrade_container.gd" id="1_5sc2g"]
+[ext_resource type="Texture2D" uid="uid://btj20klgyubgt" path="res://ui/Buttonequipped.PNG" id="1_rqe43"]
+[ext_resource type="Texture2D" uid="uid://bg55tq21lkej6" path="res://ui/Buttonnotequipped.PNG" id="3_86i5b"]
+[ext_resource type="Texture2D" uid="uid://dg44kqtawrx5l" path="res://ui/Buttonnotbought.PNG" id="4_b0b6b"]
+
+[node name="UpgradeContainer" type="HBoxContainer"]
+offset_left = 250.0
+offset_top = 33.0
+offset_right = 858.0
+offset_bottom = 105.0
+alignment = 1
+script = ExtResource("1_5sc2g")
+light_equipped = ExtResource("1_rqe43")
+light_not_equipped = ExtResource("3_86i5b")
+light_not_bought = ExtResource("4_b0b6b")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Buy Performosport
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

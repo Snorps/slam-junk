@@ -1,11 +1,11 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3]
 
-[ext_resource type="Texture2D" path="res://trenchbroom/textures/coachbody.png" id="1_t3yy2"]
+[ext_resource type="Texture2D" path="res://trenchbroom/textures/coachbody.png" id="1_onf5j"]
 
 [resource]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("1_t3yy2")
+albedo_texture = ExtResource("1_onf5j")
 metallic_specular = 0.0
 texture_filter = 2

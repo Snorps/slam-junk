@@ -1,11 +1,11 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3]
 
-[ext_resource type="Texture2D" path="res://trenchbroom/textures/bicepposter.png" id="1_pqh8h"]
+[ext_resource type="Texture2D" path="res://trenchbroom/textures/bicepposter.png" id="1_pnuwn"]
 
 [resource]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("1_pqh8h")
+albedo_texture = ExtResource("1_pnuwn")
 metallic_specular = 0.0
 texture_filter = 2

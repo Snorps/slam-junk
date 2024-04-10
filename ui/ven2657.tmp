@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1pnes7l8jun4"]
+
+[ext_resource type="Script" path="res://ui/vending_machine_gui.gd" id="1_iqvrt"]
+[ext_resource type="Texture2D" uid="uid://btj20klgyubgt" path="res://ui/Buttonequipped.PNG" id="2_g83ej"]
+[ext_resource type="Texture2D" uid="uid://bg55tq21lkej6" path="res://reticles/Buttonnotequipped.PNG" id="3_foc1p"]
+[ext_resource type="Texture2D" uid="uid://dg44kqtawrx5l" path="res://ui/Buttonnotbought.PNG" id="4_ea3ay"]
+
+[node name="VendingMachineGui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_iqvrt")
+light_equipped = ExtResource("2_g83ej")
+light_not_equipped = ExtResource("3_foc1p")
+light_not_bought = ExtResource("4_ea3ay")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 844.0
+offset_top = 450.0
+offset_right = 1064.0
+offset_bottom = 517.0
+text = "Unshop
+"
+
+[node name="PerformoContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 250.0
+offset_top = 33.0
+offset_right = 858.0
+offset_bottom = 105.0
+alignment = 1
+
+[node name="Performosport" type="Button" parent="PerformoContainer"]
+layout_mode = 2
+text = "Buy Performosport
+"
+
+[node name="Button" type="TextureRect" parent="PerformoContainer"]
+layout_mode = 2
+texture = ExtResource("2_g83ej")
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="button_down" from="PerformoContainer/Performosport" to="." method="_on_performosport_button_down"]
+[connection signal="pressed" from="PerformoContainer/Performosport" to="." method="_on_performosport_pressed"]
