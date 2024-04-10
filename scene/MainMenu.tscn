@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scene/MainMenu.gd" id="1_sd21b"]
 [ext_resource type="AudioStream" uid="uid://cehirn50yby4h" path="res://audio/BALL TITLE.wav" id="2_628lk"]
+[ext_resource type="Texture2D" uid="uid://cva6nchgvvh8p" path="res://Models/BILLFACE.png" id="4_cxgsl"]
 [ext_resource type="Texture2D" uid="uid://d244n1m3d7lyq" path="res://Models/Sphere.png" id="4_qk13n"]
-[ext_resource type="Texture2D" uid="uid://bbhihkictk55e" path="res://Models/basketbilleyes.png" id="4_wi14m"]
 [ext_resource type="Script" path="res://scene/Background.gd" id="4_ykq30"]
 [ext_resource type="Material" uid="uid://5dmx5knx2825" path="res://scene/background_material.tres" id="5_08kbj"]
 [ext_resource type="Texture2D" uid="uid://dgqcivlvn1mxa" path="res://ui/slam_junk_logo.png" id="7_g4iso"]
@@ -50,10 +50,11 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tqr6t")
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D/TheBall"]
+transform = Transform3D(0.702647, 1.49012e-08, 0, 1.49012e-08, 0.668508, 0, 0, 0, 1, 0, 0, 0)
 pixel_size = 0.0015
 billboard = 2
 no_depth_test = true
-texture = ExtResource("4_wi14m")
+texture = ExtResource("4_cxgsl")
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
