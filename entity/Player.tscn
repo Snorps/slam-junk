@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://x3l0v6tbskoe"]
+[gd_scene load_steps=22 format=3 uid="uid://x3l0v6tbskoe"]
 
 [ext_resource type="Script" path="res://entity/ent_player.gd" id="1_1xtaq"]
 [ext_resource type="Texture2D" uid="uid://d24uu77q264np" path="res://Models/enemyplayer1uvtest1.png" id="2_6q73p"]
 [ext_resource type="Script" path="res://component/Hands.gd" id="2_fro4k"]
 [ext_resource type="Shader" path="res://entity/TestShader.gdshader" id="2_fuhgk"]
+[ext_resource type="Texture2D" uid="uid://b1levhobk03ae" path="res://singleton/pointget.png" id="3_x5r5k"]
 [ext_resource type="Script" path="res://component/DestroyOffMap.gd" id="4_3wvuh"]
 [ext_resource type="Texture2D" uid="uid://dp8jkh2heqlfb" path="res://entity/image.png" id="5_il45c"]
 [ext_resource type="Script" path="res://entity/ent_player_damageable.gd" id="6_whkwv"]
@@ -141,6 +142,11 @@ scale = Vector2(0.904688, 0.920833)
 
 [node name="SpeedlineTimer" type="Timer" parent="Body/Head/CameraMarker3D/Camera3D/CanvasLayer"]
 autostart = true
+
+[node name="PointGet" type="Sprite2D" parent="Body/Head/CameraMarker3D/Camera3D/CanvasLayer"]
+position = Vector2(518, 294)
+rotation = -0.47822
+texture = ExtResource("3_x5r5k")
 
 [node name="Hands" type="Node3D" parent="Body/Head" node_paths=PackedStringArray("head", "audio_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)

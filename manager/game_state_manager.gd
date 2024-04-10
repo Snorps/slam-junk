@@ -30,6 +30,7 @@ var vending_machine_ui
 
 func _ready():
 	reset_game()
+	player = get_tree().get_root().get_node("/World/Player")
 	
 func lose_point():
 	if resetting == true: return
@@ -59,6 +60,7 @@ func win():
 	level += 1
 	HUD.set_centre_text("You scored point!")
 	$ScoreSound.play()
+	player.PointGet()
 	reset_level()
 	
 var resetting = false

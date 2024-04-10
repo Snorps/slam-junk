@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var camera_target = $Body/Head/CameraMarker3D
 @onready var head_position: Vector3 = head.position
 @onready var hands = $Body/Head/Hands
+@onready var pointGet = $Body/Head/CameraMarker3D/Camera3D/CanvasLayer/PointGet
 
 @export_file var default_reticle
 
@@ -86,6 +87,8 @@ func _ready():
 	camera_gt_current = camera_target.global_transform
 	
 	speedlines = get_tree().get_root().get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines")
+	pointGet.hide()
+	
 	
 	update_fov()
 	
@@ -99,6 +102,9 @@ func change_reticle(reticle):
 	RETICLE = load(reticle).instantiate()
 	RETICLE.character = self
 	$UserInterface.add_child(RETICLE)
+
+func PointGet():
+	pointGet.show()
 
 func update_fov():
 	$Body/Head/CameraMarker3D/Camera3D.set_fov(75 + (25 * Flags.get_upgrade("performosport").equipped))
