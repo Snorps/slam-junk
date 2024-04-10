@@ -18,7 +18,7 @@ func _on_start_pressed():
 		startButton.text = "Okay but are you sure tho"
 		confirm = true
 	else:
-		get_tree().change_scene_to_file("res://scene/generic_map.tscn")
+		get_tree().change_scene_to_file("res://scene/pregame.tscn")
 
 var rng = RandomNumberGenerator.new()
 var time = 0

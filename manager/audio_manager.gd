@@ -7,6 +7,10 @@ var target_volume
 @onready var current_music_player = $Music
 
 func set_music(audio: AudioStream, volume = null, keep_time = false):
+	if audio == null:
+		$Music.stream = null
+		$Music2.stream = null
+		return
 	if volume != null:
 		target_volume = int(volume) + music_volume
 		current_music_player.volume_db = target_volume

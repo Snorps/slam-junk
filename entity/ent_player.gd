@@ -79,6 +79,10 @@ func _ready():
 	if default_reticle:
 		change_reticle(default_reticle)
 		
+	#TODO: Remove this when we revert back to runtime building
+	await get_tree().create_timer(1).timeout
+	GameStateManager.player = self
+		
 func change_reticle(reticle):
 	if RETICLE:
 		RETICLE.queue_free()
@@ -344,5 +348,6 @@ func _func_godot_apply_properties(properties: Dictionary):
 		if delete:
 			queue_free()
 			return
+	#Doesn't do anything if not runtime building
 	GameStateManager.player = self
 

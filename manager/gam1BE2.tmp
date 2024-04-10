@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2e4ifiwgq4vi"]
+[gd_scene load_steps=6 format=3 uid="uid://b2e4ifiwgq4vi"]
 
 [ext_resource type="Script" path="res://manager/game_state_manager.gd" id="1_cxn3q"]
 [ext_resource type="PackedScene" uid="uid://qkl8i8hg8u8j" path="res://scene/pregame.tscn" id="2_nf57l"]
 [ext_resource type="PackedScene" uid="uid://pg3ialobuwx2" path="res://scene/ending.tscn" id="3_vyhtf"]
-[ext_resource type="PackedScene" uid="uid://cy8scown8paw5" path="res://scene/court.tscn" id="4_m74j2"]
 [ext_resource type="AudioStream" uid="uid://v6do815oie3e" path="res://audio/rimhit.wav" id="4_rwnwo"]
 [ext_resource type="AudioStream" uid="uid://bple6be3gnluy" path="res://audio/score.wav" id="5_wcy0h"]
 
@@ -11,7 +10,6 @@
 script = ExtResource("1_cxn3q")
 game_complete_scene = ExtResource("3_vyhtf")
 pregame_scene = ExtResource("2_nf57l")
-court_scene = ExtResource("4_m74j2")
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rwnwo")
