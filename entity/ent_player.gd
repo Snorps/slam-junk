@@ -53,6 +53,7 @@ var camera_gt_current : Transform3D
 var speedlines
 var speedlines1 = load("res://speedlines/Speedlines1.png")
 var previousPos
+var rng = RandomNumberGenerator.new()
 
 var RETICLE : Control
 
@@ -77,6 +78,8 @@ func _ready():
 	
 	camera_gt_previous = camera_target.global_transform
 	camera_gt_current = camera_target.global_transform
+	
+	speedlines = get_tree().get_root().get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines")
 	
 	update_fov()
 	
@@ -120,9 +123,17 @@ func _process(delta: float) -> void:
 	camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
 
 	##sets speeline texture if user is on performo and is moving
-	if(previousPos != position && Flags.performosport > 0):
-		if(speedlines == null):
-			get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
+	if(Flags.performosport > 0):
+		var random = rng.randi_range(1,4)
+		match random:
+			1:
+				get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
+			2:
+				print("2")
+			3:
+				print("3")
+			4:
+				print("4")
 	else:
 		get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = null
 	previousPos = position
@@ -154,7 +165,6 @@ func _input(event):
 		Flags.performosport = 0
 		GameStateManager.player.update_fov()
 		
-var rng = RandomNumberGenerator.new()
 func _physics_process(delta):
 	update_camera = true
 	var is_step: bool = false
