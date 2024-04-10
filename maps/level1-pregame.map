@@ -979,7 +979,7 @@
 // entity 20
 {
 "classname" "func_npc"
-"sound" "res://audio/Doddy.wav"
+"sound" ""
 // brush 0
 {
 ( -256 -64 64 ) ( -256 -63 64 ) ( -256 -64 65 ) doddyarm [ 0 -1 0 1771 ] [ 0 0 -1 196 ] 0 0.04 0.01
@@ -1020,14 +1020,13 @@
 // entity 21
 {
 "classname" "ent_sound"
-"origin" "-248 -88 88"
+"origin" "-248 -88 104"
 "targetname" "big_doddy"
 "sound" "res://audio/Doddy.wav"
 }
 // entity 22
 {
 "classname" "trigger_once"
-"" ""
 "target" "big_doddy"
 // brush 0
 {
