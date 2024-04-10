@@ -12,3 +12,5 @@ autoplay = true
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 autoplay = true
+
+[node name="PerformoLayer" type="AudioStreamPlayer" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1e7482awhiqt"
-path="res://.godot/imported/bicepposter.PNG-da5af11dde3dbcd750d51448f083a8cd.ctex"
+uid="uid://bjyksmtf17eet"
+path="res://.godot/imported/coachbody.PNG-b30c9a558206041c507d6142a2f8d648.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/bicepposter.PNG"
-dest_files=["res://.godot/imported/bicepposter.PNG-da5af11dde3dbcd750d51448f083a8cd.ctex"]
+source_file="res://trenchbroom/textures/coachbody.PNG"
+dest_files=["res://.godot/imported/coachbody.PNG-b30c9a558206041c507d6142a2f8d648.ctex"]
 
 [params]
 

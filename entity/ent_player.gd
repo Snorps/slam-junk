@@ -127,29 +127,30 @@ func _process(delta: float) -> void:
 	camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
 
 	##sets speeline texture if user is on performo and is moving
-	if(Flags.performosport > 0 && GameStateManager.player.velocity.length() > 0.5):
-		if(speedlineCheck == true):
-			var random = rng.randi_range(1,Flags.performosport)
-			match random:
-				
-				2:
-					#Where speedline 2 goes
-					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines2
-					speedlineCheck = false
-				3:
-					#Where speedline 3 goes
-					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines3
-					speedlineCheck = false
-				4:
-					#Where speedline 4 goes
-					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines4
-					speedlineCheck = false
-				_:
-					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
-					speedlineCheck = false
-	else:
-		get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = null
-	previousPos = position
+	if(GameStateManager.player != null):
+		if(Flags.performosport > 0 && GameStateManager.player.velocity.length() > 0.5):
+			if(speedlineCheck == true):
+				var random = rng.randi_range(1,Flags.performosport)
+				match random:
+					
+					2:
+						#Where speedline 2 goes
+						get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines2
+						speedlineCheck = false
+					3:
+						#Where speedline 3 goes
+						get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines3
+						speedlineCheck = false
+					4:
+						#Where speedline 4 goes
+						get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines4
+						speedlineCheck = false
+					_:
+						get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
+						speedlineCheck = false
+		else:
+			get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = null
+		previousPos = position
 	if is_on_floor():
 		time_in_air = 0.0
 		camera_lerp_coefficient = 1.0

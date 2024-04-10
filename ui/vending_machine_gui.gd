@@ -60,7 +60,6 @@ func _on_performosport_pressed():
 	UpdateText()
 	UpdateLabels()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
 	hide()
 	
 func _on_necrogluterol_pressed():
