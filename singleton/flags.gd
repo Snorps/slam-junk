@@ -25,13 +25,6 @@ var upgrades = [
 		"price" = 15
 	},
 	{
-		"name" = "bicepscene",
-		"equipped" = 0,
-		"unlocked" = 0,
-		"max" = 3,
-		"price" = 30
-	},
-	{
 		"name" = "sportimax",
 		"equipped" = 0,
 		"unlocked" = 0,
@@ -75,7 +68,7 @@ func refresh_upgrades_effects():
 	GameStateManager.vending_machine_ui.update()
 	GameStateManager.player.update_fov()
 	#apply effects
-	AudioManager.PerformoAudio()
+	AudioManager.PerformoAudio(0)
 	var player = GameStateManager.player
 	if player != null:
 		var skidaddlide = get_upgrade("skidaddlide").equipped
@@ -85,7 +78,7 @@ func refresh_upgrades_effects():
 		
 		var omniscerine = get_upgrade("omniscerine").equipped
 		var hands = player.get_node("Body/Head/Hands")
-		hands.preview_distance = 10 * omniscerine
+		hands.preview_distance = 7 * omniscerine
 		
 		var necrogluterol = get_upgrade("necrogluterol").equipped
 		var sportimax = get_upgrade("sportimax").equipped
@@ -93,6 +86,8 @@ func refresh_upgrades_effects():
 			player.get_node("Damageable").on_die()
 			get_upgrade("necrogluterol").equipped = 0
 			get_upgrade("sportimax").equipped = 0
+
+	AudioManager.PerformoAudio(0)
 	
 func purge_upgrades():
 	for upgrade in upgrades:
