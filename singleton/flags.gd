@@ -23,6 +23,34 @@ var upgrades = [
 		"unlocked" = 0,
 		"max" = 3,
 		"price" = 15
+	},
+	{
+		"name" = "bicepscene",
+		"equipped" = 0,
+		"unlocked" = 0,
+		"max" = 3,
+		"price" = 30
+	},
+	{
+		"name" = "sportimax",
+		"equipped" = 0,
+		"unlocked" = 0,
+		"max" = 1,
+		"price" = 25
+	},
+		{
+		"name" = "omniscerine",
+		"equipped" = 0,
+		"unlocked" = 0,
+		"max" = 2,
+		"price" = 25
+	},
+	{
+		"name" = "skidaddlide",
+		"equipped" = 0,
+		"unlocked" = 0,
+		"max" = 5,
+		"price" = 12
 	}
 ]
 
@@ -44,8 +72,16 @@ func get_upgrade(name):
 	return null
 
 func refresh_upgrades_effects():
+	GameStateManager.vending_machine_ui.update()
 	GameStateManager.player.update_fov()
+	#apply effects
 	AudioManager.PerformoAudio()
+	var player = GameStateManager.player
+	if player != null:
+		var skidaddlide = get_upgrade("skidaddlide").equipped
+		player.ACCELERATION_DEFAULT = 7 + (1.5*skidaddlide)
+		player.SPEED_DEFAULT = 7 + (1.5*skidaddlide)
+		player.SPEED_ON_STAIRS = 5 + (1.5*skidaddlide)
 	
 func purge_upgrades():
 	for upgrade in upgrades:

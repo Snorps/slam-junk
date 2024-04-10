@@ -33,6 +33,7 @@ var upgrades = [
 var containers = []
 
 func _ready():
+	GameStateManager.vending_machine_ui = self
 	for upgrade in Flags.upgrades:
 		var container = upgrade_container_scene.instantiate()
 		container.upgrade = upgrade
@@ -45,7 +46,7 @@ func _on_necrogluterol_pressed():
 	GameStateManager.player.get_node("Damageable").health = 0
 	GameStateManager.lose_game()
 
-func UpdateLabels():
+func update():
 	for container in containers:
 		container.update()
 

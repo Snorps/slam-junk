@@ -15,8 +15,7 @@ func _ready():
 var _hover_message = "Use vending machine."
 func player_interact():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	gui.UpdateLabels()
-	#gui.UpdateText()
+	gui.update()
 	gui.show()
 	
 func get_hover_message():
