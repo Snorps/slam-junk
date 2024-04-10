@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://76bqbopoyy0f"]
+[gd_scene load_steps=3 format=3 uid="uid://76bqbopoyy0f"]
 
 [ext_resource type="Script" path="res://death_camera.gd" id="1_qixeg"]
+[ext_resource type="Texture2D" uid="uid://beqnanf13bbf3" path="res://died.png" id="2_juva6"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_qixeg")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Camera3D"]
+offset_left = 160.0
+offset_right = 1045.0
+offset_bottom = 651.0
+texture = ExtResource("2_juva6")
