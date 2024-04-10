@@ -17,6 +17,8 @@ var inputBuffer = false
 var preview_models = []
 var preview_delay_remaining = 0
 
+var hasGrabSoundPlayed = false
+
 func _physics_process(delta):
 	time_left_to_grab -= delta
 	if grab_object != null:
@@ -43,6 +45,7 @@ func _physics_process(delta):
 		if result.collider.name == "GrabHitbox":
 			highlighted_object = result.collider.get_node("..")
 		time_left_to_grab = grab_grace_period
+	
 	
 	if(inputBuffer):
 		grab()
@@ -85,8 +88,12 @@ func try_grabthrow():
 		throw()
 		return
 	
-	inputBuffer = true
-	time_left_to_grab = grab_grace_period	
+	if(grab_object == null):
+		inputBuffer = true
+		time_left_to_grab = grab_grace_period
+	else:
+		inputBuffer = false
+		time_left_to_grab = 0
 	
 
 func grab():
@@ -102,15 +109,22 @@ func grab():
 		inputBuffer = false
 	if highlighted_object is RigidBody3D or highlighted_object is GrabbableBody3D:
 		grab_object = highlighted_object
-		audio_player.stream = load("res://audio/grab.wav")
-		audio_player.play()
-	inputBuffer = false	
+		
+		if(hasGrabSoundPlayed == false):
+			print("gfdjkgkfg")
+			audio_player.stream = load("res://audio/grab.wav")
+			audio_player.play()
+			hasGrabSoundPlayed = true
+			
+	
+	
 
 func throw():
 	grab_object.apply_impulse(look_vector() * throw_force)
 	grab_object = null
 	audio_player.stream = load("res://audio/THROW.wav")
 	audio_player.play()
+	hasGrabSoundPlayed = false
 
 func look_vector():
 	return (global_position - head.global_position).normalized()
