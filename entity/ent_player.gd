@@ -76,6 +76,8 @@ class StepResult:
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	$Body/enemyplayer1.hide()
+	
 	camera_target_position = camera.global_transform.origin
 	camera.set_as_top_level(true)
 	camera.global_transform = camera_target.global_transform
@@ -106,6 +108,7 @@ func die():
 	$Body/enemyplayer1.position.y += 0.6
 	var cam = load("res://death_camera.tscn").instantiate()
 	cam.global_position = global_position
+	$Body/enemyplayer1.show()
 	get_tree().current_scene.add_child(cam)
 
 func update_camera_transform():
