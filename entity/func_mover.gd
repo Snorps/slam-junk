@@ -6,6 +6,7 @@ var target_transform: Transform3D
 
 var speed := 1.0
 var on_interact = false
+var audioHandler
 
 func _init() -> void:
 	connect("body_shape_entered", body_shape_entered)
@@ -16,6 +17,9 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	base_transform = transform
 	target_transform = base_transform
+	audioHandler = load("res://doorNoise.tscn").instantiate()
+	add_child(audioHandler)
+	
 
 func use() -> void:
 	play_motion()
@@ -34,6 +38,7 @@ func body_shape_entered(body_id, body: Node, body_shape_idx: int, self_shape_idx
 var _hover_message = "Open door."
 func player_interact():
 	if not on_interact: return
+	audioHandler.play()
 	use()
 	
 func get_hover_message():

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb3rj0w7htbjl"]
+
+[ext_resource type="AudioStream" uid="uid://b3s833jpub8g0" path="res://audio/DoorOpen.wav" id="1_2s50q"]
+
+[node name="Door" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_2s50q")
