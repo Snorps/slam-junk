@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq3jed5sssne7"]
+[gd_scene load_steps=3 format=3 uid="uid://b5or7hj7j1xxe"]
 
-[ext_resource type="Script" path="res://func_npc.gd" id="1_2wdvg"]
+[ext_resource type="Script" path="res://entity/func_npc.gd" id="1_6tmeb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0vtyv"]
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_2wdvg")
+script = ExtResource("1_6tmeb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_0vtyv")

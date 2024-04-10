@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://qkl8i8hg8u8j"]
+[gd_scene load_steps=51 format=3 uid="uid://qkl8i8hg8u8j"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_aykgl"]
 [ext_resource type="Resource" uid="uid://bi6bb8ko0asno" path="res://crustball_default_map_settings.tres" id="2_mrm2m"]
@@ -16,7 +16,6 @@
 [ext_resource type="Script" path="res://entity/trigger_goal.gd" id="13_7loph"]
 [ext_resource type="PackedScene" uid="uid://dougrwojepr52" path="res://ui/pause_menu.tscn" id="14_1gneo"]
 [ext_resource type="PackedScene" uid="uid://b1pnes7l8jun4" path="res://ui/vending_machine_gui.tscn" id="15_hfv4l"]
-[ext_resource type="PackedScene" uid="uid://dq3jed5sssne7" path="res://func_npc.tscn" id="17_x4asm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk6h4"]
 transparency = 2
@@ -327,6 +326,3 @@ offset_bottom = 15.0
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
 light_energy = 0.787
 shadow_enabled = true
-
-[node name="Node3D" parent="." instance=ExtResource("17_x4asm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.33518, 2.93121, 23.1569)
