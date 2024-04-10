@@ -175,10 +175,10 @@ func _input(event):
 	if(Input.is_key_pressed(KEY_Q)):
 		Flags.purge_upgrades()
 	if(Input.is_action_just_pressed("Fullscreen")):
-		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		
 func _physics_process(delta):
 	update_camera = true

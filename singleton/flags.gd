@@ -68,7 +68,7 @@ func refresh_upgrades_effects():
 	GameStateManager.vending_machine_ui.update()
 	GameStateManager.player.update_fov()
 	#apply effects
-	AudioManager.PerformoAudio()
+	AudioManager.PerformoAudio(0)
 	var player = GameStateManager.player
 	if player != null:
 		var skidaddlide = get_upgrade("skidaddlide").equipped
@@ -86,6 +86,8 @@ func refresh_upgrades_effects():
 			player.get_node("Damageable").on_die()
 			get_upgrade("necrogluterol").equipped = 0
 			get_upgrade("sportimax").equipped = 0
+
+	AudioManager.PerformoAudio(0)
 	
 func purge_upgrades():
 	for upgrade in upgrades:

@@ -10,6 +10,7 @@ var upgradeLabel
 var necroLabel
 var moneyLabel
 var fullscreenButton
+var controlLabel
 
 @export
 var audioBusName : String
@@ -25,6 +26,8 @@ func _ready():
 	necroLabel = get_node("NecroLabel")
 	moneyLabel = get_node("MoneyLabel")
 	fullscreenButton = get_node("Fullscreen")
+	controlLabel = get_node("Controls")
+	controlLabel.hide()
 	fullscreenButton.hide()
 	moneyLabel.hide()
 	performoLabel.hide()
@@ -63,6 +66,7 @@ func ResumeGame():
 	upgradeLabel.hide()
 	moneyLabel.hide()
 	fullscreenButton.hide()
+	controlLabel.hide()
 	get_tree().paused = false
 	paused = false
 	
@@ -77,6 +81,7 @@ func PauseGame():
 	upgradeLabel.show()
 	moneyLabel.show()
 	fullscreenButton.show()
+	controlLabel.show()
 	get_tree().paused = true
 	var shopMenu = get_tree().get_root().get_node("World/VendingMachineGui")
 	moneyLabel.text = "Dollareydoos: " + str(Flags._money)
@@ -101,9 +106,9 @@ func _on_volume_control_value_changed(value):
 
 
 func _on_fullscreen_button_down():
-	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		fullscreenButton.text = "Screen ENHAMCE"
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		fullscreenButton.text = "Screen ensmallen :("
