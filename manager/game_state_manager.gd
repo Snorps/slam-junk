@@ -40,6 +40,7 @@ func lose_point():
 	
 func lose_game():
 	$LoseSound.play()
+	level = 0
 	HUD.set_centre_text("You had became died! :(")
 	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_packed(generic_map_scene)
