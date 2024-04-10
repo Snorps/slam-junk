@@ -82,6 +82,10 @@ func refresh_upgrades_effects():
 		player.ACCELERATION_DEFAULT = 7 + (1.5*skidaddlide)
 		player.SPEED_DEFAULT = 7 + (1.5*skidaddlide)
 		player.SPEED_ON_STAIRS = 5 + (1.5*skidaddlide)
+		
+		var omniscerine = get_upgrade("omniscerine").equipped
+		var hands = player.get_node("Body/Head/Hands")
+		hands.preview_distance = 10 * omniscerine
 	
 func purge_upgrades():
 	for upgrade in upgrades:
