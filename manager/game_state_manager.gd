@@ -34,7 +34,7 @@ func lose_point():
 func lose_game():
 	$LoseSound.play()
 	HUD.set_centre_text("You had became died! :(")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_packed(generic_map_scene)
 	map = {"mapname"="level1-pregame.map", "spawn_point"="player_changing_room"}
 	return

@@ -84,6 +84,13 @@ func change_reticle(reticle):
 
 func update_fov():
 	$Body/Head/CameraMarker3D/Camera3D.set_fov(75 + (25 * Flags.performosport))
+	
+func die():
+	$Body/enemyplayer1.rotation.x = -90
+	$Body/enemyplayer1.position.y += 0.6
+	var cam = load("res://death_camera.tscn").instantiate()
+	cam.global_position = global_position
+	get_tree().current_scene.add_child(cam)
 
 func update_camera_transform():
 	camera_gt_previous = camera_gt_current
