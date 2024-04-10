@@ -12,6 +12,7 @@ func _ready():
 		AudioManager.set_music(music, 10)
 
 func _on_start_pressed():
+	GameStateManager.level = 0
 	GameStateManager.map = GameStateManager.levels[0]
 	var startButton = get_node("Start")
 	if(confirm == false):
