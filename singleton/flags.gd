@@ -45,6 +45,7 @@ func get_upgrade(name):
 
 func refresh_upgrades_effects():
 	GameStateManager.player.update_fov()
+	AudioManager.PerformoAudio()
 	
 func purge_upgrades():
 	for upgrade in upgrades:

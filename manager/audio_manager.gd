@@ -18,19 +18,19 @@ func set_music(audio: AudioStream, volume = null, keep_time = false):
 		current_music_player.stream = audio
 		current_music_player.play(playback_time)
 		
-		if(Flags.performosport > 0):
+		if(Flags.get_upgrade("performosport").equipped > 0):
 			if(musicBackdrop.stream == null):
 				musicBackdrop.stream = load("res://audio/Ball room performosport.wav")
 				musicBackdrop.play(playback_time)
-		if(Flags.performosport == 0):
+		if(Flags.get_upgrade("performosport").equipped == 0):
 			musicBackdrop.stop()
 		
 func PerformoAudio():
-	if(Flags.performosport > 0):
+	if(Flags.get_upgrade("performosport").equipped > 0):
 			if(musicBackdrop.stream == null):
 				musicBackdrop.stream = load("res://audio/Ball room performosport.wav")
-				musicBackdrop.play()
-	if(Flags.performosport == 0):
+				musicBackdrop.play(current_music_player.get_playback_position())
+	if(Flags.get_upgrade("performosport").equipped == 0):
 		musicBackdrop.stop()
 	
 func crossfade_music(audio: AudioStream):
