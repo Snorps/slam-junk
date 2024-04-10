@@ -18,6 +18,7 @@ var player
 var builder
 var performoLevels
 var necroLevels
+var game_end_message
 
 #var spawn_point_name = null
 
@@ -59,16 +60,18 @@ func reset_level():
 	resetting = true
 	HUD.get_node("TopLeftText").text = str(score) + ":0"
 	if level >= levels.size():
-		get_tree().change_scene_to_packed(game_complete_scene)
-		reset_game()
-		HUD.set_centre_text("You had became beated the game!")
+		#HUD.set_centre_text("You had became beated the game!")
+		game_end("Big coach took  your whole team out for a pizza party and everyone lived happily ever after.")
 		return
 	map = levels[level]
 	await get_tree().create_timer(1).timeout
 	await get_tree().change_scene_to_packed(generic_map_scene)
 	resetting = false
 	
-
+func game_end(message):
+	get_tree().change_scene_to_packed(game_complete_scene)
+	reset_game()
+	game_end_message = message
 
 func lose_if_destroyed(obj):
 	lose_nodes.append(obj)

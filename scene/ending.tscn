@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://pg3ialobuwx2"]
+
+[ext_resource type="Script" path="res://scene/ending.gd" id="1_61egu"]
+[ext_resource type="AudioStream" uid="uid://cp7i11fj8yncr" path="res://audio/ending.wav" id="2_d3peo"]
+[ext_resource type="PackedScene" uid="uid://1q1ttixn6an3" path="res://scene/MainMenu.tscn" id="2_e7815"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3hq7o"]
+font_size = 32
+
+[node name="Ending" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_61egu")
+title_screen = ExtResource("2_e7815")
+
+[node name="EndingMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d3peo")
+volume_db = -5.0
+autoplay = true
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 79.0
+offset_right = 1112.0
+offset_bottom = 444.0
+text = "Invalid ending. Please report this as a bug."
+label_settings = SubResource("LabelSettings_3hq7o")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 446.0
+offset_right = 654.0
+offset_bottom = 533.0
+text = "Back to Title"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
