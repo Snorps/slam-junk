@@ -585,3 +585,51 @@
 ( 992 288 64 ) ( 992 288 65 ) ( 992 289 64 ) polystyrene_ceiling 140 252 0 0.2 0.2
 }
 }
+// entity 13
+{
+"classname" "ent_light"
+"origin" "440 232 240"
+"light" "100"
+"weight" "1"
+"delay" "0"
+}
+// entity 14
+{
+"classname" "ent_light"
+"origin" "48 232 240"
+"light" "100"
+"weight" "1"
+"delay" "0"
+}
+// entity 15
+{
+"classname" "ent_light"
+"origin" "864 232 240"
+"light" "100"
+"weight" "1"
+"delay" "0"
+}
+// entity 16
+{
+"classname" "ent_light"
+"origin" "24 -288 240"
+"light" "100"
+"weight" "1"
+"delay" "0"
+}
+// entity 17
+{
+"classname" "ent_light"
+"origin" "456 -288 240"
+"light" "100"
+"weight" "1"
+"delay" "0"
+}
+// entity 18
+{
+"classname" "ent_light"
+"origin" "864 -288 240"
+"light" "100"
+"weight" "1"
+"delay" "0"
+}
