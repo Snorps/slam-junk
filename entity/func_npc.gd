@@ -17,7 +17,6 @@ func _process(delta):
 		look_at(playerPos)
 		
 		if (npcPos.distance_to(playerPos) < 5):
-			print("Test")
 			look_at(playerPos)
 			rotation.x = initRotation.x
 			rotation.x = initRotation.z

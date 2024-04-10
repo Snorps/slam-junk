@@ -99,7 +99,7 @@ func change_reticle(reticle):
 	$UserInterface.add_child(RETICLE)
 
 func update_fov():
-	$Body/Head/CameraMarker3D/Camera3D.set_fov(75 + (25 * Flags.performosport))
+	$Body/Head/CameraMarker3D/Camera3D.set_fov(75 + (25 * Flags.get_upgrade("performosport").equipped))
 	
 func die():
 	$Body/enemyplayer1.rotation.x = -90
@@ -173,9 +173,7 @@ func _input(event):
 		if hands:
 			hands.try_grabthrow()
 	if(Input.is_key_pressed(KEY_Q)):
-		print("Purge")
-		Flags.performosport = 0
-		GameStateManager.player.update_fov()
+		Flags.purge_upgrades()
 	if(Input.is_action_just_pressed("Fullscreen")):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
