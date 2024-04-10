@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c25an5liaw7qv"
-path="res://.godot/imported/coachhead.PNG-ab7451975395141761d21eee35c4c674.ctex"
+uid="uid://crrro604qpj6y"
+path="res://.godot/imported/doddybody.PNG-fbb66fee0f4c27daac750105ed904258.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/coachhead.PNG"
-dest_files=["res://.godot/imported/coachhead.PNG-ab7451975395141761d21eee35c4c674.ctex"]
+source_file="res://trenchbroom/textures/doddybody.PNG"
+dest_files=["res://.godot/imported/doddybody.PNG-fbb66fee0f4c27daac750105ed904258.ctex"]
 
 [params]
 
