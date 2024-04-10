@@ -1,4 +1,5 @@
 extends Area3D
+class_name Damageable
 
 @export var health = 100
 @export var lose_on_die = false
@@ -6,16 +7,6 @@ extends Area3D
 const damage_frequency = 0.5
 
 var overlaps = []
-var damageTimer
-var damagePopup
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-	damagePopup = get_node("DamagePopup")
-	damagePopup.hide()
-	
-	damageTimer = get_node("damageTimer")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,9 +16,12 @@ func _process(delta):
 		if entry.time <= 0:
 			entry.time = damage_frequency
 			health -= entry.damage
-			print(health)
+			on_hurt()
 		if health <= 0:
-			die()
+			on_die()
+			if lose_on_die:
+				GameStateManager.lose_point()
+			queue_free()
 		
 
 
@@ -39,28 +33,23 @@ func _on_body_entered(body):
 		damage = damage_source.damage
 	overlaps.append({"body"=body, "time"=damage_frequency, "damage"=damage})
 	health -= damage
+	on_hurt()
 	print(health)
-	
-	damagePopup.show()
-	damageTimer.start()
 	
 	
 	if health <= 0:
-		die()
+		on_die()
+		if lose_on_die:
+			GameStateManager.lose_point()
+		queue_free()
 
+func on_hurt():
+	pass
+
+func on_die():
+	pass
 
 func _on_body_exited(body):
 	for entry in overlaps:
 		if entry.body == body:
 			overlaps.erase(entry)
-			
-func die():
-	if "die" in $"..":
-		$"..".die()
-	if lose_on_die:
-		GameStateManager.lose_game()
-	queue_free()
-
-
-func _on_damage_timer_timeout():
-	damagePopup.hide()

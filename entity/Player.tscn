@@ -6,7 +6,7 @@
 [ext_resource type="Shader" path="res://entity/TestShader.gdshader" id="2_fuhgk"]
 [ext_resource type="Script" path="res://component/DestroyOffMap.gd" id="4_3wvuh"]
 [ext_resource type="Texture2D" uid="uid://dp8jkh2heqlfb" path="res://entity/image.png" id="5_il45c"]
-[ext_resource type="Script" path="res://component/Damageable.gd" id="5_k4xuf"]
+[ext_resource type="Script" path="res://entity/ent_player_damageable.gd" id="6_whkwv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxnj7"]
 
@@ -181,8 +181,7 @@ layout_mode = 2
 
 [node name="Damageable" type="Area3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-script = ExtResource("5_k4xuf")
-lose_on_die = true
+script = ExtResource("6_whkwv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Damageable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333333, 0)
@@ -193,9 +192,6 @@ offset_right = 1152.0
 offset_bottom = 654.0
 texture = ExtResource("5_il45c")
 expand_mode = 1
-
-[node name="damageTimer" type="Timer" parent="Damageable"]
-wait_time = 1.5
 
 [node name="CollisionShape3D1" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -212,10 +208,9 @@ shape = SubResource("CapsuleShape3D_k0goe")
 disabled = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="."]
-volume_db = -10.0
+volume_db = -5.0
 max_polyphony = 10
 
 [connection signal="area_entered" from="Damageable" to="Damageable" method="_on_area_entered"]
 [connection signal="body_entered" from="Damageable" to="Damageable" method="_on_body_entered"]
 [connection signal="body_exited" from="Damageable" to="Damageable" method="_on_body_exited"]
-[connection signal="timeout" from="Damageable/damageTimer" to="Damageable" method="_on_damage_timer_timeout"]
