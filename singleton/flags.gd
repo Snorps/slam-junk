@@ -86,6 +86,13 @@ func refresh_upgrades_effects():
 		var omniscerine = get_upgrade("omniscerine").equipped
 		var hands = player.get_node("Body/Head/Hands")
 		hands.preview_distance = 10 * omniscerine
+		
+		var necrogluterol = get_upgrade("necrogluterol").equipped
+		var sportimax = get_upgrade("sportimax").equipped
+		if necrogluterol > 0 or sportimax > 0:
+			player.get_node("Damageable").on_die()
+			get_upgrade("necrogluterol").equipped = 0
+			get_upgrade("sportimax").equipped = 0
 	
 func purge_upgrades():
 	for upgrade in upgrades:
