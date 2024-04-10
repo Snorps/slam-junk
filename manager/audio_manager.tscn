@@ -15,3 +15,5 @@ autoplay = true
 
 [node name="PerformoLayer" type="AudioStreamPlayer" parent="."]
 volume_db = 14.054
+
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]

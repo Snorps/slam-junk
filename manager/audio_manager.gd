@@ -7,6 +7,7 @@ var target_volume
 var waitingroom
 @onready var current_music_player = $Music
 @onready var musicBackdrop = $PerformoLayer
+@onready var soundEffects = $SoundEffects
 
 func set_music(audio: AudioStream, volume = null, keep_time = false):
 	if volume != null:
@@ -56,6 +57,14 @@ func crossfade_music(audio: AudioStream):
 	current_music_player.stream = audio
 	current_music_player.volume_db = -15
 	current_music_player.play(playback_time)
+	
+func ShopClose():
+	soundEffects.stream = load("res://audio/vendclose.wav")
+	soundEffects.play()
+
+func PlayVend():
+	soundEffects.stream = load("res://audio/vendopen.wav")
+	soundEffects.play()
 	
 func _process(delta):
 	if target_volume == null: return

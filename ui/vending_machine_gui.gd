@@ -52,4 +52,5 @@ func update():
 
 func _on_quit_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	AudioManager.ShopClose()
 	hide()
