@@ -6,7 +6,7 @@ extends Node3D
 const grab_distance = 50
 const grab_force = 800
 const grab_speed_damping = 0.93
-const throw_force = 10
+var throw_force = 10
 const grab_grace_period = 0.5
 const preview_rate = 0.005
 var preview_distance = 0

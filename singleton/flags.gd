@@ -44,6 +44,13 @@ var upgrades = [
 		"unlocked" = 0,
 		"max" = 5,
 		"price" = 12
+	},
+	{
+		"name" = "bicepscene",
+		"equipped" = 0,
+		"unlocked" = 0,
+		"max" = 4,
+		"price" = 12
 	}
 ]
 
@@ -86,6 +93,9 @@ func refresh_upgrades_effects():
 			player.get_node("Damageable").on_die()
 			get_upgrade("necrogluterol").equipped = 0
 			get_upgrade("sportimax").equipped = 0
+			
+		var bicepscene = get_upgrade("bicepscene").equipped
+		hands.throw_force = 10 + (5 * bicepscene)
 
 	AudioManager.PerformoAudio(0)
 	
