@@ -50,6 +50,10 @@ var update_camera = false
 var camera_gt_previous : Transform3D
 var camera_gt_current : Transform3D
 
+var speedlines
+var speedlines1 = load("res://speedlines/Speedlines1.png")
+var previousPos
+
 var RETICLE : Control
 
 var jump_sounds = [
@@ -114,6 +118,14 @@ func _process(delta: float) -> void:
 	var head_xform : Transform3D = head.get_global_transform()
 	
 	camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
+
+	##sets speeline texture if user is on performo and is moving
+	if(previousPos != position && Flags.performosport > 0):
+		if(speedlines == null):
+			get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
+	else:
+		get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = null
+	previousPos = position
 
 	if is_on_floor():
 		time_in_air = 0.0
