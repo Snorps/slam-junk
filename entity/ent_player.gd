@@ -129,11 +129,9 @@ func _process(delta: float) -> void:
 	##sets speeline texture if user is on performo and is moving
 	if(Flags.performosport > 0 && GameStateManager.player.velocity.length() > 0.5):
 		if(speedlineCheck == true):
-			var random = rng.randi_range(1,4)
+			var random = rng.randi_range(1,Flags.performosport)
 			match random:
-				1:
-					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
-					speedlineCheck = false
+				
 				2:
 					#Where speedline 2 goes
 					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines2
@@ -145,6 +143,9 @@ func _process(delta: float) -> void:
 				4:
 					#Where speedline 4 goes
 					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines4
+					speedlineCheck = false
+				_:
+					get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = speedlines1
 					speedlineCheck = false
 	else:
 		get_node("Body/Head/CameraMarker3D/Camera3D/CanvasLayer/Speedlines").texture = null
@@ -175,6 +176,11 @@ func _input(event):
 		print("Purge")
 		Flags.performosport = 0
 		GameStateManager.player.update_fov()
+	if(Input.is_action_just_pressed("Fullscreen")):
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 		
 func _physics_process(delta):
 	update_camera = true
