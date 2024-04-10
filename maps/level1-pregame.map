@@ -911,15 +911,10 @@
 }
 // entity 17
 {
-"classname" "ent_basketball"
-"origin" "56 -40 24"
-}
-// entity 18
-{
 "classname" "ent_light"
 "origin" "-24 24 120"
 }
-// entity 19
+// entity 18
 {
 "classname" "ent_light"
 "origin" "-568 8 152"
