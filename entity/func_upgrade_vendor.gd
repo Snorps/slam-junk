@@ -14,6 +14,7 @@ func _ready():
 
 var _hover_message = "Use vending machine."
 func player_interact():
+	if gui.visible == true: return
 	AudioManager.PlayVend()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	gui.update()

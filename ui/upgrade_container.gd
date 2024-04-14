@@ -7,6 +7,10 @@ var lights = []
 @export var light_not_equipped: Texture2D
 @export var light_not_bought: Texture2D
 
+@export var fail_sound: AudioStream
+@export var buy_sound: AudioStream
+@export var dispense_sound: AudioStream
+
 func _ready():
 	for i in upgrade.max:
 		var light = TextureRect.new()
@@ -18,14 +22,19 @@ func _ready():
 	$Button.text = "Buy " + upgrade.name + ": " + str(upgrade.price) + "b"
 
 func _on_button_pressed():
-	print("pressed " + upgrade.name + " button")
 	if upgrade.equipped < upgrade.unlocked:
 		upgrade.equipped += 1
+		AudioManager.play_sound(dispense_sound)
 	elif upgrade.unlocked < upgrade.max:
-		if Flags.get_money() < upgrade.price: return
+		if Flags.get_money() < upgrade.price: 
+			AudioManager.play_sound(fail_sound)
+			return
 		Flags.add_money(-upgrade.price)
 		upgrade.unlocked += 1
 		upgrade.equipped += 1
+		AudioManager.play_sound(dispense_sound)
+		#TODO: Allow both these sounds to play at once
+		#AudioManager.play_sound(buy_sound)
 	update()
 	Flags.refresh_upgrades_effects()
 

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8p0c852e4f3p"]
+[gd_scene load_steps=8 format=3 uid="uid://b8p0c852e4f3p"]
 
 [ext_resource type="Script" path="res://ui/upgrade_container.gd" id="1_5sc2g"]
 [ext_resource type="Texture2D" uid="uid://btj20klgyubgt" path="res://ui/Buttonequipped.PNG" id="1_rqe43"]
 [ext_resource type="Texture2D" uid="uid://bg55tq21lkej6" path="res://ui/Buttonnotequipped.PNG" id="3_86i5b"]
 [ext_resource type="Texture2D" uid="uid://dg44kqtawrx5l" path="res://ui/Buttonnotbought.PNG" id="4_b0b6b"]
+[ext_resource type="AudioStream" uid="uid://hk576rmewrpm" path="res://audio/vendCANTAFFORD.wav" id="5_jiywr"]
+[ext_resource type="AudioStream" uid="uid://8sbk5d283sjo" path="res://audio/vendbuy.wav" id="6_mpvhi"]
+[ext_resource type="AudioStream" uid="uid://bixny316s0wcg" path="res://audio/vending.wav" id="7_5ucr0"]
 
 [node name="UpgradeContainer" type="HBoxContainer"]
 offset_left = 250.0
@@ -15,6 +18,9 @@ script = ExtResource("1_5sc2g")
 light_equipped = ExtResource("1_rqe43")
 light_not_equipped = ExtResource("3_86i5b")
 light_not_bought = ExtResource("4_b0b6b")
+fail_sound = ExtResource("5_jiywr")
+buy_sound = ExtResource("6_mpvhi")
+dispense_sound = ExtResource("7_5ucr0")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2

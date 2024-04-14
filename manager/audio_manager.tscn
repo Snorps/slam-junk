@@ -17,3 +17,4 @@ autoplay = true
 volume_db = 14.054
 
 [node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+max_polyphony = 16

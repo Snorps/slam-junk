@@ -9,6 +9,8 @@ var waitingroom
 @onready var musicBackdrop = $PerformoLayer
 @onready var soundEffects = $SoundEffects
 
+enum SoundTag {MUSIC, WORLD, VOICE}
+
 func set_music(audio: AudioStream, volume = null, keep_time = false):
 	if volume != null:
 		target_volume = int(volume) + music_volume
@@ -57,6 +59,10 @@ func crossfade_music(audio: AudioStream):
 	current_music_player.stream = audio
 	current_music_player.volume_db = -15
 	current_music_player.play(playback_time)
+	
+func play_sound(audio: AudioStream, player: AudioStreamPlayer = soundEffects, tag: SoundTag = SoundTag.WORLD):
+	player.stream = audio
+	player.play()
 	
 func ShopClose():
 	soundEffects.stream = load("res://audio/vendclose.wav")
