@@ -50,9 +50,9 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tqr6t")
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D/TheBall"]
-transform = Transform3D(0.702647, 1.49012e-08, 0, 1.49012e-08, 0.668508, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.665943, 0.213238, 0, -0.224128, 0.633588, 0, 0, 0, 1, 0, 0, 0.633568)
 pixel_size = 0.0015
-billboard = 2
+double_sided = false
 no_depth_test = true
 texture = ExtResource("4_cxgsl")
 
