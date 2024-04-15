@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://component/Hands.gd" id="2_fro4k"]
 [ext_resource type="Shader" path="res://entity/TestShader.gdshader" id="2_fuhgk"]
 [ext_resource type="Texture2D" uid="uid://b1levhobk03ae" path="res://singleton/pointget.png" id="3_x5r5k"]
-[ext_resource type="Script" path="res://component/DestroyOffMap.gd" id="4_3wvuh"]
 [ext_resource type="Texture2D" uid="uid://dp8jkh2heqlfb" path="res://entity/image.png" id="5_il45c"]
+[ext_resource type="Script" path="res://entity/ent_player_destroy_off_map.gd" id="6_451my"]
 [ext_resource type="Script" path="res://entity/ent_player_damageable.gd" id="6_whkwv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxnj7"]
@@ -164,8 +164,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_gv47w")
 
 [node name="DestroyOffMap" type="Node3D" parent="."]
-script = ExtResource("4_3wvuh")
-lose_on_destroy = true
+script = ExtResource("6_451my")
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3

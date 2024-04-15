@@ -1,7 +1,7 @@
 extends Node3D
+class_name DestroyOffMap
 
 @export var destroyee: Node
-@export var lose_on_destroy: bool
 
 func _ready():
 	if not is_instance_valid(destroyee):
@@ -11,6 +11,8 @@ func _ready():
 func _process(delta):
 	if global_position.y < -20:
 		GameStateManager.has_destroyed(self)
-		if lose_on_destroy == true:
-			GameStateManager.lose_game()
+		on_destroy()
 		destroyee.queue_free()
+
+func on_destroy():
+	pass

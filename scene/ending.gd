@@ -3,6 +3,7 @@ extends Control
 @export var title_screen: PackedScene
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if GameStateManager.game_end_message != null:
 		$Description.text = GameStateManager.game_end_message
 	if GameStateManager.game_end_image != null:
