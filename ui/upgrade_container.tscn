@@ -9,11 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://bixny316s0wcg" path="res://audio/vending.wav" id="7_5ucr0"]
 
 [node name="UpgradeContainer" type="HBoxContainer"]
+layout_direction = 2
 offset_left = 250.0
 offset_top = 33.0
 offset_right = 858.0
 offset_bottom = 105.0
-alignment = 1
+size_flags_horizontal = 0
+size_flags_vertical = 3
 script = ExtResource("1_5sc2g")
 light_equipped = ExtResource("1_rqe43")
 light_not_equipped = ExtResource("3_86i5b")
@@ -24,6 +26,7 @@ dispense_sound = ExtResource("7_5ucr0")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Buy Performosport
 "
 
