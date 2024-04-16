@@ -43,14 +43,14 @@ var upgrades = [
 		"equipped" = 0,
 		"unlocked" = 0,
 		"max" = 5,
-		"price" = 12
+		"price" = 16
 	},
 	{
 		"name" = "bicepscene",
 		"equipped" = 0,
 		"unlocked" = 0,
 		"max" = 4,
-		"price" = 12
+		"price" = 19
 	}
 ]
 
