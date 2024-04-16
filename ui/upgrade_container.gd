@@ -19,7 +19,6 @@ func _ready():
 		lights.append(light)
 		light.scale.y = 0.5
 		light.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
-	$Button.text = "Buy " + upgrade.name + ": " + str(upgrade.price) + "b"
 
 func _on_button_pressed():
 	if upgrade.equipped < upgrade.unlocked:
@@ -39,6 +38,15 @@ func _on_button_pressed():
 	Flags.refresh_upgrades_effects()
 
 func update():
+	#update text
+	$Button.disabled = false
+	if upgrade.unlocked > upgrade.equipped:
+		$Button.text = upgrade.name + ": FREE"
+	elif Flags.get_money() >= upgrade.price:
+		$Button.text = upgrade.name + ": Buy " + str(upgrade.price) + "b"
+	else:
+		$Button.text = upgrade.name + ": Can't Afford."
+		$Button.disabled = true
 	#update lights
 	var i = 1
 	for light in lights:
