@@ -4,8 +4,8 @@ extends Node3D
 @export var audio_player: AudioStreamPlayer3D
 
 const grab_distance = 2
-const grab_force = 800
-const grab_speed_damping = 0.93
+var grab_force = 800
+var grab_speed_damping = 0.93
 var throw_force = 10
 const grab_grace_period = 0.5
 const preview_rate = 0.005
@@ -23,8 +23,14 @@ var hasGrabSoundPlayed = false
 func _physics_process(delta):
 	time_left_to_grab -= delta
 	if grab_object != null:
-		grab_object.apply_impulse((global_position - grab_object.global_position) * grab_object.mass * grab_force * delta)
-		grab_object.linear_velocity *= grab_speed_damping
+		var mass = 1
+		if "mass" in grab_object:
+			mass = grab_object.mass
+		grab_object.apply_impulse((global_position - grab_object.global_position) * grab_force * delta)
+		if "linear_velocity" in grab_object:
+			grab_object.linear_velocity *= grab_speed_damping
+		else:
+			grab_object.velocity *= grab_speed_damping
 		generate_throw_preview(delta)
 	else:
 		for c in preview_models:
@@ -108,11 +114,11 @@ func grab():
 	if "player_interact" in highlighted_object:
 		highlighted_object.player_interact()
 		inputBuffer = false
-	if highlighted_object is RigidBody3D or highlighted_object is GrabbableBody3D:
+	if highlighted_object is RigidBody3D or highlighted_object is GrabbableBody3D or highlighted_object is CharacterBody3D:
+		if not "apply_impulse" in highlighted_object: return
 		grab_object = highlighted_object
 		
 		if(hasGrabSoundPlayed == false):
-			print("gfdjkgkfg")
 			audio_player.stream = load("res://audio/grab.wav")
 			audio_player.play()
 			hasGrabSoundPlayed = true

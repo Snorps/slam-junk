@@ -281,6 +281,7 @@
 {
 "classname" "ent_basketball"
 "origin" "392 -56 120"
+"mass" "6.6"
 }
 // entity 2
 {

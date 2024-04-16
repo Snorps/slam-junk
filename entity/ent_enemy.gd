@@ -20,6 +20,7 @@ var direction: Vector3 = Vector3.ZERO
 var main_velocity: Vector3 = Vector3.ZERO
 var gravity_direction: Vector3 = Vector3.ZERO
 var movement: Vector3 = Vector3.ZERO
+var mass = 6
 
 const STAIRS_FEELING_COEFFICIENT: float = 2.5
 const WALL_MARGIN: float = 0.001
@@ -289,6 +290,5 @@ func step_check(delta: float, is_jumping_: bool, step_result: StepResult):
 
 	return is_step
 
-
-func _on_damage_source_area_entered(area):
-	print("test")
+func apply_impulse(force: Vector3):
+	main_velocity += force
