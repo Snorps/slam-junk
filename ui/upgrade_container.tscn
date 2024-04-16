@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8p0c852e4f3p"]
 
 [ext_resource type="Script" path="res://ui/upgrade_container.gd" id="1_5sc2g"]
-[ext_resource type="Texture2D" uid="uid://btj20klgyubgt" path="res://ui/Buttonequipped.PNG" id="1_rqe43"]
-[ext_resource type="Texture2D" uid="uid://bg55tq21lkej6" path="res://ui/Buttonnotequipped.PNG" id="3_86i5b"]
-[ext_resource type="Texture2D" uid="uid://dg44kqtawrx5l" path="res://ui/Buttonnotbought.PNG" id="4_b0b6b"]
+[ext_resource type="Texture2D" uid="uid://btj20klgyubgt" path="res://ui/Buttonequipped.png" id="1_rqe43"]
+[ext_resource type="Texture2D" uid="uid://bg55tq21lkej6" path="res://ui/Buttonnotequipped.png" id="3_86i5b"]
+[ext_resource type="Texture2D" uid="uid://dg44kqtawrx5l" path="res://ui/Buttonnotbought.png" id="4_b0b6b"]
 [ext_resource type="AudioStream" uid="uid://hk576rmewrpm" path="res://audio/vendCANTAFFORD.wav" id="5_jiywr"]
 [ext_resource type="AudioStream" uid="uid://8sbk5d283sjo" path="res://audio/vendbuy.wav" id="6_mpvhi"]
 [ext_resource type="AudioStream" uid="uid://bixny316s0wcg" path="res://audio/vending.wav" id="7_5ucr0"]

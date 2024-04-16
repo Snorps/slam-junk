@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8pxgg0c03m6e"
-path="res://.godot/imported/vendfront.PNG-7b3189a4144d328146fbd7720c149c73.ctex"
+path.s3tc="res://.godot/imported/vendfront.png-d0084d1e6b2dc5258cbbafd4b3637007.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/vendfront.PNG"
-dest_files=["res://.godot/imported/vendfront.PNG-7b3189a4144d328146fbd7720c149c73.ctex"]
+source_file="res://trenchbroom/textures/vendfront.png"
+dest_files=["res://.godot/imported/vendfront.png-d0084d1e6b2dc5258cbbafd4b3637007.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c41sxdl27dk0m"
-path.s3tc="res://.godot/imported/brickswall.PNG-12f5705f79f89c1cdd7b9e948e945403.s3tc.ctex"
+path.s3tc="res://.godot/imported/brickswall.png-c097b4b2c89f1783b0735fca0c320031.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/brickswall.PNG"
-dest_files=["res://.godot/imported/brickswall.PNG-12f5705f79f89c1cdd7b9e948e945403.s3tc.ctex"]
+source_file="res://trenchbroom/textures/brickswall.png"
+dest_files=["res://.godot/imported/brickswall.png-c097b4b2c89f1783b0735fca0c320031.s3tc.ctex"]
 
 [params]
 

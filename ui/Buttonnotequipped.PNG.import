@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg55tq21lkej6"
-path="res://.godot/imported/Buttonnotequipped.PNG-ae843398b9431dbc8fdc848fd95e5414.ctex"
+path="res://.godot/imported/Buttonnotequipped.png-029ca1ee8a534240c7c23c3d82964f6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/Buttonnotequipped.PNG"
-dest_files=["res://.godot/imported/Buttonnotequipped.PNG-ae843398b9431dbc8fdc848fd95e5414.ctex"]
+source_file="res://ui/Buttonnotequipped.png"
+dest_files=["res://.godot/imported/Buttonnotequipped.png-029ca1ee8a534240c7c23c3d82964f6b.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scene/ending.gd" id="1_61egu"]
 [ext_resource type="AudioStream" uid="uid://cp7i11fj8yncr" path="res://audio/ending.wav" id="2_d3peo"]
 [ext_resource type="PackedScene" uid="uid://1q1ttixn6an3" path="res://scene/MainMenu.tscn" id="2_e7815"]
-[ext_resource type="Texture2D" uid="uid://d4jsifa1j6bre" path="res://Endscreens/ERRORENDING.PNG" id="4_rc3tb"]
+[ext_resource type="Texture2D" uid="uid://d4jsifa1j6bre" path="res://Endscreens/ERRORENDING.png" id="4_rc3tb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3hq7o"]
 font_size = 32

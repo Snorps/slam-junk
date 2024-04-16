@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvcnkrn86j2g5"
-path="res://.godot/imported/sorry.PNG-aa79153715937f0633efaf81a5ef8139.ctex"
+path.s3tc="res://.godot/imported/sorry.png-3b45dbb56638159b4672abc5c088041e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/sorry.PNG"
-dest_files=["res://.godot/imported/sorry.PNG-aa79153715937f0633efaf81a5ef8139.ctex"]
+source_file="res://trenchbroom/textures/sorry.png"
+dest_files=["res://.godot/imported/sorry.png-3b45dbb56638159b4672abc5c088041e.s3tc.ctex"]
 
 [params]
 

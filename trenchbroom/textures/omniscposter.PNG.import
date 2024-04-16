@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqyl25vvqph4f"
-path="res://.godot/imported/omniscposter.PNG-c34be411fc060c75d53b808bfcbd7d96.ctex"
+path.s3tc="res://.godot/imported/omniscposter.png-6ddf5bb134d18e78c2be1893b14b3e1e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/omniscposter.PNG"
-dest_files=["res://.godot/imported/omniscposter.PNG-c34be411fc060c75d53b808bfcbd7d96.ctex"]
+source_file="res://trenchbroom/textures/omniscposter.png"
+dest_files=["res://.godot/imported/omniscposter.png-6ddf5bb134d18e78c2be1893b14b3e1e.s3tc.ctex"]
 
 [params]
 

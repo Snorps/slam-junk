@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byndlevjd3q0r"
-path="res://.godot/imported/PR4M.PNG-10a485292165e27e140b9ab86158d841.ctex"
+path.s3tc="res://.godot/imported/PR4M.png-ecfabbfae20ef4e8b056b9600a83e508.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/PR4M.PNG"
-dest_files=["res://.godot/imported/PR4M.PNG-10a485292165e27e140b9ab86158d841.ctex"]
+source_file="res://trenchbroom/textures/PR4M.png"
+dest_files=["res://.godot/imported/PR4M.png-ecfabbfae20ef4e8b056b9600a83e508.s3tc.ctex"]
 
 [params]
 

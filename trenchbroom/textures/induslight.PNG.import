@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kucr2bfnny2n"
-path.s3tc="res://.godot/imported/induslight.PNG-f15d206a52fc43f89393b145b092d507.s3tc.ctex"
+path.s3tc="res://.godot/imported/induslight.png-812c619ac2de0ad68fa1d26467ed0a77.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/induslight.PNG"
-dest_files=["res://.godot/imported/induslight.PNG-f15d206a52fc43f89393b145b092d507.s3tc.ctex"]
+source_file="res://trenchbroom/textures/induslight.png"
+dest_files=["res://.godot/imported/induslight.png-812c619ac2de0ad68fa1d26467ed0a77.s3tc.ctex"]
 
 [params]
 

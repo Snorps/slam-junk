@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ce38c7nwwfmq6"]
 
-[ext_resource type="Texture2D" uid="uid://kucr2bfnny2n" path="res://trenchbroom/textures/induslight.PNG" id="1_nyiyf"]
+[ext_resource type="Texture2D" uid="uid://kucr2bfnny2n" path="res://trenchbroom/textures/induslight.png" id="1_nyiyf"]
 
 [resource]
 transparency = 2

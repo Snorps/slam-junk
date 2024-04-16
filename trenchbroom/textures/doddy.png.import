@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lyk64yoeqdsy"
-path.s3tc="res://.godot/imported/doddy.PNG-a8465c734013b992b816abf50f9a805f.s3tc.ctex"
+path.s3tc="res://.godot/imported/doddy.png-68f19870315e99fda3b5bd2da88ce47c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/doddy.PNG"
-dest_files=["res://.godot/imported/doddy.PNG-a8465c734013b992b816abf50f9a805f.s3tc.ctex"]
+source_file="res://trenchbroom/textures/doddy.png"
+dest_files=["res://.godot/imported/doddy.png-68f19870315e99fda3b5bd2da88ce47c.s3tc.ctex"]
 
 [params]
 

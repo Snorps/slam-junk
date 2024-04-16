@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1qhx3q8uim8e"
-path="res://.godot/imported/skid.PNG-6f0152ddb8f677ed9685ca52ab2bee62.ctex"
+path.s3tc="res://.godot/imported/skid.png-d02c9dd6a06c81ea2967d9c8ae7672ab.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/skid.PNG"
-dest_files=["res://.godot/imported/skid.PNG-6f0152ddb8f677ed9685ca52ab2bee62.ctex"]
+source_file="res://trenchbroom/textures/skid.png"
+dest_files=["res://.godot/imported/skid.png-d02c9dd6a06c81ea2967d9c8ae7672ab.s3tc.ctex"]
 
 [params]
 

@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0fnogu3xa7tp"
-path="res://.godot/imported/vendother.PNG-3d027ee1da1acbadd4a9bf9e0d1b5b38.ctex"
+path.s3tc="res://.godot/imported/vendother.png-a8647d4b8695bbdc0a440cb52aa89c94.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/vendother.PNG"
-dest_files=["res://.godot/imported/vendother.PNG-3d027ee1da1acbadd4a9bf9e0d1b5b38.ctex"]
+source_file="res://trenchbroom/textures/vendother.png"
+dest_files=["res://.godot/imported/vendother.png-a8647d4b8695bbdc0a440cb52aa89c94.s3tc.ctex"]
 
 [params]
 
