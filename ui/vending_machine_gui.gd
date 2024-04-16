@@ -4,32 +4,6 @@ extends Control
 
 var control
 var performoContainer
-var upgrades = [
-	{
-		"name"="performosport",
-		"price"=25
-	},	
-	{
-		"name"="necrogluterol",
-		"price"=15
-	},	
-	{
-		"name"="bicepscene",
-		"price"=32
-	},	
-	{
-		"name"="sportimax",
-		"price"=25
-	},	
-	{
-		"name"="skedaddlide",
-		"price"=25
-	},	
-	{
-		"name"="performosport",
-		"price"=25
-	},	
-]
 var containers = []
 
 func _ready():
