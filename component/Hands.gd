@@ -3,7 +3,7 @@ extends Node3D
 @export var head: Node3D
 @export var audio_player: AudioStreamPlayer3D
 
-const grab_distance = 50
+const grab_distance = 2
 const grab_force = 800
 const grab_speed_damping = 0.93
 var throw_force = 10
