@@ -21,7 +21,18 @@ func update_trajectory(delta):
 	on_bounce()
 	if "on_collide" in collision.get_collider():
 		collision.get_collider().on_collide(self)
-	linear_velocity = linear_velocity.bounce(collision.get_normal()) * bounciness
+		
+	#bounciness calculation (prevents ball going crazy)
+	var normal = collision.get_normal()
+	#abs it so that ceilings are 0 angle from horizon
+	normal = Vector3(abs(normal.x),abs(normal.y),abs(normal.z))
+	var angle_from_horizon = Vector3.UP.angle_to(normal)
+	angle_from_horizon = rad_to_deg(angle_from_horizon)
+	angle_from_horizon *= 0.03
+	angle_from_horizon = clamp(angle_from_horizon, 1, 90)
+	var bounciness_this_frame = bounciness * (1/angle_from_horizon)
+	
+	linear_velocity = linear_velocity.bounce(collision.get_normal()) * bounciness_this_frame
 	
 func apply_impulse(force: Vector3):
 	linear_velocity += force
