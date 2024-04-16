@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxj6ecba7t6f7"
-path="res://.godot/imported/bicep.PNG-af65c773ba972c4182898c4d5c2fadb0.ctex"
+path.s3tc="res://.godot/imported/bicep.png-239126cbacf2ea49377c40de7c9bd437.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/bicep.PNG"
-dest_files=["res://.godot/imported/bicep.PNG-af65c773ba972c4182898c4d5c2fadb0.ctex"]
+source_file="res://trenchbroom/textures/bicep.png"
+dest_files=["res://.godot/imported/bicep.png-239126cbacf2ea49377c40de7c9bd437.s3tc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vryx6qevbbjp"
-path="res://.godot/imported/GOODENDING.PNG-86a6bf0967662c5adda2acb2d96d7e82.ctex"
+path="res://.godot/imported/GOODENDING.png-92bcd57ecbf46a5a95b7409ffb7c76eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Endscreens/GOODENDING.PNG"
-dest_files=["res://.godot/imported/GOODENDING.PNG-86a6bf0967662c5adda2acb2d96d7e82.ctex"]
+source_file="res://Endscreens/GOODENDING.png"
+dest_files=["res://.godot/imported/GOODENDING.png-92bcd57ecbf46a5a95b7409ffb7c76eb.ctex"]
 
 [params]
 

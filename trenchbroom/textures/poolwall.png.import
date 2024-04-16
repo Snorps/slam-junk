@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d31ebo8n57q40"
-path.s3tc="res://.godot/imported/poolwall.PNG-6e37c1d0db31211ec0db1c6ec72c2411.s3tc.ctex"
+path.s3tc="res://.godot/imported/poolwall.png-87f1489133db4ef45b678a85b83b940d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/poolwall.PNG"
-dest_files=["res://.godot/imported/poolwall.PNG-6e37c1d0db31211ec0db1c6ec72c2411.s3tc.ctex"]
+source_file="res://trenchbroom/textures/poolwall.png"
+dest_files=["res://.godot/imported/poolwall.png-87f1489133db4ef45b678a85b83b940d.s3tc.ctex"]
 
 [params]
 

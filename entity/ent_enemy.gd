@@ -20,7 +20,7 @@ var direction: Vector3 = Vector3.ZERO
 var main_velocity: Vector3 = Vector3.ZERO
 var gravity_direction: Vector3 = Vector3.ZERO
 var movement: Vector3 = Vector3.ZERO
-var mass = 6
+var mass = 500.0
 
 const STAIRS_FEELING_COEFFICIENT: float = 2.5
 const WALL_MARGIN: float = 0.001

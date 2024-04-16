@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsxm0olsk2hwg"
-path="res://.godot/imported/necroposter.PNG-ee46146a068a104a2f4822b63c132b7a.ctex"
+path.s3tc="res://.godot/imported/necroposter.png-7c3d8aafb50a5ca11ead5959fa43b901.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/necroposter.PNG"
-dest_files=["res://.godot/imported/necroposter.PNG-ee46146a068a104a2f4822b63c132b7a.ctex"]
+source_file="res://trenchbroom/textures/necroposter.png"
+dest_files=["res://.godot/imported/necroposter.png-7c3d8aafb50a5ca11ead5959fa43b901.s3tc.ctex"]
 
 [params]
 

@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbnlf88kqnmlw"
-path="res://.godot/imported/coachbody.PNG-b30c9a558206041c507d6142a2f8d648.ctex"
+path.s3tc="res://.godot/imported/coachbody.png-ed5c17b982c838ac33a7d93c47f47801.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/coachbody.PNG"
-dest_files=["res://.godot/imported/coachbody.PNG-b30c9a558206041c507d6142a2f8d648.ctex"]
+source_file="res://trenchbroom/textures/coachbody.png"
+dest_files=["res://.godot/imported/coachbody.png-ed5c17b982c838ac33a7d93c47f47801.s3tc.ctex"]
 
 [params]
 
