@@ -26,14 +26,16 @@ func _physics_process(delta):
 		var mass = 1
 		if "mass" in grab_object:
 			mass = grab_object.mass
-		var force = grab_force * (1/mass)
+		var force = grab_force / mass
+		force = clamp(force, 0, 100*mass)
 		grab_object.apply_impulse((global_position - grab_object.global_position) * force * delta)
+		var damping = grab_speed_damping
 		if "linear_velocity" in grab_object:
-			grab_object.linear_velocity *= grab_speed_damping
+			grab_object.linear_velocity *= damping
 		elif "main_velocity" in grab_object:
-			grab_object.main_velocity *= grab_speed_damping
+			grab_object.main_velocity *= damping
 		else:
-			grab_object.velocity *= grab_speed_damping
+			grab_object.velocity *= damping
 		generate_throw_preview(delta)
 	else:
 		for c in preview_models:

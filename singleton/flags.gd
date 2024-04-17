@@ -95,8 +95,8 @@ func refresh_upgrades_effects():
 			get_upgrade("sportimax").equipped = 0
 			
 		var bicepscene = get_upgrade("bicepscene").equipped
-		hands.grab_force = 800 + (300 * bicepscene)
-		hands.grab_speed_damping = 0.95 - (0.04 * bicepscene)
+		hands.grab_force = 800 + (120000 * bicepscene)
+		hands.grab_speed_damping = 0.93 - (0.04 * bicepscene)
 
 	AudioManager.PerformoAudio(0)
 	
