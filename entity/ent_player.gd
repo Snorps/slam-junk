@@ -136,9 +136,10 @@ func _process(delta: float) -> void:
 	camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
 
 	##sets speeline texture if user is on performo and is moving
+	if not is_instance_valid(GameStateManager.player): return
 	if(Flags.get_upgrade("performosport").equipped > 0 && GameStateManager.player.velocity.length() > 0.5):
 		if(speedlineCheck == true):
-			var random = rng.randi_range(1,Flags.performosport)
+			var random = rng.randi_range(1,Flags.get_upgrade("performosport").equipped)
 			match random:
 				
 				2:

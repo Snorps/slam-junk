@@ -23,30 +23,23 @@ func set_music(audio: AudioStream, volume = null, keep_time = false):
 		current_music_player.play(playback_time)
 		if(waitingroom == null):
 			waitingroom = true
-		print("1: " + str(waitingroom))
-		PerformoAudio(playback_time)
+		PerformoAudio()
 		
-func PerformoAudio(playback_time):
+var waiting_room_performo = load("res://audio/Ball room performosport.wav")
+var court_performo = load("res://audio/Bounsyball performosport.wav")
+func PerformoAudio():
 	if(Flags.get_upgrade("performosport").equipped > 0):
-			if(waitingroom == true):
-				musicBackdrop.stop()
-				musicBackdrop.stream = load("res://audio/Ball room performosport.wav")
-				musicBackdrop.volume_db = target_volume - 5
-				musicBackdrop.play(playback_time)
-				print(current_music_player.stream)
-				waitingroom = false
-				print("2: " + str(waitingroom))
-			else:
-				print("3")
-				musicBackdrop.stop()
-				musicBackdrop.stream = load("res://audio/Bounsyball performosport.wav")
-				musicBackdrop.volume_db = target_volume - 5
-				musicBackdrop.play(playback_time)
-				print(current_music_player.stream)
-				waitingroom = true
-				
-				
-	if(Flags.get_upgrade("performosport").equipped == 0):
+		var playback_time = current_music_player.get_playback_position()
+		musicBackdrop.stop()
+		if current_music_player.stream.resource_path.to_lower() == "res://audio/BOUNSYBALL3.wav".to_lower():
+			musicBackdrop.stream = court_performo
+			musicBackdrop.volume_db = target_volume - 3
+		else:
+			musicBackdrop.stream = waiting_room_performo
+			musicBackdrop.volume_db = target_volume - 7
+		
+		musicBackdrop.play(playback_time)
+	else:
 		musicBackdrop.stop()
 	
 func crossfade_music(audio: AudioStream):

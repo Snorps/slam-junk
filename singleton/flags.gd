@@ -63,7 +63,7 @@ func refresh_upgrades_effects():
 	GameStateManager.vending_machine_ui.update()
 	GameStateManager.player.update_fov()
 	#apply effects
-	AudioManager.PerformoAudio(0)
+	AudioManager.PerformoAudio()
 	var player = GameStateManager.player
 	if player != null:
 		var skidaddlide = get_upgrade("skidaddlide").equipped
@@ -86,7 +86,7 @@ func refresh_upgrades_effects():
 		hands.grab_force = 800 + (120000 * bicepscene)
 		hands.grab_speed_damping = 0.93 - (0.04 * bicepscene)
 
-	AudioManager.PerformoAudio(0)
+	AudioManager.PerformoAudio()
 	
 func purge_upgrades():
 	for upgrade in upgrades:
