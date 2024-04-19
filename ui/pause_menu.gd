@@ -84,8 +84,6 @@ func PauseGame():
 	controlLabel.show()
 	get_tree().paused = true
 	var shopMenu = get_tree().get_root().get_node("World/VendingMachineGui")
-	moneyLabel.text = "Dollareydoos: " + str(Flags._money)
-	performoLabel.text = "Performosports: " + str(Flags.performosport)
 	shopMenu.hide()
 	paused = true
 

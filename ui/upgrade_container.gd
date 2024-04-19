@@ -12,6 +12,9 @@ var lights = []
 @export var dispense_sound: AudioStream
 
 func _ready():
+	var logo = load("res://logos/" + upgrade.name + ".png")
+	if logo:
+		$LogoContainer/Logo.texture = logo
 	for i in upgrade.max:
 		var light = TextureRect.new()
 		light.texture = light_not_bought
@@ -41,11 +44,11 @@ func update():
 	#update text
 	$Button.disabled = false
 	if upgrade.unlocked > upgrade.equipped:
-		$Button.text = upgrade.name + ": FREE"
+		$Button.text = "FREE"
 	elif Flags.get_money() >= upgrade.price:
-		$Button.text = upgrade.name + ": Buy " + str(upgrade.price) + "b"
+		$Button.text = "Buy " + str(upgrade.price) + "b"
 	else:
-		$Button.text = upgrade.name + ": Can't Afford."
+		$Button.text = "Can't Afford."
 		$Button.disabled = true
 	#update lights
 	var i = 1

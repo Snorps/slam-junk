@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8p0c852e4f3p"]
+[gd_scene load_steps=9 format=3 uid="uid://b8p0c852e4f3p"]
 
 [ext_resource type="Script" path="res://ui/upgrade_container.gd" id="1_5sc2g"]
 [ext_resource type="Texture2D" uid="uid://btj20klgyubgt" path="res://ui/Buttonequipped.png" id="1_rqe43"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://hk576rmewrpm" path="res://audio/vendCANTAFFORD.wav" id="5_jiywr"]
 [ext_resource type="AudioStream" uid="uid://8sbk5d283sjo" path="res://audio/vendbuy.wav" id="6_mpvhi"]
 [ext_resource type="AudioStream" uid="uid://bixny316s0wcg" path="res://audio/vending.wav" id="7_5ucr0"]
+[ext_resource type="Texture2D" uid="uid://chjoxosug7wnd" path="res://logos/necrogluterol.png" id="8_gkski"]
 
 [node name="UpgradeContainer" type="HBoxContainer"]
 layout_direction = 2
@@ -24,9 +25,19 @@ fail_sound = ExtResource("5_jiywr")
 buy_sound = ExtResource("6_mpvhi")
 dispense_sound = ExtResource("7_5ucr0")
 
+[node name="LogoContainer" type="BoxContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="LogoContainer"]
+layout_mode = 2
+texture = ExtResource("8_gkski")
+expand_mode = 3
+
 [node name="Button" type="Button" parent="."]
 clip_contents = true
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 0
