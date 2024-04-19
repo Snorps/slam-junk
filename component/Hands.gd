@@ -51,7 +51,7 @@ func _physics_process(delta):
 			var message = result.collider.get_hover_message()
 			if message != null:
 				HUD.set_hands_text(message)
-		highlighted_object = result.collider
+		set_highlighted_object(result.collider)
 		time_left_to_grab = grab_grace_period
 	
 	
@@ -60,6 +60,13 @@ func _physics_process(delta):
 		time_left_to_grab -= delta
 		if(time_left_to_grab <= 0):
 			inputBuffer = false
+			
+func set_highlighted_object(object):
+	if not is_instance_valid(object): return
+	#if is_instance_valid(highlighted_object):
+		#highlighted_object.modulate = Color(0,0,0)
+	highlighted_object = object
+	#highlighted_object.modulate = Color(1,1,1)
 
 func generate_throw_preview(delta):
 	if not grab_object is GrabbableBody3D: return
