@@ -84,5 +84,12 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("5_08kbj")
 script = ExtResource("4_ykq30")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 614.0
+offset_right = 432.0
+offset_bottom = 639.0
+text = "Post-Jam V1.0    Check slamjunk.snorps.net for updates"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

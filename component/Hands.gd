@@ -4,8 +4,8 @@ extends Node3D
 @export var audio_player: AudioStreamPlayer3D
 
 const grab_distance = 2
-const grab_force = 800
-const grab_speed_damping = 0.93
+var grab_force = 800
+var grab_speed_damping = 0.93
 var throw_force = 10
 const grab_grace_period = 0.5
 const preview_rate = 0.005
@@ -23,8 +23,19 @@ var hasGrabSoundPlayed = false
 func _physics_process(delta):
 	time_left_to_grab -= delta
 	if grab_object != null:
-		grab_object.apply_impulse((global_position - grab_object.global_position) * grab_object.mass * grab_force * delta)
-		grab_object.linear_velocity *= grab_speed_damping
+		var mass = 1
+		if "mass" in grab_object:
+			mass = grab_object.mass
+		var force = grab_force / mass
+		force = clamp(force, 0, 100*mass)
+		grab_object.apply_impulse((global_position - grab_object.global_position) * force * delta)
+		var damping = grab_speed_damping
+		if "linear_velocity" in grab_object:
+			grab_object.linear_velocity *= damping
+		elif "main_velocity" in grab_object:
+			grab_object.main_velocity *= damping
+		else:
+			grab_object.velocity *= damping
 		generate_throw_preview(delta)
 	else:
 		for c in preview_models:
@@ -40,11 +51,7 @@ func _physics_process(delta):
 			var message = result.collider.get_hover_message()
 			if message != null:
 				HUD.set_hands_text(message)
-		highlighted_object = result.collider
-		#print(result.collider.name)
-		#print("distance: " + str((result.position - head.global_position).length()))
-		if result.collider.name == "GrabHitbox":
-			highlighted_object = result.collider.get_node("..")
+		set_highlighted_object(result.collider)
 		time_left_to_grab = grab_grace_period
 	
 	
@@ -53,6 +60,13 @@ func _physics_process(delta):
 		time_left_to_grab -= delta
 		if(time_left_to_grab <= 0):
 			inputBuffer = false
+			
+func set_highlighted_object(object):
+	if not is_instance_valid(object): return
+	#if is_instance_valid(highlighted_object):
+		#highlighted_object.modulate = Color(0,0,0)
+	highlighted_object = object
+	#highlighted_object.modulate = Color(1,1,1)
 
 func generate_throw_preview(delta):
 	if not grab_object is GrabbableBody3D: return
@@ -99,20 +113,17 @@ func try_grabthrow():
 
 func grab():
 	if time_left_to_grab <= 0: return
-	#PhysicsServer3D.body_set_state(
-		#highlighted_object.get_rid(),
-		#PhysicsServer3D.BODY_STATE_TRANSFORM,
-		#Transform3D.IDENTITY.translated(global_position)
-	#)
 	if highlighted_object == null: return
 	if "player_interact" in highlighted_object:
 		highlighted_object.player_interact()
 		inputBuffer = false
-	if highlighted_object is RigidBody3D or highlighted_object is GrabbableBody3D:
+	if highlighted_object is RigidBody3D or highlighted_object is GrabbableBody3D or highlighted_object is CharacterBody3D:
+		if "mass" in highlighted_object:
+			if highlighted_object.mass * 5 > grab_force: return
+		if not "apply_impulse" in highlighted_object: return
 		grab_object = highlighted_object
 		
 		if(hasGrabSoundPlayed == false):
-			print("gfdjkgkfg")
 			audio_player.stream = load("res://audio/grab.wav")
 			audio_player.play()
 			hasGrabSoundPlayed = true

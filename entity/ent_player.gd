@@ -136,7 +136,7 @@ func _process(delta: float) -> void:
 	camera_target_position = lerp(camera_target_position, head_xform.origin, delta * speed * STAIRS_FEELING_COEFFICIENT * camera_lerp_coefficient)
 
 	##sets speeline texture if user is on performo and is moving
-	if(Flags.performosport > 0 && GameStateManager.player.velocity.length() > 0.5):
+	if(Flags.get_upgrade("performosport").equipped > 0 && GameStateManager.player.velocity.length() > 0.5):
 		if(speedlineCheck == true):
 			var random = rng.randi_range(1,Flags.performosport)
 			match random:
@@ -183,6 +183,8 @@ func _input(event):
 			hands.try_grabthrow()
 	if(Input.is_key_pressed(KEY_Q)):
 		Flags.purge_upgrades()
+	if(Input.is_key_pressed(KEY_G)):
+		Flags.add_money(2)
 	if(Input.is_action_just_pressed("Fullscreen")):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
