@@ -1,13 +1,6 @@
 extends Node
 
-var _money
-
-var performosport
-var totalPerformo
-var maxPerformo
-
-var necrogluterol_unlocked
-var necroMax
+var _money = 0
 
 var upgrades = [
 	{
@@ -58,11 +51,6 @@ func _ready():
 	reset()
 
 func reset():
-	performosport = 0
-	totalPerformo = 0
-	maxPerformo = 5
-	necroMax = 1
-	_money = 0
 	add_money(0)
 	
 func get_upgrade(name):

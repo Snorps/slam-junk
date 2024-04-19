@@ -52,10 +52,6 @@ func _physics_process(delta):
 			if message != null:
 				HUD.set_hands_text(message)
 		highlighted_object = result.collider
-		#print(result.collider.name)
-		#print("distance: " + str((result.position - head.global_position).length()))
-		if result.collider.name == "GrabHitbox":
-			highlighted_object = result.collider.get_node("..")
 		time_left_to_grab = grab_grace_period
 	
 	
@@ -110,16 +106,13 @@ func try_grabthrow():
 
 func grab():
 	if time_left_to_grab <= 0: return
-	#PhysicsServer3D.body_set_state(
-		#highlighted_object.get_rid(),
-		#PhysicsServer3D.BODY_STATE_TRANSFORM,
-		#Transform3D.IDENTITY.translated(global_position)
-	#)
 	if highlighted_object == null: return
 	if "player_interact" in highlighted_object:
 		highlighted_object.player_interact()
 		inputBuffer = false
 	if highlighted_object is RigidBody3D or highlighted_object is GrabbableBody3D or highlighted_object is CharacterBody3D:
+		if "mass" in highlighted_object:
+			if highlighted_object.mass * 5 > grab_force: return
 		if not "apply_impulse" in highlighted_object: return
 		grab_object = highlighted_object
 		

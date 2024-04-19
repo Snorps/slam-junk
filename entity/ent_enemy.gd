@@ -56,17 +56,6 @@ class StepResult:
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	#camera_target_position = camera.global_transform.origin
-	#camera.set_as_top_level(true)
-	#camera.global_transform = camera_target.global_transform
-	#
-	#camera_gt_previous = camera_target.global_transform
-	#camera_gt_current = camera_target.global_transform
-#
-#func update_camera_transform():
-	#camera_gt_previous = camera_gt_current
-	#camera_gt_current = camera_target.global_transform
-	
 func _process(delta: float) -> void:
 	#if update_camera:
 		#update_camera_transform()
