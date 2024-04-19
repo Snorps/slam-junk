@@ -20,6 +20,7 @@ var direction: Vector3 = Vector3.ZERO
 var main_velocity: Vector3 = Vector3.ZERO
 var gravity_direction: Vector3 = Vector3.ZERO
 var movement: Vector3 = Vector3.ZERO
+var mass = 500.0
 
 const STAIRS_FEELING_COEFFICIENT: float = 2.5
 const WALL_MARGIN: float = 0.001
@@ -54,17 +55,6 @@ class StepResult:
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	#camera_target_position = camera.global_transform.origin
-	#camera.set_as_top_level(true)
-	#camera.global_transform = camera_target.global_transform
-	#
-	#camera_gt_previous = camera_target.global_transform
-	#camera_gt_current = camera_target.global_transform
-#
-#func update_camera_transform():
-	#camera_gt_previous = camera_gt_current
-	#camera_gt_current = camera_target.global_transform
 	
 func _process(delta: float) -> void:
 	#if update_camera:
@@ -289,6 +279,5 @@ func step_check(delta: float, is_jumping_: bool, step_result: StepResult):
 
 	return is_step
 
-
-func _on_damage_source_area_entered(area):
-	print("test")
+func apply_impulse(force: Vector3):
+	main_velocity += force
