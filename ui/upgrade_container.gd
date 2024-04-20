@@ -48,7 +48,7 @@ func update():
 	elif Flags.get_money() >= upgrade.price:
 		$Button.text = "Buy " + str(upgrade.price) + "b"
 	else:
-		$Button.text = "Can't Afford."
+		$Button.text = "Can't Afford." + str(upgrade.price) + "b"
 		$Button.disabled = true
 	#update lights
 	var i = 1
