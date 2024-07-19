@@ -1,3 +1,5 @@
+Play the game here: https://thosesnorps.itch.io/slam-junk
+
 Thanks to
 
 Zakarya for reticule https://godotengine.org/asset-library/asset/2418
