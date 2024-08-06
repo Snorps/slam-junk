@@ -1,0 +1,4 @@
+res://scene/MainMenu.tscn
+res://scene/generic_map.tscn
+res://ui/upgrade_container.tscn
+res://manager/game_state_manager.tscn
